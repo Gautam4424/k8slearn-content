@@ -4,13 +4,28 @@
   "duration": "2 Hours",
   "passingScore": "66%",
   "format": "Hands-on Performance-based (Interactive CLI)",
-  "price": "$395 USD",
+  "price": "$445 USD",
   "attempts": "2 attempts included",
   "curriculum": [
-    { "domain": "Cluster Architecture, Installation & Configuration", "weight": 25 },
-    { "domain": "Workloads & Scheduling", "weight": 15 },
-    { "domain": "Services & Networking", "weight": 20 },
-    { "domain": "Storage", "weight": 10 },
-    { "domain": "Troubleshooting", "weight": 30 }
+    {
+      "domain": "Cluster Architecture, Installation & Configuration",
+      "weight": 25
+    },
+    {
+      "domain": "Workloads & Scheduling",
+      "weight": 15
+    },
+    {
+      "domain": "Services & Networking",
+      "weight": 20
+    },
+    {
+      "domain": "Storage",
+      "weight": 10
+    },
+    {
+      "domain": "Troubleshooting",
+      "weight": 30
+    }
   ]
 }

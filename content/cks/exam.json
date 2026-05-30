@@ -4,14 +4,32 @@
   "duration": "2 Hours",
   "passingScore": "66%",
   "format": "Hands-on Performance-based (Interactive CLI)",
-  "price": "$395 USD",
+  "price": "$445 USD",
   "attempts": "2 attempts included",
   "curriculum": [
-    { "domain": "Cluster Setup", "weight": 10 },
-    { "domain": "Cluster Hardening", "weight": 15 },
-    { "domain": "System Hardening", "weight": 15 },
-    { "domain": "Minimize Microservice Vulnerabilities", "weight": 20 },
-    { "domain": "Supply Chain Security", "weight": 20 },
-    { "domain": "Monitoring, Logging and Runtime Security", "weight": 20 }
+    {
+      "domain": "Cluster Setup",
+      "weight": 10
+    },
+    {
+      "domain": "Cluster Hardening",
+      "weight": 15
+    },
+    {
+      "domain": "System Hardening",
+      "weight": 15
+    },
+    {
+      "domain": "Minimize Microservice Vulnerabilities",
+      "weight": 20
+    },
+    {
+      "domain": "Supply Chain Security",
+      "weight": 20
+    },
+    {
+      "domain": "Monitoring, Logging and Runtime Security",
+      "weight": 20
+    }
   ]
 }

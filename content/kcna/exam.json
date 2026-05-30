@@ -7,10 +7,25 @@
   "price": "$250 USD",
   "attempts": "2 attempts included",
   "curriculum": [
-    { "domain": "Kubernetes Fundamentals", "weight": 46 },
-    { "domain": "Container Orchestration", "weight": 22 },
-    { "domain": "Cloud Native Architecture", "weight": 16 },
-    { "domain": "Cloud Native Observability", "weight": 8 },
-    { "domain": "Cloud Native Application Delivery", "weight": 8 }
+    {
+      "domain": "Kubernetes Fundamentals",
+      "weight": 46
+    },
+    {
+      "domain": "Container Orchestration",
+      "weight": 22
+    },
+    {
+      "domain": "Cloud Native Architecture",
+      "weight": 16
+    },
+    {
+      "domain": "Cloud Native Observability",
+      "weight": 8
+    },
+    {
+      "domain": "Cloud Native Application Delivery",
+      "weight": 8
+    }
   ]
 }

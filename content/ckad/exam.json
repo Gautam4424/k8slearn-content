@@ -4,13 +4,28 @@
   "duration": "2 Hours",
   "passingScore": "66%",
   "format": "Hands-on Performance-based (Interactive CLI)",
-  "price": "$395 USD",
+  "price": "$445 USD",
   "attempts": "2 attempts included",
   "curriculum": [
-    { "domain": "Application Design and Build", "weight": 20 },
-    { "domain": "Application Deployment", "weight": 20 },
-    { "domain": "Application Environment, Security and Configuration", "weight": 25 },
-    { "domain": "Application Observability and Maintenance", "weight": 15 },
-    { "domain": "Services and Networking", "weight": 20 }
+    {
+      "domain": "Application Design and Build",
+      "weight": 20
+    },
+    {
+      "domain": "Application Deployment",
+      "weight": 20
+    },
+    {
+      "domain": "Application Environment, Security and Configuration",
+      "weight": 25
+    },
+    {
+      "domain": "Application Observability and Maintenance",
+      "weight": 15
+    },
+    {
+      "domain": "Services and Networking",
+      "weight": 20
+    }
   ]
 }
