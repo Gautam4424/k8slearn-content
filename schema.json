@@ -1,0 +1,64 @@
+{
+  "version": "1.0",
+  "description": "Global schema for all certification topics. Every .json sidecar must follow this format.",
+
+  "certifications": {
+    "allowed": ["cka", "ckad", "cks", "kcna"]
+  },
+
+  "difficulty": {
+    "allowed": ["beginner", "intermediate", "advanced"]
+  },
+
+  "question_types": {
+    "allowed": ["mcq", "multi-select", "true-false"]
+  },
+
+  "sidecar_schema": {
+    "required_fields": [
+      "title",
+      "cert",
+      "roadmap",
+      "subtopic",
+      "difficulty",
+      "content",
+      "questions"
+    ],
+    "optional_fields": ["order", "tags", "prerequisites"],
+
+    "field_rules": {
+      "title":        { "type": "string", "max_length": 80 },
+      "cert":         { "type": "string", "must_be_one_of": "certifications.allowed" },
+      "roadmap":      { "type": "string", "max_length": 50, "description": "major topic group e.g. Scheduling" },
+      "subtopic":     { "type": "string", "max_length": 50, "description": "specific topic e.g. Taints" },
+      "difficulty":   { "type": "string", "must_be_one_of": "difficulty.allowed" },
+      "content":      { "type": "string", "description": "filename of the paired .md file in same folder" },
+      "order":        { "type": "number", "optional": true },
+      "tags":         { "type": "array",  "optional": true },
+      "prerequisites":{ "type": "array",  "optional": true },
+      "questions":    { "type": "array",  "min_items": 1, "max_items": 20 }
+    },
+
+    "question_rules": {
+      "required_fields": ["type", "q", "options", "answer", "explanation"],
+      "field_rules": {
+        "type":        { "must_be_one_of": "question_types.allowed" },
+        "q":           { "type": "string", "max_length": 300 },
+        "options":     { "type": "array",  "min_items": 2, "max_items": 5 },
+        "answer":      { "type": "number", "description": "zero-based index into options array" },
+        "explanation": { "type": "string", "max_length": 500 }
+      }
+    }
+  },
+
+  "file_rules": {
+    "content_field_must_point_to_existing_md": true,
+    "folder_must_match_cert_field": true,
+    "filename_pattern": "lowercase letters, numbers, hyphens only"
+  },
+
+  "folder_convention": {
+    "pattern": "content/{cert}/{roadmap-slug}/{subtopic-slug}/",
+    "example": "content/cka/scheduling/taints/"
+  }
+}
