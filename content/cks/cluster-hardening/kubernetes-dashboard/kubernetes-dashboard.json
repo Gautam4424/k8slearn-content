@@ -1,0 +1,19 @@
+﻿{
+  "title": "Securing the Dashboard",
+  "cert": "cks",
+  "roadmap": "cluster-hardening",
+  "subtopic": "Securing the Dashboard",
+  "difficulty": "beginner",
+  "content": "kubernetes-dashboard.md",
+  "order": 3,
+  "tags": ["dashboard", "rbac", "exposure", "ui"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}

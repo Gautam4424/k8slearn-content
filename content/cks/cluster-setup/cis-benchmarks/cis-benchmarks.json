@@ -1,0 +1,19 @@
+﻿{
+  "title": "CIS Benchmarks",
+  "cert": "cks",
+  "roadmap": "cluster-setup",
+  "subtopic": "CIS Benchmarks",
+  "difficulty": "intermediate",
+  "content": "cis-benchmarks.md",
+  "order": 1,
+  "tags": ["cis", "benchmark", "hardening", "kube-bench"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}

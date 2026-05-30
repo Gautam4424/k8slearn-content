@@ -1,0 +1,19 @@
+﻿{
+  "title": "Persistent Volumes & Claims",
+  "cert": "ckad",
+  "roadmap": "state-persistence",
+  "subtopic": "Persistent Volumes & Claims",
+  "difficulty": "intermediate",
+  "content": "persistent-volumes.md",
+  "order": 1,
+  "tags": ["pv", "pvc", "storageclass", "volumes"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which resource is used to inject non-sensitive configuration data into pods as environment variables?",
+      "options": ["Secret", "ConfigMap", "PersistentVolume", "ServiceAccount"],
+      "answer": 1,
+      "explanation": "ConfigMaps store non-sensitive key-value data. Secrets are similar but base64-encoded for sensitive data like passwords and tokens."
+    }
+  ]
+}

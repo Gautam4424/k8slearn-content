@@ -1,0 +1,19 @@
+﻿{
+  "title": "Static Analysis (Kubesec/Falco)",
+  "cert": "cks",
+  "roadmap": "minimize-attack-surface",
+  "subtopic": "Static Analysis (Kubesec/Falco)",
+  "difficulty": "advanced",
+  "content": "static-analysis.md",
+  "order": 2,
+  "tags": ["kubesec", "falco", "static-analysis", "runtime-security"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}

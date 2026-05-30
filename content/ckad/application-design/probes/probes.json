@@ -1,0 +1,19 @@
+﻿{
+  "title": "Liveness & Readiness Probes",
+  "cert": "ckad",
+  "roadmap": "application-design",
+  "subtopic": "Liveness & Readiness Probes",
+  "difficulty": "beginner",
+  "content": "probes.md",
+  "order": 4,
+  "tags": ["liveness", "readiness", "startup", "healthcheck"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which resource is used to inject non-sensitive configuration data into pods as environment variables?",
+      "options": ["Secret", "ConfigMap", "PersistentVolume", "ServiceAccount"],
+      "answer": 1,
+      "explanation": "ConfigMaps store non-sensitive key-value data. Secrets are similar but base64-encoded for sensitive data like passwords and tokens."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+﻿{
+  "title": "Falco Runtime Security",
+  "cert": "cks",
+  "roadmap": "runtime-security",
+  "subtopic": "Falco Runtime Security",
+  "difficulty": "advanced",
+  "content": "falco.md",
+  "order": 1,
+  "tags": ["falco", "rules", "alerts", "syscall", "audit"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}

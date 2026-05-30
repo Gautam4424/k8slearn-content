@@ -1,0 +1,19 @@
+﻿{
+  "title": "Network Policies",
+  "cert": "cks",
+  "roadmap": "cluster-setup",
+  "subtopic": "Network Policies",
+  "difficulty": "intermediate",
+  "content": "network-policies-cks.md",
+  "order": 2,
+  "tags": ["networkpolicy", "isolation", "egress", "ingress"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+﻿{
+  "title": "RBAC (Roles & Bindings)",
+  "cert": "cks",
+  "roadmap": "cluster-hardening",
+  "subtopic": "RBAC (Roles & Bindings)",
+  "difficulty": "intermediate",
+  "content": "rbac.md",
+  "order": 1,
+  "tags": ["rbac", "role", "clusterrole", "rolebinding", "serviceaccount"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What tool is commonly used to check Kubernetes cluster configuration against CIS benchmarks?",
+      "options": ["Trivy", "kube-bench", "Falco", "OPA Gatekeeper"],
+      "answer": 1,
+      "explanation": "kube-bench is an open-source tool that checks whether Kubernetes is deployed securely by running checks documented in the CIS Kubernetes Benchmark."
+    }
+  ]
+}
