@@ -1,0 +1,67 @@
+{
+  "title": "Static Pods",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Static Pods",
+  "difficulty": "intermediate",
+  "content": "static-pods.md",
+  "order": 8,
+  "tags": ["static-pods", "kubelet", "staticPodPath", "manifests", "mirror-pods"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which component is directly responsible for managing Static Pods?",
+      "options": [
+        "kube-scheduler",
+        "kube-controller-manager",
+        "kubelet",
+        "kube-apiserver"
+      ],
+      "answer": 2,
+      "explanation": "kubelet manages Static Pods by watching the staticPodPath directory. It creates, recreates, and destroys pods based on YAML files in that directory — without needing the API server."
+    },
+    {
+      "type": "mcq",
+      "q": "Where is the default staticPodPath on a kubeadm cluster?",
+      "options": [
+        "/etc/kubelet/manifests",
+        "/var/lib/kubelet/pods",
+        "/etc/kubernetes/manifests",
+        "/etc/static-pods"
+      ],
+      "answer": 2,
+      "explanation": "The default staticPodPath on kubeadm clusters is /etc/kubernetes/manifests/. This contains YAML files for etcd, kube-apiserver, kube-controller-manager, and kube-scheduler."
+    },
+    {
+      "type": "mcq",
+      "q": "You run `kubectl delete pod static-web-node01` on a Static Pod mirror. What happens?",
+      "options": [
+        "The pod is permanently deleted",
+        "The pod is deleted but kubelet recreates it from the manifest file",
+        "The manifest file on node01 is removed",
+        "The pod enters Terminating state permanently"
+      ],
+      "answer": 1,
+      "explanation": "kubectl delete on a Static Pod mirror is effectively ignored — kubelet recreates the pod from the manifest file immediately. To actually delete it, you must remove the YAML file from the node."
+    },
+    {
+      "type": "mcq",
+      "q": "How do Static Pod mirror pods appear in `kubectl get pods`?",
+      "options": [
+        "They are not visible in kubectl at all",
+        "As `<podname>-<nodename>` in the default namespace",
+        "As `<podname>-<nodename>` in the kube-system namespace",
+        "Depends on the namespace in the manifest file"
+      ],
+      "answer": 3,
+      "explanation": "Mirror pods appear with the naming format <podname>-<nodename> in whichever namespace the manifest specifies. Control plane components appear in kube-system because their manifests specify that namespace."
+    },
+    {
+      "type": "true-false",
+      "q": "Static Pods require the kube-scheduler to be running in order to start.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. Static Pods bypass the scheduler entirely. kubelet creates them directly from the YAML file on disk without any interaction with the API server or scheduler. This is why they're used for control plane bootstrapping."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "title": "Resource Limits and QoS",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Resource Limits",
+  "difficulty": "intermediate",
+  "content": "resource-limits.md",
+  "order": 6,
+  "tags": ["resources", "limits", "requests", "QoS", "LimitRange", "ResourceQuota", "OOMKilled"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A container sets `requests.memory: 64Mi` and `limits.memory: 256Mi`. What QoS class is assigned?",
+      "options": [
+        "Guaranteed",
+        "Burstable",
+        "BestEffort",
+        "Limited"
+      ],
+      "answer": 1,
+      "explanation": "Burstable QoS is assigned when requests are set but differ from limits. The container requests 64Mi but can burst to 256Mi."
+    },
+    {
+      "type": "mcq",
+      "q": "Which QoS class is evicted FIRST when a node is under memory pressure?",
+      "options": [
+        "Guaranteed",
+        "Burstable",
+        "BestEffort",
+        "All classes are evicted equally"
+      ],
+      "answer": 2,
+      "explanation": "BestEffort pods have no resource requests or limits and are the first to be evicted under memory pressure. Guaranteed pods are evicted last."
+    },
+    {
+      "type": "mcq",
+      "q": "What happens when a container exceeds its memory limit?",
+      "options": [
+        "It is throttled and slowed down",
+        "It is OOMKilled and the container is restarted",
+        "It is evicted from the node entirely",
+        "It is moved to a node with more memory"
+      ],
+      "answer": 1,
+      "explanation": "When a container exceeds its memory limit, the Linux OOM killer terminates the process and the container is restarted (OOMKilled). Unlike CPU, memory cannot be throttled — exceeding the limit kills the process."
+    },
+    {
+      "type": "mcq",
+      "q": "A LimitRange sets `default.cpu: 500m` in namespace `dev`. A pod is created in `dev` without any resource spec. What CPU limit does the container get?",
+      "options": [
+        "No limit (unlimited)",
+        "500m",
+        "100m (the defaultRequest)",
+        "The pod is rejected"
+      ],
+      "answer": 1,
+      "explanation": "The LimitRange's `default` field is automatically injected as the limit when a container doesn't specify one. So the container gets cpu limit: 500m."
+    },
+    {
+      "type": "mcq",
+      "q": "How many millicores is `0.5` CPU?",
+      "options": [
+        "5m",
+        "50m",
+        "500m",
+        "5000m"
+      ],
+      "answer": 2,
+      "explanation": "1 CPU = 1000m (millicores). Therefore 0.5 CPU = 500m. Common values: 100m = 0.1 CPU, 500m = 0.5 CPU, 1000m = 1 CPU."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the difference between LimitRange and ResourceQuota?",
+      "options": [
+        "LimitRange applies to namespaces; ResourceQuota applies to containers",
+        "LimitRange sets per-container bounds and defaults; ResourceQuota caps total namespace consumption",
+        "They are the same but with different syntax",
+        "ResourceQuota injects defaults; LimitRange caps the total"
+      ],
+      "answer": 1,
+      "explanation": "LimitRange controls individual container/pod resource bounds and injects defaults. ResourceQuota controls the total sum of resources consumed by all objects in a namespace."
+    }
+  ]
+}

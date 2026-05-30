@@ -1,0 +1,72 @@
+{
+  "title": "Labels and Selectors",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Labels and Selectors",
+  "difficulty": "beginner",
+  "content": "labels-selectors.md",
+  "order": 3,
+  "tags": ["labels", "selectors", "annotations", "matchLabels", "filtering"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A Service has `selector: {app: web, env: prod}`. Which pod will receive traffic from this Service?",
+      "options": [
+        "A pod with only `app: web`",
+        "A pod with `app: web` and `env: prod` and `version: v2`",
+        "A pod with `app: web` and `env: staging`",
+        "A pod with no labels"
+      ],
+      "answer": 1,
+      "explanation": "Service selectors use AND logic — a pod must have ALL the specified labels to match. A pod with app:web, env:prod, version:v2 matches because it has at least those two labels."
+    },
+    {
+      "type": "mcq",
+      "q": "What command lists all pods that have the label `env=production` AND `tier=backend`?",
+      "options": [
+        "kubectl get pods -l env=production -l tier=backend",
+        "kubectl get pods -l env=production,tier=backend",
+        "kubectl get pods --label env=production AND tier=backend",
+        "kubectl get pods -l 'env=production && tier=backend'"
+      ],
+      "answer": 1,
+      "explanation": "kubectl get pods -l env=production,tier=backend uses comma separation to express AND logic for equality-based selectors."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the key difference between Labels and Annotations?",
+      "options": [
+        "Labels support more characters than Annotations",
+        "Annotations can be used in selectors, Labels cannot",
+        "Labels are used to identify/select objects; Annotations store metadata not used for selection",
+        "Labels are visible only to humans; Annotations are read by Kubernetes controllers"
+      ],
+      "answer": 2,
+      "explanation": "Labels are queryable and used for selection (Services, ReplicaSets, etc.). Annotations store arbitrary metadata (build IDs, docs URLs) that is not used in selectors."
+    },
+    {
+      "type": "mcq",
+      "q": "Which command removes the label `canary` from a pod named `my-pod`?",
+      "options": [
+        "kubectl label pod my-pod canary=false",
+        "kubectl label pod my-pod --remove canary",
+        "kubectl label pod my-pod canary-",
+        "kubectl unlabel pod my-pod canary"
+      ],
+      "answer": 2,
+      "explanation": "Appending a hyphen (-) to a label key removes it: `kubectl label pod my-pod canary-`. This is a standard kubectl label management pattern."
+    },
+    {
+      "type": "multi-select",
+      "q": "Which selector types support set-based expressions like `env in (production, staging)`?",
+      "options": [
+        "Services",
+        "ReplicaSets",
+        "Deployments",
+        "ReplicationControllers"
+      ],
+      "answer": 1,
+      "explanation": "ReplicaSets and Deployments support set-based selectors (matchExpressions). Services and ReplicationControllers only support equality-based selectors."
+    }
+  ]
+}

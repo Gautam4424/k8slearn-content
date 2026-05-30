@@ -1,0 +1,67 @@
+{
+  "title": "Scheduling Overview",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Scheduling Overview",
+  "difficulty": "beginner",
+  "content": "scheduling-overview.md",
+  "order": 1,
+  "tags": ["scheduler", "kube-scheduler", "filter", "score", "pipeline"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What are the two main phases the kube-scheduler uses to assign a pod to a node?",
+      "options": [
+        "Authenticate and Authorize",
+        "Filter and Score",
+        "Validate and Bind",
+        "Queue and Execute"
+      ],
+      "answer": 1,
+      "explanation": "The kube-scheduler uses a two-phase pipeline: Filter (eliminate unfit nodes) and Score (rank remaining nodes). After scoring, it Binds the pod by writing the nodeName field."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod has been Pending for several minutes and the Events section of `kubectl describe pod` is empty. What is the most likely cause?",
+      "options": [
+        "The pod image cannot be pulled",
+        "The node does not have enough memory",
+        "The kube-scheduler is not running",
+        "The pod has a wrong nodeName"
+      ],
+      "answer": 2,
+      "explanation": "If Events is empty, the scheduler never attempted to schedule the pod. The most common cause is the kube-scheduler not running. Check with: kubectl get pods -n kube-system | grep scheduler"
+    },
+    {
+      "type": "mcq",
+      "q": "Which extension point in the scheduler pipeline is responsible for writing the nodeName to the pod spec?",
+      "options": [
+        "Score",
+        "Reserve",
+        "Permit",
+        "Bind"
+      ],
+      "answer": 3,
+      "explanation": "The Bind phase is the final step where the scheduler writes the selected node's name into the pod spec, causing kubelet on that node to start the pod."
+    },
+    {
+      "type": "true-false",
+      "q": "If you manually set the `nodeName` field in a pod spec, the kube-scheduler will still evaluate and potentially override your choice.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. If nodeName is already set, the kube-scheduler skips that pod entirely. The pod is sent directly to the specified node's kubelet."
+    },
+    {
+      "type": "mcq",
+      "q": "Which scheduler extension point handles preemption when no suitable node is found?",
+      "options": [
+        "Filter",
+        "Score",
+        "PostFilter",
+        "Reserve"
+      ],
+      "answer": 2,
+      "explanation": "PostFilter runs when no node passed the Filter phase. The DefaultPreemption plugin runs here and tries to evict lower-priority pods to make room."
+    }
+  ]
+}

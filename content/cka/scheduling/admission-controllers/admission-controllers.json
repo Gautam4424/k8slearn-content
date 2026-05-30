@@ -1,0 +1,79 @@
+{
+  "title": "Admission Controllers",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Admission Controllers",
+  "difficulty": "advanced",
+  "content": "admission-controllers.md",
+  "order": 10,
+  "tags": ["admission-controllers", "webhooks", "MutatingWebhook", "ValidatingWebhook", "LimitRanger", "OPA", "Kyverno"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "In the API request lifecycle, in what order do mutating and validating webhooks run?",
+      "options": [
+        "Validating webhooks run first, then mutating webhooks",
+        "They run in parallel",
+        "Mutating webhooks run first, then validating webhooks",
+        "Order depends on the failurePolicy setting"
+      ],
+      "answer": 2,
+      "explanation": "Mutating admission webhooks always run before validating admission webhooks. This ensures objects are modified into their final form before validation checks are applied."
+    },
+    {
+      "type": "mcq",
+      "q": "A `ValidatingWebhookConfiguration` has `failurePolicy: Fail`. The webhook service goes down. What happens to new pod creation requests?",
+      "options": [
+        "Pods are created without validation",
+        "Pods are queued until the webhook recovers",
+        "Pod creation requests are rejected",
+        "The API server switches to the backup webhook"
+      ],
+      "answer": 2,
+      "explanation": "failurePolicy: Fail means if the webhook endpoint is unreachable, the entire request is rejected. This is safer for security-critical policies but can cause availability issues."
+    },
+    {
+      "type": "mcq",
+      "q": "Which admission controller automatically injects resource defaults (CPU/memory) into pods that don't specify them?",
+      "options": [
+        "ResourceQuota",
+        "ServiceAccount",
+        "LimitRanger",
+        "DefaultStorageClass"
+      ],
+      "answer": 2,
+      "explanation": "LimitRanger is a Mutating admission controller that injects default CPU and memory requests/limits from a LimitRange object when a container doesn't specify resource requirements."
+    },
+    {
+      "type": "mcq",
+      "q": "What does the `NamespaceLifecycle` admission controller do?",
+      "options": [
+        "Creates namespaces automatically when referenced",
+        "Prevents resource creation in non-existent or terminating namespaces",
+        "Deletes namespaces when empty",
+        "Enforces naming conventions on namespaces"
+      ],
+      "answer": 1,
+      "explanation": "NamespaceLifecycle is a Validating controller that rejects requests to create resources in namespaces that don't exist or are currently being deleted (Terminating state)."
+    },
+    {
+      "type": "mcq",
+      "q": "Where do you enable or disable built-in admission plugins in a kubeadm cluster?",
+      "options": [
+        "In /etc/kubernetes/admission.yaml",
+        "In a ConfigMap in kube-system namespace",
+        "In the kube-apiserver static pod manifest via --enable-admission-plugins flag",
+        "In /var/lib/kubelet/config.yaml"
+      ],
+      "answer": 2,
+      "explanation": "Built-in admission plugins are enabled/disabled via the --enable-admission-plugins and --disable-admission-plugins flags on the kube-apiserver. In kubeadm clusters, this is in /etc/kubernetes/manifests/kube-apiserver.yaml."
+    },
+    {
+      "type": "true-false",
+      "q": "A MutatingWebhookConfiguration can both modify the object AND allow/deny the request.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True. Mutating webhooks can modify objects (via JSON Patch in the response) AND they can deny a request by setting allowed: false in the AdmissionReview response."
+    }
+  ]
+}

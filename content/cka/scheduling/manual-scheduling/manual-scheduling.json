@@ -1,0 +1,55 @@
+{
+  "title": "Manual Scheduling",
+  "cert": "cka",
+  "roadmap": "Scheduling",
+  "subtopic": "Manual Scheduling",
+  "difficulty": "beginner",
+  "content": "manual-scheduling.md",
+  "order": 2,
+  "tags": ["nodeName", "manual", "binding", "pending"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What field in the pod spec do you set to bypass the kube-scheduler and manually assign a pod to a node?",
+      "options": [
+        "nodeSelector",
+        "nodeName",
+        "nodeAffinity",
+        "targetNode"
+      ],
+      "answer": 1,
+      "explanation": "The nodeName field in the pod spec, when set at creation time, causes the kube-scheduler to skip the pod and the kubelet on that node picks it up directly."
+    },
+    {
+      "type": "mcq",
+      "q": "You need to change the node a running pod is assigned to. The pod was created without a nodeName. What is the correct approach?",
+      "options": [
+        "kubectl edit pod and change nodeName",
+        "kubectl patch pod with the new nodeName",
+        "kubectl replace --force -f pod.yaml with updated nodeName",
+        "kubectl taint the current node to evict the pod"
+      ],
+      "answer": 2,
+      "explanation": "nodeName is an immutable field after creation. kubectl replace --force deletes and recreates the pod from the updated spec, allowing the new nodeName to take effect."
+    },
+    {
+      "type": "mcq",
+      "q": "Which API resource/endpoint can you POST to in order to assign an already-pending pod to a specific node when the scheduler is unavailable?",
+      "options": [
+        "NodeAssignment",
+        "PodSchedule",
+        "Binding",
+        "NodeBinding"
+      ],
+      "answer": 2,
+      "explanation": "The Binding API (POST /api/v1/namespaces/{ns}/pods/{pod}/binding) allows you to manually assign a pending pod to a node, mimicking what the scheduler does."
+    },
+    {
+      "type": "true-false",
+      "q": "You can change the nodeName of a running pod using `kubectl edit pod`.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. nodeName is immutable after pod creation. kubectl edit will reject the change. You must use kubectl replace --force -f with the updated spec."
+    }
+  ]
+}
