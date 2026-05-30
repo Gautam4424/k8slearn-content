@@ -1,5 +1,3 @@
-> **Source:** [KodeKloud CKA Course — 02-Core-Concepts](https://github.com/kodekloudhub/certified-kubernetes-administrator-course/tree/master/docs/02-Core-Concepts) | 📅 Created: May 2026
-
 # Imperative Commands with kubectl
 
 For the CKA exam, **speed matters**. Use imperative commands to generate YAML quickly rather than writing from scratch.
