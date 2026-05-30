@@ -9,6 +9,10 @@ Kubernetes is designed to **host applications in containers** in an automated fa
 | **Master / Control Plane** | Manages the cluster — scheduling, monitoring, orchestrating |
 | **Worker Nodes** | Run application workloads (containers) |
 
+## High-Level Architecture Flow
+
+![Kubernetes Cluster Architecture](/k8s_architecture.png)
+
 ## The Ship Analogy
 
 Think of a Kubernetes cluster like a fleet of ships:
