@@ -1,19 +1,32 @@
-﻿{
+{
   "title": "Network Policies",
-  "cert": "ckad",
-  "roadmap": "services-networking",
+  "cert": ["ckad", "cka", "cks"],
+  "roadmap": {
+    "ckad": "services-networking",
+    "cka": "networking",
+    "cks": "cluster-setup"
+  },
   "subtopic": "Network Policies",
   "difficulty": "advanced",
   "content": "network-policies.md",
-  "order": 2,
+  "order": {
+    "ckad": 2,
+    "cka": 1,
+    "cks": 2
+  },
   "tags": ["networkpolicy", "ingress", "egress", "isolation"],
   "questions": [
     {
       "type": "mcq",
-      "q": "Which resource is used to inject non-sensitive configuration data into pods as environment variables?",
-      "options": ["Secret", "ConfigMap", "PersistentVolume", "ServiceAccount"],
-      "answer": 1,
-      "explanation": "ConfigMaps store non-sensitive key-value data. Secrets are similar but base64-encoded for sensitive data like passwords and tokens."
+      "q": "What is the default isolation behavior for a pod in Kubernetes when no NetworkPolicies are applied to it?",
+      "options": [
+        "Non-isolated (all ingress and egress traffic allowed)",
+        "Fully isolated (all ingress and egress traffic blocked)",
+        "Ingress blocked, egress allowed",
+        "Egress blocked, ingress allowed"
+      ],
+      "answer": 0,
+      "explanation": "By default, pods are non-isolated; they accept traffic from any source and send traffic to any destination. They become isolated only when a NetworkPolicy selects them."
     }
   ]
 }

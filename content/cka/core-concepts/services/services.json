@@ -1,11 +1,17 @@
 {
   "title": "Services",
-  "cert": "cka",
-  "roadmap": "core-concepts",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "services-networking"
+  },
   "subtopic": "Services",
   "difficulty": "beginner",
   "content": "services.md",
-  "order": 13,
+  "order": {
+    "cka": 13,
+    "ckad": 1
+  },
   "tags": [
     "services",
     "clusterip",

@@ -1,11 +1,17 @@
 {
   "title": "Labels and Selectors",
-  "cert": "cka",
-  "roadmap": "Scheduling",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Scheduling",
+    "ckad": "application-design"
+  },
   "subtopic": "Labels and Selectors",
   "difficulty": "beginner",
   "content": "labels-selectors.md",
-  "order": 3,
+  "order": {
+    "cka": 3,
+    "ckad": 10
+  },
   "tags": ["labels", "selectors", "annotations", "matchLabels", "filtering"],
   "questions": [
     {

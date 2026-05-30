@@ -29,7 +29,9 @@ function validateFile(full) {
 
   let data
   try {
-    data = JSON.parse(fs.readFileSync(full, 'utf8'))
+    let content = fs.readFileSync(full, 'utf8')
+    content = content.replace(/^\uFEFF/, '')
+    data = JSON.parse(content)
   } catch (e) {
     err(label, `invalid JSON — ${e.message}`)
     return
@@ -43,8 +45,14 @@ function validateFile(full) {
   }
 
   // cert allowed
-  if (!ALLOWED_CERTS.includes(data.cert)) {
-    err(label, `cert "${data.cert}" not in allowed list: ${ALLOWED_CERTS.join(', ')}`)
+  const certs = Array.isArray(data.cert) ? data.cert : [data.cert]
+  if (certs.length === 0) {
+    err(label, `cert field cannot be empty`)
+  }
+  for (const c of certs) {
+    if (!ALLOWED_CERTS.includes(c)) {
+      err(label, `cert "${c}" not in allowed list: ${ALLOWED_CERTS.join(', ')}`)
+    }
   }
 
   // folder must match cert field
@@ -52,8 +60,40 @@ function validateFile(full) {
   const contentIdx = parts.indexOf('content')
   if (contentIdx !== -1) {
     const folderCert = parts[contentIdx + 1]
-    if (folderCert && folderCert !== data.cert) {
-      err(label, `cert field "${data.cert}" does not match folder "${folderCert}"`)
+    if (folderCert && !certs.includes(folderCert)) {
+      err(label, `folder cert "${folderCert}" must be one of the specified certs: ${certs.join(', ')}`)
+    }
+  }
+
+  // roadmap validation (can be string or mapping object)
+  if (data.roadmap !== undefined && data.roadmap !== null && data.roadmap !== '') {
+    if (typeof data.roadmap === 'object' && !Array.isArray(data.roadmap)) {
+      for (const [c, val] of Object.entries(data.roadmap)) {
+        if (!certs.includes(c)) {
+          err(label, `roadmap key "${c}" must be one of the specified certs: ${certs.join(', ')}`)
+        }
+        if (typeof val !== 'string' || val === '') {
+          err(label, `roadmap for cert "${c}" must be a non-empty string`)
+        }
+      }
+    } else if (typeof data.roadmap !== 'string') {
+      err(label, `roadmap must be a string or a mapping object`)
+    }
+  }
+
+  // order validation (can be number or mapping object)
+  if (data.order !== undefined && data.order !== null) {
+    if (typeof data.order === 'object' && !Array.isArray(data.order)) {
+      for (const [c, val] of Object.entries(data.order)) {
+        if (!certs.includes(c)) {
+          err(label, `order key "${c}" must be one of the specified certs: ${certs.join(', ')}`)
+        }
+        if (typeof val !== 'number') {
+          err(label, `order for cert "${c}" must be a number`)
+        }
+      }
+    } else if (typeof data.order !== 'number') {
+      err(label, `order must be a number or a mapping object`)
     }
   }
 

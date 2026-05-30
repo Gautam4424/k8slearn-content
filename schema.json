@@ -28,12 +28,12 @@
 
     "field_rules": {
       "title":        { "type": "string", "max_length": 80 },
-      "cert":         { "type": "string", "must_be_one_of": "certifications.allowed" },
-      "roadmap":      { "type": "string", "max_length": 50, "description": "major topic group e.g. Scheduling" },
+      "cert":         { "type": "string or array of strings", "must_be_one_of": "certifications.allowed" },
+      "roadmap":      { "type": "string or object", "max_length": 50, "description": "major topic group, or map of cert to topic group" },
       "subtopic":     { "type": "string", "max_length": 50, "description": "specific topic e.g. Taints" },
       "difficulty":   { "type": "string", "must_be_one_of": "difficulty.allowed" },
       "content":      { "type": "string", "description": "filename of the paired .md file in same folder" },
-      "order":        { "type": "number", "optional": true },
+      "order":        { "type": "number or object", "optional": true, "description": "numerical order, or map of cert to numerical order" },
       "tags":         { "type": "array",  "optional": true },
       "prerequisites":{ "type": "array",  "optional": true },
       "questions":    { "type": "array",  "min_items": 1, "max_items": 20 }

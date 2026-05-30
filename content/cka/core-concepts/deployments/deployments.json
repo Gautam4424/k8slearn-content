@@ -1,11 +1,17 @@
 {
   "title": "Deployments",
-  "cert": "cka",
-  "roadmap": "core-concepts",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "application-design"
+  },
   "subtopic": "Deployments",
   "difficulty": "beginner",
   "content": "deployments.md",
-  "order": 11,
+  "order": {
+    "cka": 11,
+    "ckad": 1
+  },
   "tags": [
     "deployments",
     "rolling-updates",
@@ -24,6 +30,18 @@
       ],
       "answer": 1,
       "explanation": "Recreate deletes all existing pods before starting new ones, which leads to temporary application downtime."
+    },
+    {
+      "type": "mcq",
+      "q": "What command rolls back a deployment to its previous revision?",
+      "options": [
+        "kubectl revert deployment myapp",
+        "kubectl rollout undo deployment/myapp",
+        "kubectl deployment rollback myapp",
+        "kubectl apply --rollback deployment/myapp"
+      ],
+      "answer": 1,
+      "explanation": "kubectl rollout undo deployment/<name> reverts a deployment to the previous revision. You can specify --to-revision=N for a specific version."
     }
   ]
 }

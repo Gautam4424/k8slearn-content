@@ -1,11 +1,17 @@
 {
   "title": "DaemonSets",
-  "cert": "cka",
-  "roadmap": "Scheduling",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Scheduling",
+    "ckad": "application-design"
+  },
   "subtopic": "DaemonSets",
   "difficulty": "intermediate",
   "content": "daemonsets.md",
-  "order": 7,
+  "order": {
+    "cka": 7,
+    "ckad": 9
+  },
   "tags": ["daemonset", "node-agent", "fluentd", "kube-proxy", "one-pod-per-node"],
   "questions": [
     {

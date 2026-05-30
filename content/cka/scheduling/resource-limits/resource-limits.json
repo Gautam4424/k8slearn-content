@@ -1,11 +1,17 @@
 {
   "title": "Resource Limits and QoS",
-  "cert": "cka",
-  "roadmap": "Scheduling",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Scheduling",
+    "ckad": "application-design"
+  },
   "subtopic": "Resource Limits",
   "difficulty": "intermediate",
   "content": "resource-limits.md",
-  "order": 6,
+  "order": {
+    "cka": 6,
+    "ckad": 5
+  },
   "tags": ["resources", "limits", "requests", "QoS", "LimitRange", "ResourceQuota", "OOMKilled"],
   "questions": [
     {
