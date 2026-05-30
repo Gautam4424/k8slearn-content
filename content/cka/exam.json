@@ -1,0 +1,16 @@
+{
+  "title": "Certified Kubernetes Administrator",
+  "subtitle": "The gold standard for cluster administrators. Focuses on production-grade cluster architecture, installation, configuration, networking, storage, security, and day-two troubleshooting.",
+  "duration": "2 Hours",
+  "passingScore": "66%",
+  "format": "Hands-on Performance-based (Interactive CLI)",
+  "price": "$395 USD",
+  "attempts": "2 attempts included",
+  "curriculum": [
+    { "domain": "Cluster Architecture, Installation & Configuration", "weight": 25 },
+    { "domain": "Workloads & Scheduling", "weight": 15 },
+    { "domain": "Services & Networking", "weight": 20 },
+    { "domain": "Storage", "weight": 10 },
+    { "domain": "Troubleshooting", "weight": 30 }
+  ]
+}

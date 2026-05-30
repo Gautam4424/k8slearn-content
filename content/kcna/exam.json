@@ -1,0 +1,16 @@
+{
+  "title": "Kubernetes & Cloud Native Associate",
+  "subtitle": "The foundational entry point to the cloud-native ecosystem. Perfect for demonstrating understanding of basic Kubernetes core architecture, container orchestration, cloud-native delivery, observability, and CNCF landscape.",
+  "duration": "90 Minutes",
+  "passingScore": "75%",
+  "format": "Multiple Choice (Online Proctored)",
+  "price": "$250 USD",
+  "attempts": "2 attempts included",
+  "curriculum": [
+    { "domain": "Kubernetes Fundamentals", "weight": 46 },
+    { "domain": "Container Orchestration", "weight": 22 },
+    { "domain": "Cloud Native Architecture", "weight": 16 },
+    { "domain": "Cloud Native Observability", "weight": 8 },
+    { "domain": "Cloud Native Application Delivery", "weight": 8 }
+  ]
+}

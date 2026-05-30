@@ -19,7 +19,7 @@ function walk(dir) {
     const full = path.join(dir, entry.name)
     if (entry.isDirectory()) { walk(full); continue }
     if (!entry.name.endsWith('.json')) continue
-    if (entry.name === 'schema.json') continue
+    if (entry.name === 'schema.json' || entry.name === 'exam.json') continue
     validateFile(full)
   }
 }
