@@ -1,0 +1,29 @@
+{
+  "title": "Pods",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "Pods",
+  "difficulty": "beginner",
+  "content": "pods.md",
+  "order": 9,
+  "tags": [
+    "pods",
+    "containers",
+    "multi-container",
+    "sidecar"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "How do multiple containers inside the same pod communicate with each other?",
+      "options": [
+        "Using cross-node proxy routing",
+        "Using localhost and sharing the same ports",
+        "Using external cluster IP Services",
+        "They cannot communicate directly"
+      ],
+      "answer": 1,
+      "explanation": "Containers in the same pod share the network namespace, meaning they communicate over localhost and must not bind to conflicting ports."
+    }
+  ]
+}

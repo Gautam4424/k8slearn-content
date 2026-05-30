@@ -1,0 +1,41 @@
+{
+  "title": "ETCD Datastore",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "ETCD",
+  "difficulty": "intermediate",
+  "content": "etcd.md",
+  "order": 3,
+  "tags": [
+    "etcd",
+    "datastore",
+    "key-value",
+    "ha"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which component communicates directly with the etcd datastore?",
+      "options": [
+        "kubelet",
+        "kube-apiserver",
+        "kube-scheduler",
+        "kube-controller-manager"
+      ],
+      "answer": 1,
+      "explanation": "Only the kube-apiserver communicates directly with etcd. All other components go through the API server."
+    },
+    {
+      "type": "mcq",
+      "q": "Under which path prefix does Kubernetes store its registry resources in etcd?",
+      "options": [
+        "/k8s/",
+        "/registry/",
+        "/kubernetes/",
+        "/system/"
+      ],
+      "answer": 1,
+      "explanation": "Kubernetes stores its configurations under the /registry/ prefix (e.g., /registry/pods/default/nginx)."
+    }
+  ]
+}

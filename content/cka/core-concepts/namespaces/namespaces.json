@@ -1,0 +1,29 @@
+{
+  "title": "Namespaces",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "Namespaces",
+  "difficulty": "beginner",
+  "content": "namespaces.md",
+  "order": 12,
+  "tags": [
+    "namespaces",
+    "isolation",
+    "dns",
+    "resource-quotas"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What is the full DNS domain name format used to access a service in a namespace named \"test\"?",
+      "options": [
+        "service-name.test.pod.cluster",
+        "service-name.test.svc.cluster.local",
+        "service-name.svc.test.local",
+        "service-name.test.kubernetes"
+      ],
+      "answer": 1,
+      "explanation": "The standard DNS name format for a service is <service-name>.<namespace>.svc.cluster.local."
+    }
+  ]
+}

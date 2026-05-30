@@ -1,0 +1,29 @@
+{
+  "title": "Kube Scheduler",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "Scheduler",
+  "difficulty": "intermediate",
+  "content": "kube-scheduler.md",
+  "order": 6,
+  "tags": [
+    "kube-scheduler",
+    "scheduling",
+    "filtering",
+    "scoring"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What are the two primary phases of the scheduling process?",
+      "options": [
+        "Filter and Score",
+        "Select and Build",
+        "Validate and Authenticate",
+        "Tolerate and Evict"
+      ],
+      "answer": 0,
+      "explanation": "The scheduling process consists of two main phases: Filter (eliminating invalid nodes) and Score/Rank (finding the best node among the valid ones)."
+    }
+  ]
+}

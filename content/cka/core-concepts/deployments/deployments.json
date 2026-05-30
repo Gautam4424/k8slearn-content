@@ -1,0 +1,29 @@
+{
+  "title": "Deployments",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "Deployments",
+  "difficulty": "beginner",
+  "content": "deployments.md",
+  "order": 11,
+  "tags": [
+    "deployments",
+    "rolling-updates",
+    "rollbacks",
+    "scaling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which deployment strategy kills all running pod replicas first before initiating new ones?",
+      "options": [
+        "RollingUpdate",
+        "Recreate",
+        "BlueGreen",
+        "Canary"
+      ],
+      "answer": 1,
+      "explanation": "Recreate deletes all existing pods before starting new ones, which leads to temporary application downtime."
+    }
+  ]
+}

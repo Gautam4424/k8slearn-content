@@ -1,0 +1,28 @@
+{
+  "title": "ReplicaSets",
+  "cert": "cka",
+  "roadmap": "core-concepts",
+  "subtopic": "ReplicaSets",
+  "difficulty": "beginner",
+  "content": "replicasets.md",
+  "order": 10,
+  "tags": [
+    "replicasets",
+    "replication",
+    "scaling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which field is mandatory in a ReplicaSet configuration to bind pods to the controller?",
+      "options": [
+        "template.metadata.name",
+        "spec.selector.matchLabels",
+        "spec.replicas",
+        "metadata.labels"
+      ],
+      "answer": 1,
+      "explanation": "spec.selector.matchLabels is mandatory in a ReplicaSet to let the controller identify which pods it is responsible for managing."
+    }
+  ]
+}
