@@ -1,0 +1,62 @@
+{
+  "title": "Rolling Updates & Rollbacks",
+  "cert": "cka",
+  "roadmap": "Application Lifecycle Management",
+  "subtopic": "Rolling Updates & Rollbacks",
+  "difficulty": "intermediate",
+  "content": "rolling-updates-rollbacks.md",
+  "order": 1,
+  "tags": ["deployment", "rolling-update", "rollback", "maxSurge", "maxUnavailable", "strategy"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which deployment strategy causes downtime by killing all old pods before starting new ones?",
+      "options": ["RollingUpdate", "Recreate", "BlueGreen", "Canary"],
+      "answer": 1,
+      "explanation": "Recreate terminates all running pods before creating new ones, causing a brief downtime window. RollingUpdate replaces pods gradually with no downtime."
+    },
+    {
+      "type": "mcq",
+      "q": "What does maxUnavailable=1 mean in a RollingUpdate strategy?",
+      "options": [
+        "Only 1 new pod can be created at a time",
+        "At most 1 pod can be unavailable below the desired count during the update",
+        "The update will stop after 1 failure",
+        "Only 1 old pod is kept during the update"
+      ],
+      "answer": 1,
+      "explanation": "maxUnavailable sets the maximum number of pods that can be unavailable (below the desired replica count) during the update. maxSurge controls how many extra pods can be created above the desired count."
+    },
+    {
+      "type": "mcq",
+      "q": "Which command rolls back a deployment to revision 2?",
+      "options": [
+        "kubectl rollout revert deployment/myapp --revision=2",
+        "kubectl rollout undo deployment/myapp --to-revision=2",
+        "kubectl rollback deployment/myapp --revision=2",
+        "kubectl set revision deployment/myapp 2"
+      ],
+      "answer": 1,
+      "explanation": "kubectl rollout undo deployment/myapp --to-revision=2 rolls back to a specific revision. Without --to-revision, it rolls back to the previous revision."
+    },
+    {
+      "type": "true-false",
+      "q": "When a rollback is performed, the old ReplicaSet is deleted from the cluster.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. Old ReplicaSets are kept (scaled to 0) to enable rollback. The number of old ReplicaSets retained is controlled by spec.revisionHistoryLimit (default: 10)."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the purpose of kubectl rollout pause?",
+      "options": [
+        "Stop all traffic to the deployment",
+        "Prevent any rollout from starting",
+        "Batch multiple changes before resuming the rollout",
+        "Freeze the current replica count"
+      ],
+      "answer": 2,
+      "explanation": "Pausing a rollout lets you apply multiple changes (image update, resource limits, env vars) in one batch. Once resumed with kubectl rollout resume, all changes are rolled out together."
+    }
+  ]
+}

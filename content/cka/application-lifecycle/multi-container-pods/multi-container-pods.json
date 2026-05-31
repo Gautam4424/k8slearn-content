@@ -1,0 +1,53 @@
+{
+  "title": "Multi-Container Pods",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka":  "Application Lifecycle Management",
+    "ckad": "application-design"
+  },
+  "subtopic": "Multi-Container Pods",
+  "difficulty": "intermediate",
+  "content": "multi-container-pods.md",
+  "order": 4,
+  "tags": ["sidecar", "ambassador", "adapter", "multi-container", "emptyDir", "shared-volume"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What do all containers in a pod automatically share?",
+      "options": [
+        "Filesystem and environment variables",
+        "Network namespace (IP and localhost) and any explicitly mounted volumes",
+        "CPU and memory limits",
+        "Service account tokens and ConfigMaps"
+      ],
+      "answer": 1,
+      "explanation": "Containers in a pod share the same network namespace — they all have the same IP and can communicate via localhost. They can also share storage volumes that are explicitly mounted in each container's spec. Filesystems are NOT shared unless a volume is mounted."
+    },
+    {
+      "type": "mcq",
+      "q": "Which multi-container pattern is used when a sidecar converts the main app's metrics format for Prometheus scraping?",
+      "options": ["Sidecar", "Ambassador", "Adapter", "Proxy"],
+      "answer": 2,
+      "explanation": "The Adapter pattern transforms the output of the main container into a standardised format. A common example is converting app-specific metrics into the Prometheus exposition format."
+    },
+    {
+      "type": "mcq",
+      "q": "How do you get logs from the 'log-agent' container in a multi-container pod named 'web-pod'?",
+      "options": [
+        "kubectl logs web-pod",
+        "kubectl logs web-pod --all",
+        "kubectl logs web-pod -c log-agent",
+        "kubectl describe pod web-pod -c log-agent"
+      ],
+      "answer": 2,
+      "explanation": "For multi-container pods, you must specify -c <container-name>. Without -c, kubectl logs fails with an error asking you to specify a container. Use --all-containers=true to get logs from all containers at once."
+    },
+    {
+      "type": "true-false",
+      "q": "Containers in the same pod can communicate with each other using localhost.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True. All containers in a pod share the same network namespace, meaning they share the same IP address and port space. Container-to-container communication within a pod uses localhost."
+    }
+  ]
+}

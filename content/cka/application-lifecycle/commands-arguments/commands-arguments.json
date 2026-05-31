@@ -1,0 +1,50 @@
+{
+  "title": "Commands & Arguments",
+  "cert": "cka",
+  "roadmap": "Application Lifecycle Management",
+  "subtopic": "Commands & Arguments",
+  "difficulty": "beginner",
+  "content": "commands-arguments.md",
+  "order": 2,
+  "tags": ["command", "args", "entrypoint", "cmd", "dockerfile", "pod-spec"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which Kubernetes pod spec field corresponds to the Docker ENTRYPOINT?",
+      "options": ["args", "command", "entrypoint", "run"],
+      "answer": 1,
+      "explanation": "In Kubernetes, 'command' overrides the Docker ENTRYPOINT, and 'args' overrides the Docker CMD. This is a common source of confusion because the names are swapped relative to Docker."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod spec sets only 'args: [\"10\"]' without setting 'command'. What happens?",
+      "options": [
+        "The pod fails to start — command is required",
+        "The ENTRYPOINT from the image is used, CMD is replaced with '10'",
+        "Both ENTRYPOINT and CMD from the image are ignored",
+        "The args value is appended to the existing CMD"
+      ],
+      "answer": 1,
+      "explanation": "If only args is set, Kubernetes uses the ENTRYPOINT defined in the Docker image and replaces CMD with the provided args. Setting command alone would ignore both ENTRYPOINT and CMD from the image."
+    },
+    {
+      "type": "true-false",
+      "q": "In a Kubernetes pod spec, numeric values in the args array must be quoted as strings.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True. Both command and args fields expect arrays of strings. A number like 10 must be written as '10'. Providing an unquoted integer will cause a YAML type error."
+    },
+    {
+      "type": "mcq",
+      "q": "What happens if both 'command' and 'args' are set in a pod spec?",
+      "options": [
+        "command sets ENTRYPOINT, args is appended to the image CMD",
+        "Both ENTRYPOINT and CMD from the image are completely overridden",
+        "An error is returned — only one can be set",
+        "command is ignored and only args takes effect"
+      ],
+      "answer": 1,
+      "explanation": "When both command and args are specified, they completely replace the Docker ENTRYPOINT and CMD. The image's own ENTRYPOINT and CMD are not used at all."
+    }
+  ]
+}

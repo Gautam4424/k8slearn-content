@@ -9,7 +9,8 @@
   "roadmapOrder": [
     "core-concepts",
     "Scheduling",
-    "Logging & Monitoring"
+    "Logging & Monitoring",
+    "Application Lifecycle Management"
   ],
   "curriculum": [
     {

@@ -1,0 +1,65 @@
+{
+  "title": "Self-Healing & Probes",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka":  "Application Lifecycle Management",
+    "ckad": "application-design"
+  },
+  "subtopic": "Self-Healing & Probes",
+  "difficulty": "intermediate",
+  "content": "self-healing-probes.md",
+  "order": 6,
+  "tags": ["liveness", "readiness", "startup", "probes", "self-healing", "restartPolicy", "healthcheck"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A liveness probe fails 3 times. What does Kubernetes do?",
+      "options": [
+        "Removes the pod from Service endpoints only",
+        "Marks the pod as Unhealthy but keeps it running",
+        "Kills and restarts the container",
+        "Deletes the pod and creates a new one"
+      ],
+      "answer": 2,
+      "explanation": "A failed liveness probe causes Kubernetes to kill the container and restart it (according to the pod's restartPolicy). The pod itself is not deleted — only the container is restarted, preserving the pod's IP and volumes."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the difference between a liveness probe failure and a readiness probe failure?",
+      "options": [
+        "Liveness removes from endpoints; readiness kills the container",
+        "Liveness kills and restarts the container; readiness removes it from Service endpoints without killing it",
+        "Both kill the container but readiness also deletes the pod",
+        "There is no difference — both have the same effect"
+      ],
+      "answer": 1,
+      "explanation": "Liveness probe failure → container is killed and restarted. Readiness probe failure → pod is removed from Service endpoints so it stops receiving traffic, but it is NOT killed. This lets a container temporarily stop serving traffic without being restarted."
+    },
+    {
+      "type": "mcq",
+      "q": "Which restartPolicy should you use for a Kubernetes Job that should only retry on failure?",
+      "options": ["Always", "OnFailure", "Never", "OnError"],
+      "answer": 1,
+      "explanation": "OnFailure restarts the container only if it exits with a non-zero exit code. Always would restart even on clean exit, which is inappropriate for Jobs. Never would not retry any failure."
+    },
+    {
+      "type": "mcq",
+      "q": "A JVM application takes 3 minutes to start. Which probe prevents the liveness probe from killing it during startup?",
+      "options": [
+        "readinessProbe with a high initialDelaySeconds",
+        "startupProbe with failureThreshold × periodSeconds covering the startup time",
+        "livenessProbe with initialDelaySeconds: 180",
+        "No special probe — just increase periodSeconds"
+      ],
+      "answer": 1,
+      "explanation": "The startupProbe disables the liveness and readiness probes until it succeeds. Setting failureThreshold: 30 and periodSeconds: 10 gives the app up to 5 minutes to start. Using a high initialDelaySeconds on liveness is fragile because it applies to every restart, not just the first start."
+    },
+    {
+      "type": "mcq",
+      "q": "Which probe check method succeeds when a command exits with code 0?",
+      "options": ["httpGet", "tcpSocket", "exec", "grpc"],
+      "answer": 2,
+      "explanation": "The exec probe runs a command inside the container and considers it successful if the command exits with code 0. httpGet checks for 2xx/3xx HTTP responses, and tcpSocket checks if a port accepts a connection."
+    }
+  ]
+}
