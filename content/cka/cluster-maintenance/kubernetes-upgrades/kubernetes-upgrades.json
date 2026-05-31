@@ -1,0 +1,48 @@
+{
+  "title": "Kubernetes Version Upgrades",
+  "cert": "cka",
+  "roadmap": "Cluster Maintenance",
+  "subtopic": "Version Upgrades",
+  "difficulty": "advanced",
+  "content": "kubernetes-upgrades.md",
+  "order": 2,
+  "tags": ["upgrade", "kubeadm", "kubelet", "version-skew"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What is the maximum allowed version hop when upgrading a Kubernetes cluster?",
+      "options": [
+        "One minor version at a time (e.g. 1.28 to 1.29)",
+        "Two minor versions at a time (e.g. 1.28 to 1.30)",
+        "Any number of minor versions as long as it is within the same major version",
+        "Only patch versions can be upgraded"
+      ],
+      "answer": 0,
+      "explanation": "Kubernetes only supports upgrading one minor version at a time. Upgrades spanning multiple minor versions must be performed step-by-step (e.g., 1.27 -> 1.28 -> 1.29)."
+    },
+    {
+      "type": "mcq",
+      "q": "According to the Kubernetes version skew policy, which component is NOT allowed to be a higher version than the kube-apiserver?",
+      "options": [
+        "kube-scheduler",
+        "kube-controller-manager",
+        "kubelet",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "All of the above. The kube-apiserver acts as the reference version X. No other control plane components (scheduler, controller-manager) or node components (kubelet, kube-proxy) are allowed to be a higher version than the API server."
+    },
+    {
+      "type": "mcq",
+      "q": "When upgrading a worker node using kubeadm, which command performs the actual node upgrade configuration?",
+      "options": [
+        "kubeadm upgrade plan",
+        "kubeadm upgrade apply",
+        "kubeadm upgrade node",
+        "kubeadm node upgrade"
+      ],
+      "answer": 2,
+      "explanation": "For worker nodes, kubeadm upgrade node upgrades local configuration. kubeadm upgrade apply is only run on the first control plane node to upgrade the cluster-wide control plane components."
+    }
+  ]
+}

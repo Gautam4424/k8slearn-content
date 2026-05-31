@@ -10,7 +10,8 @@
     "core-concepts",
     "Scheduling",
     "Logging & Monitoring",
-    "Application Lifecycle Management"
+    "Application Lifecycle Management",
+    "Cluster Maintenance"
   ],
   "curriculum": [
     {

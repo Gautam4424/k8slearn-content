@@ -1,0 +1,46 @@
+{
+  "title": "Node Drain & Cordon",
+  "cert": "cka",
+  "roadmap": "Cluster Maintenance",
+  "subtopic": "Drain & Cordon",
+  "difficulty": "intermediate",
+  "content": "drain-cordon.md",
+  "order": 1,
+  "tags": ["drain", "cordon", "uncordon", "maintenance", "eviction"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which command marks a node as unschedulable but does NOT evict any running pods?",
+      "options": [
+        "kubectl drain node01",
+        "kubectl cordon node01",
+        "kubectl delete node01",
+        "kubectl reject node01"
+      ],
+      "answer": 1,
+      "explanation": "kubectl cordon marks the node as SchedulingDisabled, preventing new pods from landing there, but leaves existing pods running. kubectl drain cordons the node AND evicts all pods."
+    },
+    {
+      "type": "mcq",
+      "q": "Why must you specify --ignore-daemonsets when draining a node that runs daemonsets?",
+      "options": [
+        "DaemonSet pods cannot run on cordoned nodes",
+        "DaemonSet pods are managed by kubelet directly",
+        "DaemonSet pods are automatically recreated on the same node by the DaemonSet controller, leading to an infinite drain loop",
+        "DaemonSet pods must be force-deleted"
+      ],
+      "answer": 2,
+      "explanation": "DaemonSet pods run on all nodes (or a subset) by default. If you evict a DaemonSet pod, the DaemonSet controller will immediately recreate it on the same node, which blocks kubectl drain from completing. Thus, you must ignore them."
+    },
+    {
+      "type": "true-false",
+      "q": "When you uncordon a node, pods that were previously evicted from it will automatically move back.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. kubectl uncordon only allows new pods to be scheduled on the node. Existing/evicted pods that were rescheduled to other nodes stay where they are; they are not automatically moved back."
+    }
+  ]
+}
