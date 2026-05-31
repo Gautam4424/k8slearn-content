@@ -1,17 +1,16 @@
 {
   "title": "Cluster Architecture",
-  "cert": ["cka", "kcna"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "kcna": "core-concepts"
-  },
+  "cert": [
+    "cka",
+    "ckad",
+    "cks",
+    "kcna"
+  ],
+  "roadmap": "core-concepts",
   "subtopic": "Cluster Architecture",
   "difficulty": "beginner",
   "content": "cluster-architecture.md",
-  "order": {
-    "cka": 1,
-    "kcna": 1
-  },
+  "order": 1,
   "tags": [
     "architecture",
     "control-plane",

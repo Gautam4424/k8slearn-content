@@ -1,17 +1,11 @@
 {
   "title": "Namespaces",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "application-design"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "Namespaces",
   "difficulty": "beginner",
   "content": "namespaces.md",
-  "order": {
-    "cka": 12,
-    "ckad": 6
-  },
+  "order": 3,
   "tags": [
     "namespaces",
     "isolation",

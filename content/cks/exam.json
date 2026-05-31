@@ -6,6 +6,15 @@
   "format": "Hands-on Performance-based (Interactive CLI)",
   "price": "$445 USD",
   "attempts": "2 attempts included",
+  "roadmapOrder": [
+    "core-concepts",
+    "cluster-setup",
+    "cluster-hardening",
+    "system-hardening",
+    "minimize-attack-surface",
+    "supply-chain",
+    "runtime-security"
+  ],
   "curriculum": [
     {
       "domain": "Cluster Setup",

@@ -1,17 +1,11 @@
 {
   "title": "Pods",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "application-design"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "Pods",
   "difficulty": "beginner",
   "content": "pods.md",
-  "order": {
-    "cka": 9,
-    "ckad": 7
-  },
+  "order": 2,
   "tags": [
     "pods",
     "containers",

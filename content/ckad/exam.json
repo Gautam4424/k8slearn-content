@@ -6,6 +6,13 @@
   "format": "Hands-on Performance-based (Interactive CLI)",
   "price": "$445 USD",
   "attempts": "2 attempts included",
+  "roadmapOrder": [
+    "core-concepts",
+    "application-design",
+    "services-networking",
+    "state-persistence",
+    "observability"
+  ],
   "curriculum": [
     {
       "domain": "Application Design and Build",

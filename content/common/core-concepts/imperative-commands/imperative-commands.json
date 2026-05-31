@@ -1,17 +1,11 @@
 {
   "title": "Imperative Commands",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "core-concepts"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "Imperative Commands",
   "difficulty": "beginner",
   "content": "imperative-commands.md",
-  "order": {
-    "cka": 14,
-    "ckad": 8
-  },
+  "order": 5,
   "tags": [
     "kubectl",
     "imperative",

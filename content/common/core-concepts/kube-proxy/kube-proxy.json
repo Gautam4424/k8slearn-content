@@ -1,17 +1,11 @@
 {
   "title": "Kube Proxy",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "core-concepts"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "Kube Proxy",
   "difficulty": "intermediate",
   "content": "kube-proxy.md",
-  "order": {
-    "cka": 8,
-    "ckad": 6
-  },
+  "order": 8,
   "tags": [
     "kube-proxy",
     "networking",

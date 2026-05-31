@@ -1,17 +1,11 @@
 {
   "title": "Deployments",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "application-design"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "Deployments",
   "difficulty": "beginner",
   "content": "deployments.md",
-  "order": {
-    "cka": 11,
-    "ckad": 1
-  },
+  "order": 7,
   "tags": [
     "deployments",
     "rolling-updates",

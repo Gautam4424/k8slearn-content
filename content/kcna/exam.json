@@ -6,6 +6,9 @@
   "format": "Multiple Choice (Online Proctored)",
   "price": "$250 USD",
   "attempts": "2 attempts included",
+  "roadmapOrder": [
+    "core-concepts"
+  ],
   "curriculum": [
     {
       "domain": "Kubernetes Fundamentals",

@@ -1,17 +1,11 @@
 {
   "title": "ReplicaSets",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "application-design"
-  },
+  "cert": ["cka", "ckad", "cks", "kcna"],
+  "roadmap": "core-concepts",
   "subtopic": "ReplicaSets",
   "difficulty": "beginner",
   "content": "replicasets.md",
-  "order": {
-    "cka": 10,
-    "ckad": 8
-  },
+  "order": 6,
   "tags": [
     "replicasets",
     "replication",
