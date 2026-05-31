@@ -1,0 +1,33 @@
+{
+  "title": "Imperative Commands",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "core-concepts"
+  },
+  "subtopic": "Imperative Commands",
+  "difficulty": "beginner",
+  "content": "imperative-commands.md",
+  "order": {
+    "cka": 14,
+    "ckad": 8
+  },
+  "tags": [
+    "kubectl",
+    "imperative",
+    "yaml",
+    "exam-tips"
+  ],
+  "questions": [
+    {
+      "type": "true-false",
+      "q": "Using the flag --dry-run=client will execute and create the resource on the live cluster.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. The --dry-run=client flag only simulates the command locally and does not contact the Kubernetes API server or create the resource."
+    }
+  ]
+}

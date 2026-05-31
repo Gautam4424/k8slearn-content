@@ -1,0 +1,45 @@
+{
+  "title": "Cluster Architecture",
+  "cert": ["cka", "kcna"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "kcna": "core-concepts"
+  },
+  "subtopic": "Cluster Architecture",
+  "difficulty": "beginner",
+  "content": "cluster-architecture.md",
+  "order": {
+    "cka": 1,
+    "kcna": 1
+  },
+  "tags": [
+    "architecture",
+    "control-plane",
+    "worker-nodes",
+    "roles"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "In the ship analogy, which component corresponds to the log recording everything loaded, where, and when?",
+      "options": [
+        "kube-scheduler",
+        "kube-apiserver",
+        "ETCD",
+        "kube-controller-manager"
+      ],
+      "answer": 2,
+      "explanation": "ETCD is the ship's log. It records all configuration and cluster state details, serving as the single source of truth."
+    },
+    {
+      "type": "true-false",
+      "q": "The Control Plane nodes run the actual user application workloads.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. User application workloads (containers) are run on the Worker Nodes. Control Plane nodes manage the cluster."
+    }
+  ]
+}

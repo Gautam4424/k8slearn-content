@@ -1,0 +1,35 @@
+{
+  "title": "Kube Proxy",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "core-concepts"
+  },
+  "subtopic": "Kube Proxy",
+  "difficulty": "intermediate",
+  "content": "kube-proxy.md",
+  "order": {
+    "cka": 8,
+    "ckad": 6
+  },
+  "tags": [
+    "kube-proxy",
+    "networking",
+    "iptables",
+    "services"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "How does kube-proxy run on a kubeadm cluster?",
+      "options": [
+        "As a systemd system service",
+        "As a static pod on master nodes only",
+        "As a DaemonSet running on every node",
+        "As a component inside the API server"
+      ],
+      "answer": 2,
+      "explanation": "kube-proxy is deployed as a DaemonSet, ensuring an instance runs on every node of the cluster."
+    }
+  ]
+}

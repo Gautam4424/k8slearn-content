@@ -1,0 +1,61 @@
+{
+  "title": "Node Selectors",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Scheduling",
+    "ckad": "application-design"
+  },
+  "subtopic": "Node Selectors",
+  "difficulty": "beginner",
+  "content": "node-selectors.md",
+  "order": {
+    "cka": 4,
+    "ckad": 4
+  },
+  "tags": ["nodeSelector", "node-labels", "scheduling"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What must you do BEFORE a `nodeSelector` can match a node?",
+      "options": [
+        "Add a taint to the node",
+        "Label the node with the required key-value pair",
+        "Add a toleration to the pod",
+        "Create a LimitRange in the namespace"
+      ],
+      "answer": 1,
+      "explanation": "nodeSelector matches against node labels. You must first label the target node (`kubectl label nodes <node> <key>=<value>`) before the selector can work."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod has `nodeSelector: {disk: ssd}` but no nodes have the label `disk=ssd`. What happens?",
+      "options": [
+        "The pod runs on any available node",
+        "The pod is rejected immediately with an error",
+        "The pod stays in Pending state indefinitely",
+        "The scheduler assigns the pod to the node with the most free memory"
+      ],
+      "answer": 2,
+      "explanation": "If no nodes match the nodeSelector, the pod cannot be scheduled and stays in Pending. It will remain there until a matching node becomes available or the pod is deleted."
+    },
+    {
+      "type": "mcq",
+      "q": "Which of the following scheduling requirements CANNOT be expressed using `nodeSelector`?",
+      "options": [
+        "Schedule only on nodes with label disk=ssd",
+        "Schedule only on nodes with label env=production",
+        "Schedule on nodes with label size=large OR size=xlarge",
+        "Schedule only on nodes with label region=us-east"
+      ],
+      "answer": 2,
+      "explanation": "nodeSelector only supports exact equality matches. OR conditions (e.g., size=large OR size=xlarge) require Node Affinity with the 'In' operator and a list of values."
+    },
+    {
+      "type": "true-false",
+      "q": "`nodeSelector` supports the NotIn operator to exclude nodes with specific labels.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. nodeSelector only supports simple equality-based matching (key=value). Operators like NotIn, Exists, or DoesNotExist require Node Affinity (matchExpressions)."
+    }
+  ]
+}

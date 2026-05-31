@@ -1,0 +1,30 @@
+{
+  "title": "Logging & Monitoring",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Logging & Monitoring",
+    "ckad": "observability"
+  },
+  "subtopic": "Logging & Monitoring",
+  "difficulty": "beginner",
+  "content": "logging.md",
+  "order": {
+    "cka": 5,
+    "ckad": 5
+  },
+  "tags": ["logs", "kubectl-logs", "metrics", "monitoring"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which command would you run to view logs from a pod named 'app-server' that is running inside the 'prod' namespace?",
+      "options": [
+        "kubectl logs app-server",
+        "kubectl logs app-server -n prod",
+        "kubectl get logs app-server --namespace prod",
+        "kubectl show logs app-server prod"
+      ],
+      "answer": 1,
+      "explanation": "In Kubernetes, you must specify the namespace using the -n or --namespace flag for any resource that resides inside a non-default namespace. Without it, the command defaults to the 'default' namespace."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Debugging Applications",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Logging & Monitoring",
+    "ckad": "observability"
+  },
+  "subtopic": "Debugging Applications",
+  "difficulty": "intermediate",
+  "content": "debugging.md",
+  "order": {
+    "cka": 4,
+    "ckad": 4
+  },
+  "tags": ["debug", "exec", "describe", "events", "troubleshoot"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "If a pod fails to start with the status 'CreateContainerConfigError', which of the following is the most likely cause?",
+      "options": [
+        "The container image registry requires authentication credentials that were not provided",
+        "The pod references a missing ConfigMap or Secret in its environment/volume definitions",
+        "The node has exceeded its CPU or memory capacity",
+        "The pod's liveness probe has failed three times consecutively"
+      ],
+      "answer": 1,
+      "explanation": "CreateContainerConfigError is thrown when the kubelet attempts to build the container's configuration but fails because a referenced ConfigMap or Secret is missing from the namespace."
+    }
+  ]
+}

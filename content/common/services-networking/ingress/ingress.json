@@ -1,0 +1,30 @@
+{
+  "title": "Ingress Controllers",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "services-networking"
+  },
+  "subtopic": "Ingress Controllers",
+  "difficulty": "intermediate",
+  "content": "ingress.md",
+  "order": {
+    "cka": 15,
+    "ckad": 3
+  },
+  "tags": ["ingress", "tls", "routing", "nginx"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What is the primary role of an Ingress Controller in a Kubernetes cluster?",
+      "options": [
+        "To provision persistent storage volumes",
+        "To act as a reverse proxy and load balancer routing external HTTP/HTTPS traffic to internal Services",
+        "To schedule pods onto nodes",
+        "To manage the deployment rolling updates"
+      ],
+      "answer": 1,
+      "explanation": "Ingress is a collection of routing rules that require an Ingress Controller (like NGINX or Traefik) running in the cluster to act as the actual load balancer/reverse proxy to route external requests to internal Services."
+    }
+  ]
+}

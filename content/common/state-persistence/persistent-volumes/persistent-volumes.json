@@ -1,0 +1,30 @@
+{
+  "title": "Persistent Volumes & Claims",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "core-concepts",
+    "ckad": "state-persistence"
+  },
+  "subtopic": "Persistent Volumes & Claims",
+  "difficulty": "intermediate",
+  "content": "persistent-volumes.md",
+  "order": {
+    "cka": 16,
+    "ckad": 1
+  },
+  "tags": ["pv", "pvc", "storageclass", "volumes"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What is the primary difference between a PersistentVolume (PV) and a PersistentVolumeClaim (PVC)?",
+      "options": [
+        "A PV is cluster-wide storage provisioned by an administrator, whereas a PVC is a request for storage by a user/pod",
+        "A PV is created by the pod, whereas a PVC is created by the administrator",
+        "A PV is only for local storage, whereas a PVC is for network storage",
+        "A PV can only be mounted read-only, whereas a PVC is read-write"
+      ],
+      "answer": 0,
+      "explanation": "PersistentVolume (PV) represents actual storage provisioned by the cluster administrator or dynamically by a StorageClass. PersistentVolumeClaim (PVC) is a request for that storage by a developer/application pod."
+    }
+  ]
+}

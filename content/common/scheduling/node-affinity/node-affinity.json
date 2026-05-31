@@ -1,0 +1,78 @@
+{
+  "title": "Node Affinity",
+  "cert": ["cka", "ckad"],
+  "roadmap": {
+    "cka": "Scheduling",
+    "ckad": "application-design"
+  },
+  "subtopic": "Node Affinity",
+  "difficulty": "intermediate",
+  "content": "node-affinity.md",
+  "order": {
+    "cka": 5,
+    "ckad": 5
+  },
+  "tags": ["nodeAffinity", "matchExpressions", "scheduling", "affinity", "In", "NotIn", "Exists"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A pod has `requiredDuringSchedulingIgnoredDuringExecution` nodeAffinity but no nodes match. What happens?",
+      "options": [
+        "The pod schedules on any available node",
+        "The pod stays in Pending until a matching node is available",
+        "The pod is rejected and returns an error immediately",
+        "The scheduler upgrades the constraint to preferred"
+      ],
+      "answer": 1,
+      "explanation": "requiredDuringScheduling is a hard constraint. If no matching node exists, the pod stays Pending. It will NOT fall back to scheduling on any node."
+    },
+    {
+      "type": "mcq",
+      "q": "Which node affinity operator would you use to schedule a pod only on nodes that DO NOT have the label `size=small`?",
+      "options": [
+        "In",
+        "Exists",
+        "NotIn",
+        "DoesNotExist"
+      ],
+      "answer": 2,
+      "explanation": "NotIn excludes nodes where the label value matches the list. Using `key: size, operator: NotIn, values: [small]` ensures the pod avoids nodes labeled size=small."
+    },
+    {
+      "type": "mcq",
+      "q": "In a `preferredDuringSchedulingIgnoredDuringExecution` rule, what does the `weight` field control?",
+      "options": [
+        "The minimum number of nodes that must match",
+        "The CPU resource weight allocated to the pod",
+        "The relative priority of this preference when scoring nodes",
+        "The timeout before the preference is ignored"
+      ],
+      "answer": 2,
+      "explanation": "Weight (1-100) determines how much a preference contributes to the node score. Higher weight preferences influence the final node selection more strongly."
+    },
+    {
+      "type": "mcq",
+      "q": "You want to guarantee ML workloads ONLY run on GPU nodes AND prevent non-ML pods from using GPU nodes. Which combination achieves this?",
+      "options": [
+        "nodeSelector alone",
+        "Node Affinity alone",
+        "Taints alone",
+        "Taints + Tolerations + Node Affinity"
+      ],
+      "answer": 3,
+      "explanation": "Taints prevent non-GPU pods from landing on GPU nodes. Tolerations allow GPU pods past the taint. Node Affinity (required) guarantees GPU pods actually go to GPU nodes — not just any non-tainted node."
+    },
+    {
+      "type": "mcq",
+      "q": "Which operator in node affinity lets you match a node that has a label key regardless of its value?",
+      "options": [
+        "In",
+        "Equals",
+        "Exists",
+        "Has"
+      ],
+      "answer": 2,
+      "explanation": "The Exists operator matches any node that has the specified label key, regardless of the value. No 'values' list is needed when using Exists."
+    }
+  ]
+}
