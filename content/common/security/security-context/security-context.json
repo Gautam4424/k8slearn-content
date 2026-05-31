@@ -1,0 +1,45 @@
+{
+  "title": "Security Contexts",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "security",
+  "subtopic": "Security Contexts",
+  "difficulty": "intermediate",
+  "content": "security-context.md",
+  "order": {
+    "cka": 5,
+    "ckad": 4,
+    "cks": 5
+  },
+  "tags": [
+    "securitycontext",
+    "capabilities",
+    "runasuser",
+    "fsgroup"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which of the following configuration options is strictly restricted to container-level security contexts and cannot be declared at the pod-level?",
+      "options": [
+        "runAsUser",
+        "runAsGroup",
+        "capabilities (add/drop Linux privileges)",
+        "fsGroup"
+      ],
+      "answer": 2,
+      "explanation": "Linux 'capabilities' can only be added or dropped under a container-specific securityContext. Pod-level securityContexts support group, user, and fsGroup configurations, but do not support capabilities."
+    },
+    {
+      "type": "mcq",
+      "q": "What securityContext setting prevents processes running inside a container from modifying files in its root directory or writeable system paths?",
+      "options": [
+        "runAsNonRoot: true",
+        "readOnlyRootFilesystem: true",
+        "allowPrivilegeEscalation: false",
+        "privileged: false"
+      ],
+      "answer": 1,
+      "explanation": "Setting 'readOnlyRootFilesystem: true' mounts the container's root directory as read-only, forcing the application to write data only to designated volumes or emptyDir mounts, drastically reducing the system attack surface."
+    }
+  ]
+}

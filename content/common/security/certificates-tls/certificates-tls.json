@@ -1,0 +1,45 @@
+{
+  "title": "TLS Certificates",
+  "cert": ["cka", "cks"],
+  "roadmap": "security",
+  "subtopic": "TLS Certificates",
+  "difficulty": "advanced",
+  "content": "certificates-tls.md",
+  "order": {
+    "cka": 2,
+    "cks": 2
+  },
+  "tags": [
+    "tls",
+    "certificates",
+    "ca",
+    "kubeadm",
+    "openssl"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which kubeadm command is used to inspect the expiration dates of all control plane certificates?",
+      "options": [
+        "kubeadm certs check-expiration",
+        "kubeadm show certificates",
+        "kubeadm init phase certs show",
+        "kubectl get certs --all-namespaces"
+      ],
+      "answer": 0,
+      "explanation": "The 'kubeadm certs check-expiration' command scans the certificates in '/etc/kubernetes/pki' and '/etc/kubernetes/*.conf' files, reporting their remaining validity period."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the standard path to the primary Kubernetes Root CA (Certificate Authority) certificate inside a kubeadm-provisioned control plane node?",
+      "options": [
+        "/var/lib/kubernetes/ca.crt",
+        "/etc/kubernetes/pki/ca.crt",
+        "/usr/local/share/ca.crt",
+        "/root/.kube/ca.crt"
+      ],
+      "answer": 1,
+      "explanation": "In a cluster managed by kubeadm, all key PKI infrastructure is stored in '/etc/kubernetes/pki/'. The Root CA is stored at '/etc/kubernetes/pki/ca.crt'."
+    }
+  ]
+}

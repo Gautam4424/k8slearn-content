@@ -1,18 +1,14 @@
 {
   "title": "Network Policies",
   "cert": ["ckad", "cka", "cks"],
-  "roadmap": {
-    "ckad": "services-networking",
-    "cka": "networking",
-    "cks": "cluster-setup"
-  },
+  "roadmap": "security",
   "subtopic": "Network Policies",
   "difficulty": "advanced",
   "content": "network-policies.md",
   "order": {
-    "ckad": 2,
-    "cka": 1,
-    "cks": 2
+    "cka": 6,
+    "ckad": 5,
+    "cks": 6
   },
   "tags": ["networkpolicy", "ingress", "egress", "isolation"],
   "questions": [

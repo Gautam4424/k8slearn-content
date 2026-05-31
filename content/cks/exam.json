@@ -8,6 +8,7 @@
   "attempts": "2 attempts included",
   "roadmapOrder": [
     "core-concepts",
+    "security",
     "cluster-setup",
     "cluster-hardening",
     "system-hardening",

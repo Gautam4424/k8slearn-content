@@ -1,0 +1,44 @@
+{
+  "title": "Authentication",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "security",
+  "subtopic": "Authentication",
+  "difficulty": "intermediate",
+  "content": "authentication.md",
+  "order": {
+    "cka": 1,
+    "ckad": 1,
+    "cks": 1
+  },
+  "tags": [
+    "authentication",
+    "serviceaccounts",
+    "tokens",
+    "oidc",
+    "users"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which of the following represents a native Kubernetes resource used to authenticate an application or workload running in the cluster?",
+      "options": [
+        "User Account",
+        "Group Account",
+        "ServiceAccount",
+        "Client Certificate"
+      ],
+      "answer": 2,
+      "explanation": "ServiceAccounts are native Kubernetes objects created inside the cluster to represent workloads and applications. Kubernetes does not have a native User resource; human users are managed externally."
+    },
+    {
+      "type": "true-false",
+      "q": "Kubernetes natively stores human user credentials like passwords inside its etcd database.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "False. Kubernetes does not manage or store human user accounts or credentials natively in etcd. It relies on external mechanisms such as Client Certificates, OIDC, or external LDAP directories."
+    }
+  ]
+}
