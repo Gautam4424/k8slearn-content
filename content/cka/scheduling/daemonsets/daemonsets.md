@@ -102,7 +102,7 @@ kubectl rollout status daemonset/node-monitor
 
 ## Static Pods vs DaemonSets
 
-| | Static Pods | DaemonSets |
+| Feature | Static Pods | DaemonSets |
 |---|---|---|
 | Managed by | kubelet | kube-controller-manager |
 | Needs API server | No | Yes |
