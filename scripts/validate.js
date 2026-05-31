@@ -60,7 +60,7 @@ function validateFile(full) {
   const contentIdx = parts.indexOf('content')
   if (contentIdx !== -1) {
     const folderCert = parts[contentIdx + 1]
-    if (folderCert && !certs.includes(folderCert)) {
+    if (folderCert && folderCert !== 'common' && !certs.includes(folderCert)) {
       err(label, `folder cert "${folderCert}" must be one of the specified certs: ${certs.join(', ')}`)
     }
   }
