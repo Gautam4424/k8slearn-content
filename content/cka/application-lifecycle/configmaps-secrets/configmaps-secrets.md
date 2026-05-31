@@ -16,9 +16,14 @@ flowchart TD
     POD["📦 Container"]
     D & CM1 & CM2 & CM3 & S1 & S2 & S3 --> POD
 
-    style S1 fill:#fef3c7,stroke:#f59e0b
-    style S2 fill:#fef3c7,stroke:#f59e0b
-    style S3 fill:#fee2e2,stroke:#ef4444
+    style D fill:#0f172a,stroke:#94a3b8,color:#f1f5f9
+    style CM1 fill:#062f22,stroke:#10b981,color:#d1fae5
+    style CM2 fill:#062f22,stroke:#10b981,color:#d1fae5
+    style CM3 fill:#062f22,stroke:#10b981,color:#d1fae5
+    style S1 fill:#2d1a09,stroke:#f59e0b,color:#fef3c7
+    style S2 fill:#2d1a09,stroke:#f59e0b,color:#fef3c7
+    style S3 fill:#3b1111,stroke:#ef4444,color:#fee2e2
+    style POD fill:#1e1b4b,stroke:#818cf8,color:#e0e7ff
 ```
 
 ## ConfigMaps

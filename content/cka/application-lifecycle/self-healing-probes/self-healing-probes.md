@@ -42,8 +42,12 @@ flowchart TD
     LP -->|fail| LP_FAIL
     LP -->|pass| LP_OK --> LP
 
-    style SP_FAIL fill:#fee2e2,stroke:#ef4444
-    style LP_FAIL fill:#fee2e2,stroke:#ef4444
+    style SP_FAIL fill:#3b1111,stroke:#ef4444,color:#fee2e2
+    style LP_FAIL fill:#3b1111,stroke:#ef4444,color:#fee2e2
+    style RP_FAIL fill:#2d1a09,stroke:#f59e0b,color:#fef3c7
+    style SP_OK fill:#062f22,stroke:#10b981,color:#d1fae5
+    style RP_OK fill:#062f22,stroke:#10b981,color:#d1fae5
+    style LP_OK fill:#062f22,stroke:#10b981,color:#d1fae5
 ```
 
 | Probe | Fails → | Use for |
