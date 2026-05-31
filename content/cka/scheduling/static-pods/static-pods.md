@@ -4,12 +4,19 @@ Static Pods are managed **directly by kubelet** — no API server, scheduler, or
 
 ## How It Works
 
-```
-kubelet watches /etc/kubernetes/manifests/
+```mermaid
+graph TD
+    dir["📁 kubelet watches\n/etc/kubernetes/manifests/"]
+    add["File ADDED"]
+    edit["File EDITED"]
+    del["File DELETED"]
+    create["✅ Pod CREATED immediately"]
+    recreate["♻️ Pod RECREATED\n(old deleted → new started)"]
+    destroy["❌ Pod DESTROYED"]
 
-  File ADDED   →  Pod CREATED  (immediately)
-  File EDITED  →  Pod RECREATED (old deleted, new started)
-  File DELETED →  Pod DESTROYED
+    dir --> add --> create
+    dir --> edit --> recreate
+    dir --> del --> destroy
 ```
 
 Mirror pods (read-only copies) appear in `kubectl get pods` as `<podname>-<nodename>`. You **cannot** delete or edit them via kubectl — manage the YAML file on the node directly.

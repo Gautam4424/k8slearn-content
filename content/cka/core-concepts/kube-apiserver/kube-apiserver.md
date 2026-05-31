@@ -6,11 +6,22 @@ The **kube-apiserver is the primary management component** of Kubernetes. All ot
 
 ## Request Flow
 
-```
-kubectl apply -f pod.yaml
-  → kube-apiserver (authenticate → validate → update etcd)
-  → scheduler watches API → assigns node → updates etcd via API
-  → kubelet watches API → pulls image → starts container → reports status
+```mermaid
+graph LR
+    kubectl["🖥️ kubectl / REST client"]
+    api["🔵 kube-apiserver"]
+    etcd["🟢 etcd"]
+    sched["🟡 kube-scheduler"]
+    kubelet["🟠 kubelet"]
+
+    kubectl -->|"kubectl apply -f pod.yaml"| api
+    api -->|"Authenticate → Validate"| api
+    api -->|"Store state"| etcd
+    sched -->|"Watches API for unscheduled pods"| api
+    sched -->|"Assigns node → writes nodeName"| api
+    kubelet -->|"Watches API for pod specs"| api
+    kubelet -->|"Pulls image → starts container"| kubelet
+    kubelet -->|"Reports status"| api
 ```
 
 ## Key Responsibilities

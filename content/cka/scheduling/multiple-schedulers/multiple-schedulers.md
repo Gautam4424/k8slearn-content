@@ -36,7 +36,24 @@ spec:
           name: my-scheduler-config
 ```
 
-## Example 2 — Scheduler Config via ConfigMap
+## Scheduling Framework Pipeline
+
+```mermaid
+graph LR
+    QS["QueueSort"]
+    PF["PreFilter"]
+    F["Filter\n(eliminate unfit nodes)"]
+    POF["PostFilter"]
+    PS["PreScore"]
+    SC["Score\n(rank remaining nodes)"]
+    R["Reserve"]
+    P["Permit"]
+    PB["PreBind"]
+    B["Bind\n(write nodeName)"]
+    POB["PostBind"]
+
+    QS --> PF --> F --> POF --> PS --> SC --> R --> P --> PB --> B --> POB
+```
 
 ```yaml
 apiVersion: v1
@@ -105,9 +122,7 @@ profiles:
 
 ## Extension Points Pipeline
 
-```
-QueueSort → PreFilter → Filter → PostFilter → PreScore → Score → Reserve → Permit → PreBind → Bind → PostBind
-```
+
 
 | Extension Point | Purpose | Key Plugin |
 |---|---|---|

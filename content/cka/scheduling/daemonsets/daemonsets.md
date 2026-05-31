@@ -2,6 +2,24 @@
 
 A DaemonSet ensures that **one pod runs on every node** (or a subset). When nodes are added, pods are automatically created. When nodes are removed, pods are garbage collected.
 
+```mermaid
+graph TD
+    DS["📋 DaemonSet\n(kube-controller-manager)"]
+    N1["🖥️ Node 1"]
+    N2["🖥️ Node 2"]
+    N3["🖥️ Node 3 (new)"]
+    P1["📦 Pod (e.g. fluentd)"]
+    P2["📦 Pod (e.g. fluentd)"]
+    P3["📦 Pod (auto-created)"]
+
+    DS -->|"ensures 1 pod"| N1
+    DS -->|"ensures 1 pod"| N2
+    DS -->|"auto-deploys"| N3
+    N1 --- P1
+    N2 --- P2
+    N3 --- P3
+```
+
 ## Use Cases
 
 | Use Case | Example Tools |

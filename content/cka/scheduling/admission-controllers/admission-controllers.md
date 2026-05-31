@@ -4,29 +4,20 @@ Admission controllers intercept every API request **after authorization but befo
 
 ## Complete Request Flow
 
-```
-kubectl apply -f pod.yaml
-       │
-  ① AUTHENTICATE  ──  who are you? (cert / token / OIDC)
-       │
-  ② AUTHORIZE     ──  are you allowed? (RBAC)
-       │
-  ③a MUTATING ADMISSION  ──  runs FIRST, can MODIFY the object
-       │   DefaultStorageClass  → sets PVC storage class
-       │   LimitRanger          → injects default CPU/memory
-       │   ServiceAccount       → injects default SA token
-       │   MutatingWebhook      → your custom mutation code
-       │
-  ③b SCHEMA VALIDATION  ──  is the YAML valid?
-       │
-  ③c VALIDATING ADMISSION  ──  ALLOW or DENY (read-only)
-       │   NamespaceLifecycle   → rejects non-existent NS
-       │   ResourceQuota        → rejects if quota exceeded
-       │   PodSecurity          → enforces security standards
-       │   ValidatingWebhook    → your custom deny/allow code
-       │
-  ④ PERSIST to etcd
-  ⑤ RETURN response to client
+```mermaid
+graph TD
+    req["📥 kubectl apply -f pod.yaml"]
+    auth1["① AUTHENTICATE\nWho are you?\n(cert / token / OIDC)"]
+    auth2["② AUTHORIZE\nAre you allowed?\n(RBAC)"]
+    mutate["③a MUTATING ADMISSION\nRuns FIRST — can MODIFY the object\n• DefaultStorageClass\n• LimitRanger\n• ServiceAccount\n• MutatingWebhook"]
+    schema["③b SCHEMA VALIDATION\nIs the YAML valid?"]
+    validate["③c VALIDATING ADMISSION\nALLOW or DENY (read-only)\n• NamespaceLifecycle\n• PodSecurity\n• ValidatingWebhook"]
+    etcd["✅ Stored in etcd"]
+    deny["❌ Request Rejected"]
+
+    req --> auth1 --> auth2 --> mutate --> schema --> validate
+    validate -->|"Allowed"| etcd
+    validate -->|"Denied"| deny
 ```
 
 **Key rule:** Mutating webhooks always run BEFORE validating webhooks.

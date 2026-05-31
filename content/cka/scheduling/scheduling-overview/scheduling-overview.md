@@ -2,23 +2,16 @@
 
 The **kube-scheduler** assigns pods to nodes through a two-phase pipeline: **Filter → Score**.
 
-```
-Pod created (no nodeName)
-        │
-        ▼
-  kube-scheduler watches API server
-        │
-        ▼
-  Phase 1: Filter  →  eliminate unfit nodes
-        │
-        ▼
-  Phase 2: Score   →  rank remaining nodes
-        │
-        ▼
-  Bind: write nodeName to pod spec
-        │
-        ▼
-  kubelet on that node starts the pod
+```mermaid
+graph TD
+    A["📦 Pod created\n(no nodeName set)"]
+    B["kube-scheduler watches API Server"]
+    C["Phase 1: Filter\nEliminate unfit nodes"]
+    D["Phase 2: Score\nRank remaining nodes"]
+    E["Bind\nWrite nodeName to pod spec via API"]
+    F["kubelet on selected node\nstarts the pod"]
+
+    A --> B --> C --> D --> E --> F
 ```
 
 ## How the Scheduler Works

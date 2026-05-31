@@ -24,13 +24,17 @@ systemctl status kubelet
 ps aux | grep kubelet
 ```
 
-## kubelet Registration Flow
+## kubelet Startup Flow
 
-```
-kubelet starts
-  → registers node with API server
-  → API server marks node as Ready
-  → kubelet starts polling for PodSpecs assigned to this node
-  → starts containers via CRI
-  → reports container status back to API server
+```mermaid
+graph TD
+    start["kubelet starts"]
+    register["Register node with API Server"]
+    ready["API Server marks node as Ready"]
+    poll["Poll API for PodSpecs assigned to this node"]
+    cri["Start containers via CRI (containerd)"]
+    report["Report container status back to API Server"]
+
+    start --> register --> ready --> poll --> cri --> report
+    report -->|"Continuous loop"| poll
 ```

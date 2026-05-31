@@ -2,6 +2,21 @@
 
 Labels are key-value pairs attached to Kubernetes objects. Selectors are how you query and filter those objects.
 
+```mermaid
+graph LR
+    SVC["🔵 Service\napp: payment-service\nenv: production"]
+    P1["✅ Pod 1\napp: payment-service\nenv: production"]
+    P2["✅ Pod 2\napp: payment-service\nenv: production"]
+    P3["❌ Pod 3\napp: payment-service\nenv: staging"]
+    RS["📋 ReplicaSet\nselector:\n  app: payment-service"]
+
+    SVC -->|"Routes traffic to matching pods"| P1
+    SVC -->|"Routes traffic to matching pods"| P2
+    SVC -. "No match (env!=production)" .-> P3
+    RS -->|"Owns & manages"| P1
+    RS -->|"Owns & manages"| P2
+```
+
 ## Labels vs Annotations
 
 | | Labels | Annotations |

@@ -1,4 +1,4 @@
-# Cluster Architecture
+﻿# Cluster Architecture
 
 ## Overview
 
@@ -11,49 +11,38 @@ Kubernetes is designed to **host applications in containers** in an automated fa
 
 ## Cluster Architecture Diagram
 
-```diagram
-╔══════════════════════════════════════════════════════════════════════╗
-║                     KUBERNETES CLUSTER                               ║
-║                                                                      ║
-║  ┌─────────────────────────────────────────────────────────────┐    ║
-║  │                    CONTROL PLANE                            │    ║
-║  │                                                             │    ║
-║  │  ┌──────────────┐  ┌──────────────┐  ┌────────────────┐   │    ║
-║  │  │  API Server  │  │   etcd       │  │   Scheduler    │   │    ║
-║  │  │  (kube-      │  │  (Cluster    │  │  (kube-        │   │    ║
-║  │  │  apiserver)  │  │   Store)     │  │  scheduler)    │   │    ║
-║  │  └──────┬───────┘  └──────────────┘  └────────────────┘   │    ║
-║  │         │                                                   │    ║
-║  │  ┌──────▼────────────────────────────────────────────┐    │    ║
-║  │  │           Controller Manager                       │    │    ║
-║  │  │  (Node, Replication, Endpoint, SA Controllers)     │    │    ║
-║  │  └───────────────────────────────────────────────────┘    │    ║
-║  │                                                             │    ║
-║  │  ┌──────────────────────────────────────────────────────┐  │    ║
-║  │  │         Cloud Controller Manager (optional)          │  │    ║
-║  │  └──────────────────────────────────────────────────────┘  │    ║
-║  └─────────────────────────────────────────────────────────────┘    ║
-║                              │  │  │                                 ║
-║         ┌────────────────────┘  │  └──────────────────┐             ║
-║         ▼                       ▼                      ▼             ║
-║  ┌─────────────┐      ┌─────────────────┐    ┌─────────────────┐   ║
-║  │  WORKER     │      │  WORKER NODE 2  │    │  WORKER NODE N  │   ║
-║  │  NODE 1     │      │                 │    │                 │   ║
-║  │             │      │  ┌───────────┐  │    │  ┌───────────┐  │   ║
-║  │ ┌─────────┐ │      │  │  kubelet  │  │    │  │  kubelet  │  │   ║
-║  │ │ kubelet │ │      │  └───────────┘  │    │  └───────────┘  │   ║
-║  │ └─────────┘ │      │  ┌───────────┐  │    │  ┌───────────┐  │   ║
-║  │ ┌─────────┐ │      │  │kube-proxy │  │    │  │kube-proxy │  │   ║
-║  │ │kube-prxy│ │      │  └───────────┘  │    │  └───────────┘  │   ║
-║  │ └─────────┘ │      │  ┌───────────┐  │    │  ┌───────────┐  │   ║
-║  │ ┌─────────┐ │      │  │  Runtime  │  │    │  │  Runtime  │  │   ║
-║  │ │ Runtime │ │      │  │(containerd│  │    │  │(containerd│  │   ║
-║  │ └─────────┘ │      │  └───────────┘  │    │  └───────────┘  │   ║
-║  │ ┌─────────┐ │      │  ┌───────────┐  │    │  ┌───────────┐  │   ║
-║  │ │  Pods   │ │      │  │   Pods    │  │    │  │   Pods    │  │   ║
-║  │ └─────────┘ │      │  └───────────┘  │    │  └───────────┘  │   ║
-║  └─────────────┘      └─────────────────┘    └─────────────────┘   ║
-╚══════════════════════════════════════════════════════════════════════╝
+```mermaid
+graph TD
+    subgraph ControlPlane["☸️ Control Plane"]
+        API["🔵 kube-apiserver\n(all traffic goes through here)"]
+        ETCD["🟢 etcd\n(cluster state store)"]
+        SCHED["🟡 kube-scheduler\n(assigns pods to nodes)"]
+        CTRL["🟠 controller-manager\n(reconciliation loops)"]
+    end
+
+    subgraph WorkerNode1["🖥️ Worker Node 1"]
+        KL1["kubelet"]
+        KP1["kube-proxy"]
+        CR1["containerd"]
+        P1["📦 Pods"]
+    end
+
+    subgraph WorkerNode2["🖥️ Worker Node 2"]
+        KL2["kubelet"]
+        KP2["kube-proxy"]
+        CR2["containerd"]
+        P2["📦 Pods"]
+    end
+
+    API <--> ETCD
+    API --> SCHED
+    API --> CTRL
+    API --> KL1
+    API --> KL2
+    KL1 --> CR1 --> P1
+    KL2 --> CR2 --> P2
+    KP1 -.->|iptables rules| P1
+    KP2 -.->|iptables rules| P2
 ```
 
 ## The Ship Analogy
@@ -62,7 +51,7 @@ Think of a Kubernetes cluster like a fleet of ships:
 
 - **Cargo ships** = Worker nodes that carry containers (workloads)
 - **Control ship** = Master node that manages and monitors the fleet
-- **ETCD** = The ship's log — records everything loaded, where, and when
+- **ETCD** = The ship’s log — records everything loaded, where, and when
 - **Schedulers** = Cranes that place containers onto ships based on capacity
 - **Controllers** = Operations teams that manage different functions
 - **kube-apiserver** = The captain — orchestrates all operations
