@@ -6,6 +6,11 @@
   "format": "Hands-on Performance-based (Interactive CLI)",
   "price": "$445 USD",
   "attempts": "2 attempts included",
+  "roadmapOrder": [
+    "Core Concepts",
+    "Scheduling",
+    "Logging & Monitoring"
+  ],
   "curriculum": [
     {
       "domain": "Cluster Architecture, Installation & Configuration",
