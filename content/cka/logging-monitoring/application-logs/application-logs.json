@@ -1,0 +1,67 @@
+{
+  "title": "Application Logs",
+  "cert": "cka",
+  "roadmap": "Logging & Monitoring",
+  "subtopic": "Application Logs",
+  "difficulty": "beginner",
+  "content": "application-logs.md",
+  "order": 2,
+  "tags": ["logs", "kubectl-logs", "stdout", "stderr", "fluentd", "logging", "multi-container"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Where should a containerized application write its logs so that kubectl logs can retrieve them?",
+      "options": [
+        "/var/log/app.log",
+        "stdout and stderr",
+        "/tmp/logs/",
+        "A mounted ConfigMap"
+      ],
+      "answer": 1,
+      "explanation": "Kubernetes captures stdout and stderr from containers and makes them available via kubectl logs. Writing to files inside the container bypasses this mechanism and the logs won't be accessible with kubectl logs."
+    },
+    {
+      "type": "mcq",
+      "q": "You have a multi-container pod with containers named 'web' and 'sidecar'. Which command streams logs from the sidecar container?",
+      "options": [
+        "kubectl logs my-pod --container sidecar",
+        "kubectl logs my-pod -c sidecar -f",
+        "kubectl logs my-pod sidecar",
+        "kubectl stream my-pod -c sidecar"
+      ],
+      "answer": 1,
+      "explanation": "For multi-container pods, you must use -c <container-name> to specify which container's logs to retrieve. The -f flag streams logs in real-time. Both -c and --container are equivalent."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod is in CrashLoopBackOff. Which command retrieves the logs from the last crashed container instance?",
+      "options": [
+        "kubectl logs my-pod --last",
+        "kubectl logs my-pod --previous",
+        "kubectl logs my-pod --crashed",
+        "kubectl describe pod my-pod"
+      ],
+      "answer": 1,
+      "explanation": "kubectl logs --previous (or -p) retrieves logs from the previously terminated container instance. This is essential for diagnosing CrashLoopBackOff because the current instance may not have produced useful output before crashing."
+    },
+    {
+      "type": "true-false",
+      "q": "kubectl logs deployment/my-app retrieves logs from all pods in the deployment simultaneously.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. kubectl logs deployment/my-deployment fetches logs from only one pod (chosen randomly). To get logs from all pods, use kubectl logs -l app=my-app which selects all pods matching the label."
+    },
+    {
+      "type": "mcq",
+      "q": "Which tool is typically deployed as a DaemonSet to ship container logs to a centralized store like Elasticsearch?",
+      "options": [
+        "Prometheus",
+        "Metrics Server",
+        "Fluentd or Filebeat",
+        "kube-state-metrics"
+      ],
+      "answer": 2,
+      "explanation": "Fluentd and Filebeat are the most common log shippers. They run as DaemonSets (one pod per node) and tail /var/log/containers/ to forward logs to backends like Elasticsearch, Loki, or CloudWatch."
+    }
+  ]
+}
