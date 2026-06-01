@@ -16,7 +16,8 @@
     "storage",
     "security",
     "cluster-design",
-    "troubleshooting"
+    "Troubleshooting",
+    "advanced-kubectl"
   ],
   "curriculum": [
     {

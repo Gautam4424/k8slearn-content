@@ -1,0 +1,52 @@
+{
+  "title": "JSONPath with kubectl",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "advanced-kubectl",
+  "subtopic": "JSONPath with kubectl",
+  "difficulty": "advanced",
+  "content": "jsonpath.md",
+  "order": {
+    "cka": 1,
+    "ckad": 1,
+    "cks": 1
+  },
+  "tags": ["jsonpath", "kubectl", "json", "filtering", "custom-columns"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which kubectl command will output the image name of the first container running in a pod named `web-pod`?",
+      "options": [
+        "kubectl get pod web-pod -o jsonpath='{.spec.containers[0].image}'",
+        "kubectl get pod web-pod -o jsonpath='{.status.containerStatuses[0].imageID}'",
+        "kubectl get pod web-pod -o custom-columns='IMAGE:.image'",
+        "kubectl describe pod web-pod | grep image"
+      ],
+      "answer": 0,
+      "explanation": "The image definition is stored in the pod specification under `spec.containers`. Since it's an array, you use `[0]` to access the first container, followed by `.image` to get the image string."
+    },
+    {
+      "type": "mcq",
+      "q": "You need to extract the base64-encoded value of a key named `db-password` from a Secret named `my-secret`. Which JSONPath expression is correct?",
+      "options": [
+        "'{.spec.db-password}'",
+        "'{.data.db-password}'",
+        "'{.metadata.db-password}'",
+        "'{.status.db-password}'"
+      ],
+      "answer": 1,
+      "explanation": "Secret contents are stored in the `.data` dictionary of the API object. To access a specific key, you use `{.data.<key-name>}`. You can then pipe this output to `base64 -d` to decode it."
+    },
+    {
+      "type": "mcq",
+      "q": "Which JSONPath syntax is used to iterate over a list of items and format them with newlines?",
+      "options": [
+        "{loop .items[*]} ... {end}",
+        "{for .items[*]} ... {end}",
+        "{range .items[*]} ... {end}",
+        "{each .items[*]} ... {end}"
+      ],
+      "answer": 2,
+      "explanation": "JSONPath in kubectl uses the `{range <array>}` and `{end}` syntax to loop through items, allowing you to print text, variables, tabs `{\"\\t\"}`, and newlines `{\"\\n\"}` for each item in the array."
+    }
+  ]
+}

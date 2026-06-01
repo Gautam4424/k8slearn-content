@@ -1,0 +1,52 @@
+{
+  "title": "Advanced kubectl Commands",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "advanced-kubectl",
+  "subtopic": "Advanced kubectl Commands",
+  "difficulty": "advanced",
+  "content": "advanced-commands.md",
+  "order": {
+    "cka": 2,
+    "ckad": 2,
+    "cks": 2
+  },
+  "tags": ["kubectl", "imperative", "dry-run", "port-forward", "exam-tips", "commands"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You want to create a new deployment named `web-app` using the `nginx` image with 3 replicas, but instead of applying it immediately, you want to save the YAML definition to a file named `deploy.yaml`. Which command does this?",
+      "options": [
+        "kubectl create deployment web-app --image=nginx --replicas=3 > deploy.yaml",
+        "kubectl create deployment web-app --image=nginx --replicas=3 --dry-run=client -o yaml > deploy.yaml",
+        "kubectl create deployment web-app --image=nginx --replicas=3 -o yaml > deploy.yaml",
+        "kubectl generate deployment web-app --image=nginx --replicas=3 > deploy.yaml"
+      ],
+      "answer": 1,
+      "explanation": "The `--dry-run=client` flag tells kubectl to process the command without sending it to the API server. Combined with `-o yaml`, it prints the generated YAML manifest to standard output, which you can redirect (`>`) to a file."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod named `api-pod` is listening on port 8080 inside the cluster. You want to test it locally from your workstation's port 9000. Which command accomplishes this?",
+      "options": [
+        "kubectl port-forward pod/api-pod 9000:8080",
+        "kubectl proxy pod/api-pod 9000:8080",
+        "kubectl port-forward pod/api-pod 8080:9000",
+        "kubectl expose pod/api-pod --port=9000 --target-port=8080"
+      ],
+      "answer": 0,
+      "explanation": "The `kubectl port-forward` command uses the format `local-port:remote-port`. Therefore, `9000:8080` forwards traffic from port 9000 on your local machine to port 8080 on the pod."
+    },
+    {
+      "type": "mcq",
+      "q": "Which output format should you use with `kubectl` to see additional columns for Pods, such as the Node they are running on and their IP address?",
+      "options": [
+        "-o extra",
+        "-o extended",
+        "-o full",
+        "-o wide"
+      ],
+      "answer": 3,
+      "explanation": "The `-o wide` flag instructs kubectl to display additional, commonly requested columns that are normally hidden to save horizontal space, such as the pod IP and the node it is scheduled on."
+    }
+  ]
+}
