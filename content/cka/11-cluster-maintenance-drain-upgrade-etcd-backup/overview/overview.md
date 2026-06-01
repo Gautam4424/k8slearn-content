@@ -420,8 +420,6 @@ spec:
 
 ## minAvailable vs maxUnavailable
 
-[Table Not Rendered - Unsupported Block]
-
 ```bash
 # Check PDB status
 kubectl get pdb

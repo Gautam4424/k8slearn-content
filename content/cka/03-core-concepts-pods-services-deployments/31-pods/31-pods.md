@@ -109,5 +109,3 @@ kubectl delete pod nginx --force --grace-period=0   # immediate
 
 # Pod Status — What Do They Mean?
 
-[Table Not Rendered - Unsupported Block]
-

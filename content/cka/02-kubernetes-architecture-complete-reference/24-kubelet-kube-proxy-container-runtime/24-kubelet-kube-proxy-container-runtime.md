@@ -105,8 +105,6 @@ The container runtime is what actually creates and runs containers on the node.
 
 kubelet uses a **gRPC API** called CRI to talk to any compliant runtime — it doesn't care which one you use.
 
-[Table Not Rendered - Unsupported Block]
-
 ```bash
 # Check which runtime is in use
 kubectl get nodes -o wide

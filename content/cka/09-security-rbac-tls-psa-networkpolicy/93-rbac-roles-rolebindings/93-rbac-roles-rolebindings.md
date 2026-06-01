@@ -37,8 +37,6 @@ flowchart TD
 
 # Namespaced vs Cluster-Wide
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # YAML Examples

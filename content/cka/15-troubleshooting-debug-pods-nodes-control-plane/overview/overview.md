@@ -14,5 +14,3 @@ tags: ["cka"]
 
 > ⚠️ **This chapter is worth 30% of the CKA exam — don't skip it!**
 
-[Table Not Rendered - Unsupported Block]
-

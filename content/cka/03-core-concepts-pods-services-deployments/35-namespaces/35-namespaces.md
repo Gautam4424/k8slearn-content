@@ -32,13 +32,9 @@ graph TD
 
 ## Default Namespaces
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # Namespaced vs Cluster-Scoped Resources
-
-[Table Not Rendered - Unsupported Block]
 
 ```bash
 # Check if a resource is namespaced

@@ -105,8 +105,6 @@ flowchart LR
 
 # Key Differences
 
-[Table Not Rendered - Unsupported Block]
-
 ```bash
 # Get logs from specific container in multi-container pod
 kubectl logs <pod> -c <container-name>

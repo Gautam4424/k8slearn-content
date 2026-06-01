@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "What is the role of etcd in Kubernetes?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "To schedule pods",
+        "To store cluster state and configuration",
+        "To run containers",
+        "To route network traffic"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 1,
+      "explanation": "etcd is a consistent and highly-available key value store used as Kubernetes' backing store for all cluster data."
     }
   ]
 }

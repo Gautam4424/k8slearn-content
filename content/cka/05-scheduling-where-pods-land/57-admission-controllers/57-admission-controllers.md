@@ -41,8 +41,6 @@ flowchart TD
 
 # Common Built-in Controllers
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # Custom Admission Webhooks

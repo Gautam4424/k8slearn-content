@@ -48,8 +48,6 @@ flowchart TD
     style R_FAIL fill:#fef3c7,stroke:#f59e0b
 ```
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # Probe Types (How to Check)

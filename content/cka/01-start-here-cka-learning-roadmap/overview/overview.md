@@ -16,8 +16,6 @@ This guide is structured for **complete beginners** — follow the chapters in o
 
 ## How Long Will This Take?
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 ## The Learning Path
@@ -48,8 +46,6 @@ flowchart TD
 ---
 
 ## Chapter Map
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 
@@ -88,11 +84,7 @@ complete -F __start_kubectl k
 
 > 📚 **Exam Registration:** [training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka](http://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka)
 
-> 
-
 > 🧠 **Official Docs:** [kubernetes.io/docs](http://kubernetes.io/docs) — allowed during exam
-
-> 
 
 > 🧪 **Practice Platform:** [killer.sh](http://killer.sh/) — 2 free sessions with exam registration
 

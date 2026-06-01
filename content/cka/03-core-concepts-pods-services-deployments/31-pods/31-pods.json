@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "What is the smallest deployable computing unit in Kubernetes?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "Node",
+        "Container",
+        "Pod",
+        "Service"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 2,
+      "explanation": "A Pod is the smallest and simplest unit in the Kubernetes object model that you create or deploy."
     }
   ]
 }

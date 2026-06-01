@@ -106,7 +106,5 @@ spec:
 
 # Secret Types
 
-[Table Not Rendered - Unsupported Block]
-
 > ⚠️ Base64 is **encoding, not encryption**. Secrets are not secure by default — enable [etcd encryption at rest](../09-Security/9.8-etcd-Encryption-at-Rest) in production.
 

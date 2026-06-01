@@ -40,11 +40,7 @@ flowchart TD
 
 # 1. Core Concepts
 
-[Table Not Rendered - Unsupported Block]
-
 ## Helm 2 vs Helm 3
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 

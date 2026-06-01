@@ -49,8 +49,6 @@ graph TD
 
 # 1. Kustomize vs Helm
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # 2. Installation & Setup
@@ -260,8 +258,6 @@ patches:
     name: myapp
     namespace: production
 ```
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 

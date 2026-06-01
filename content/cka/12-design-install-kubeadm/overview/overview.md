@@ -39,8 +39,6 @@ tags: ["cka"]
 
 ## Node Sizing Guidelines
 
-[Table Not Rendered - Unsupported Block]
-
 ## HA Control Plane Architecture
 
 ```javascript
@@ -184,21 +182,13 @@ kubectl get nodes
 
 > 📚 **Ref:** [kubeadm install](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) | [HA topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/)
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 HA Control Plane Architecture
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 etcd Raft Quorum Table
-
-[Table Not Rendered - Unsupported Block]
 
 > 📌 Always use an **odd number** of etcd nodes. 4 nodes has the same fault tolerance as 3 but more risk during split-brain scenarios.
 
 ## 🔄 Cluster Design Decision Matrix
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 

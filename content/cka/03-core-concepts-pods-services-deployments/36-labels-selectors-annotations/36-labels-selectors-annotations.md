@@ -107,5 +107,3 @@ metadata:
     git-commit: "abc123def"
 ```
 
-[Table Not Rendered - Unsupported Block]
-

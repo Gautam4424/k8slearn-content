@@ -35,8 +35,6 @@ flowchart TD
 
 # Common Use Cases
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # DaemonSet YAML

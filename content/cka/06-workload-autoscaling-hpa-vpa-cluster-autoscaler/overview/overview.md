@@ -202,11 +202,7 @@ kubectl get vpa myapp-vpa -o yaml | grep -A20 recommendation
 
 ## VPA Update Modes
 
-[Table Not Rendered - Unsupported Block]
-
 ## HPA vs VPA
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 

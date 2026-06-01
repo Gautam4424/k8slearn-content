@@ -85,8 +85,6 @@ flowchart TD
 
 # Key Concepts Summary
 
-[Table Not Rendered - Unsupported Block]
-
 ```bash
 # Watch a deployment rollout step by step
 kubectl get pods -w

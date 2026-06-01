@@ -48,8 +48,6 @@ spec:
         app: web
 ```
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # PriorityClass

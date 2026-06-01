@@ -79,8 +79,6 @@ flowchart TD
 
 ## Key Controllers
 
-[Table Not Rendered - Unsupported Block]
-
 ```bash
 # View controller-manager static pod
 cat /etc/kubernetes/manifests/kube-controller-manager.yaml

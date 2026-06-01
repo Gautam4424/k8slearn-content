@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "Which object should you use to store non-confidential configuration data?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "Secret",
+        "ConfigMap",
+        "Volume",
+        "Deployment"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 1,
+      "explanation": "ConfigMaps allow you to decouple environment-specific configuration from your container images."
     }
   ]
 }

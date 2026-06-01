@@ -55,8 +55,6 @@ flowchart TD
     style LB fill:#dbeafe,stroke:#3b82f6
 ```
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # Service YAML

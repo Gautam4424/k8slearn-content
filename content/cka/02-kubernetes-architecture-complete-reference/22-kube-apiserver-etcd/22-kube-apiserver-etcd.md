@@ -95,8 +95,6 @@ flowchart LR
     style DONE fill:#d1fae5,stroke:#10b981
 ```
 
-[Table Not Rendered - Unsupported Block]
-
 > ✅ Always use **odd numbers** of etcd nodes. 3 is the minimum for production.
 
 ## Key Facts

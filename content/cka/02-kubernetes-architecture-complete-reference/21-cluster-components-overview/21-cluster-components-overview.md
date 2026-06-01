@@ -49,15 +49,9 @@ graph TD
 
 # Control Plane vs Worker Nodes
 
-[Table Not Rendered - Unsupported Block]
-
 ## Control Plane Components
 
-[Table Not Rendered - Unsupported Block]
-
 ## Worker Node Components
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 

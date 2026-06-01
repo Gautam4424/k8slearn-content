@@ -91,5 +91,3 @@ rules:
 - level: Metadata    # default: log everything else
 ```
 
-[Table Not Rendered - Unsupported Block]
-

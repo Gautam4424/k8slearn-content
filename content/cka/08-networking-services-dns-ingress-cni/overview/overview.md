@@ -310,23 +310,13 @@ ls /opt/cni/bin/
 
 > 📚 **Ref:** [Services](https://kubernetes.io/docs/concepts/services-networking/service/) | [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) | [DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 Service Types & Traffic Flow
-
-[Table Not Rendered - Unsupported Block]
 
 ## 🔄 DNS Resolution Flow
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 Ingress Flow
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 CNI Plugin Flow
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 
@@ -539,8 +529,6 @@ kubectl describe gateway main-gateway -n infra
 
 ## Gateway API vs Ingress
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # 6. EndpointSlices
@@ -582,6 +570,4 @@ kubectl describe endpointslice web-svc-abc
 # Old Endpoints object (still exists for compatibility)
 kubectl get endpoints web-svc
 ```
-
-[Table Not Rendered - Unsupported Block]
 

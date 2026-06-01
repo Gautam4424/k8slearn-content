@@ -30,8 +30,6 @@ flowchart LR
 
 # Node Affinity Types
 
-[Table Not Rendered - Unsupported Block]
-
 ```yaml
 spec:
   affinity:
@@ -60,8 +58,6 @@ spec:
 ```
 
 ## Operators
-
-[Table Not Rendered - Unsupported Block]
 
 ```bash
 # Label a node

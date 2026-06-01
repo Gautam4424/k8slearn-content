@@ -44,8 +44,6 @@ tags: ["cka"]
 
 ## Volume Types
 
-[Table Not Rendered - Unsupported Block]
-
 ```yaml
 # emptyDir — shared temp between containers in same pod
 apiVersion: v1
@@ -122,8 +120,6 @@ spec:
 ```
 
 ## Access Modes
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 
@@ -285,19 +281,11 @@ kubectl delete pvc <name>
 
 > 📚 **Ref:** [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) | [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) | [CSI](https://kubernetes-csi.github.io/docs/)
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 PV Lifecycle States
-
-[Table Not Rendered - Unsupported Block]
 
 ## 🔄 Dynamic Provisioning Flow
 
-[Table Not Rendered - Unsupported Block]
-
 ## 🔄 Access Modes Comparison
-
-[Table Not Rendered - Unsupported Block]
 
 ---
 
@@ -483,6 +471,4 @@ spec:
     requests:
       storage: 5Gi
 ```
-
-[Table Not Rendered - Unsupported Block]
 

@@ -47,8 +47,6 @@ spec:
 
 # CPU vs Memory Enforcement
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # QoS Classes

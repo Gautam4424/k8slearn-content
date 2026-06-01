@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "What is the primary purpose of this component in Kubernetes?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "To manage state",
+        "To serve traffic",
+        "To orchestrate containers",
+        "To store data"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 2,
+      "explanation": "Kubernetes is a container orchestration platform."
     }
   ]
 }

@@ -35,8 +35,6 @@ flowchart TD
 
 # Taint Effects
 
-[Table Not Rendered - Unsupported Block]
-
 ---
 
 # Commands

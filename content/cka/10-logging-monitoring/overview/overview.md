@@ -40,8 +40,6 @@ flowchart TD
 
 ## What to Monitor
 
-[Table Not Rendered - Unsupported Block]
-
 ## Metrics Server (Lightweight, In-Memory)
 
 Metrics Server is the **official in-cluster monitoring solution** for Kubernetes. It scrapes resource usage from kubelets (via cAdvisor) and exposes it through the API server.

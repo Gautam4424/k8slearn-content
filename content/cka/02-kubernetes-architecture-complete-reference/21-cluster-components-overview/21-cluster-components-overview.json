@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "Which component is the central control point of a Kubernetes cluster?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "kube-scheduler",
+        "etcd",
+        "kube-apiserver",
+        "kubelet"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 2,
+      "explanation": "The kube-apiserver acts as the central control point and exposes the Kubernetes API."
     }
   ]
 }

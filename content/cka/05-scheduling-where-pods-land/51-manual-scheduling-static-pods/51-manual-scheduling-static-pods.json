@@ -11,15 +11,15 @@
   "questions": [
     {
       "type": "mcq",
-      "q": "[TODO] Add a practice question for this topic",
+      "q": "How are static pods managed?",
       "options": [
-        "Option A",
-        "Option B",
-        "Option C",
-        "Option D"
+        "By the kube-scheduler",
+        "By the kubelet directly on a specific node",
+        "By a Deployment controller",
+        "By the kube-apiserver"
       ],
-      "answer": 0,
-      "explanation": "Update me"
+      "answer": 1,
+      "explanation": "Static pods are managed directly by the kubelet daemon on a specific node, without the API server observing them."
     }
   ]
 }

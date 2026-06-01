@@ -34,8 +34,6 @@ kubectl get pods -o json
 
 ## Syntax Reference
 
-[Table Not Rendered - Unsupported Block]
-
 ## Practical Examples
 
 ```bash
