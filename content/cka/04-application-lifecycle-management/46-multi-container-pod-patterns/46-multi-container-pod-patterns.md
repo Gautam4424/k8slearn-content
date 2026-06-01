@@ -102,6 +102,13 @@ flowchart LR
 
 # Key Differences
 
+
+| Pattern | Container Role | Communication |
+| --- | --- | --- |
+| Sidecar | Enhances main app | Shared volume / localhost |
+| Ambassador | Proxy for external services | localhost ports |
+| Adapter | Format translation | Shared volume / localhost |
+
 ```bash
 # Get logs from specific container in multi-container pod
 kubectl logs <pod> -c <container-name>

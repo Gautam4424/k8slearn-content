@@ -45,6 +45,13 @@ flowchart TD
     L -->|fail| L_FAIL
 ```
 
+
+| Probe | Checks | Failure Effect | Use For |
+| --- | --- | --- | --- |
+| Liveness | Is container alive? | Kill + restart | Deadlocks, hung processes |
+| Readiness | Ready to serve traffic? | Remove from Service | DB warmup, slow start |
+| Startup | Has app started? | Kill + restart | Slow-starting apps (JVM) |
+
 ---
 
 # Probe Types (How to Check)

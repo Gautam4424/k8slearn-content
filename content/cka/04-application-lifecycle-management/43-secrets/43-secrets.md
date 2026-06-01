@@ -106,5 +106,13 @@ spec:
 
 # Secret Types
 
+
+| Type | Created by | Use |
+| --- | --- | --- |
+| Opaque | User | Generic key-value secrets |
+| kubernetes.io/tls | User | TLS certs |
+| kubernetes.io/dockerconfigjson | User | Docker registry auth |
+| kubernetes.io/service-account-token | K8s | SA tokens (auto) |
+
 > ⚠️ Base64 is **encoding, not encryption**. Secrets are not secure by default — enable [etcd encryption at rest](../09-Security/9.8-etcd-Encryption-at-Rest) in production.
 

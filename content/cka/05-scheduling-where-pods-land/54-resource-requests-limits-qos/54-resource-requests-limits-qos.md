@@ -45,6 +45,9 @@ spec:
 
 # CPU vs Memory Enforcement
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ---
 
 # QoS Classes

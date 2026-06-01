@@ -71,6 +71,20 @@ flowchart TD
 
 ## Key Controllers
 
+
+| Controller | What it watches | What it does |
+| --- | --- | --- |
+| Node Controller | Node status | Taints failing nodes, evicts pods |
+| ReplicaSet Controller | ReplicaSet, Pods | Ensures correct replica count |
+| Deployment Controller | Deployment | Manages rolling updates via ReplicaSets |
+| StatefulSet Controller | StatefulSet | Ordered, stable-identity pods |
+| DaemonSet Controller | DaemonSet, Nodes | Ensures one pod per node |
+| Job Controller | Job | Runs pods to completion |
+| CronJob Controller | CronJob | Schedules Job creation |
+| Endpoint Controller | Service, Pods | Populates EndpointSlices |
+| Namespace Controller | Namespaces | Cleans up resources on deletion |
+| PV/PVC Controller | PV, PVC | Binds claims to volumes |
+
 ```bash
 # View controller-manager static pod
 cat /etc/kubernetes/manifests/kube-controller-manager.yaml

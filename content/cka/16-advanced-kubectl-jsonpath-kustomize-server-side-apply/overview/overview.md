@@ -34,6 +34,9 @@ kubectl get pods -o json
 
 ## Syntax Reference
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## Practical Examples
 
 ```bash

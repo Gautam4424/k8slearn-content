@@ -88,3 +88,11 @@ rules:
 - level: Metadata    # default: log everything else
 ```
 
+
+| Level | Logs |
+| --- | --- |
+| None | Nothing |
+| Metadata | Request metadata only |
+| Request | Metadata + request body |
+| RequestResponse | Metadata + request + response |
+

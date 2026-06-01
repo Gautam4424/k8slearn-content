@@ -106,3 +106,11 @@ metadata:
     git-commit: "abc123def"
 ```
 
+
+|  | Labels | Annotations |
+| --- | --- | --- |
+| Used for selection? | ✅ Yes | ❌ No |
+| Indexed by K8s? | ✅ Yes | ❌ No |
+| Size limit | Small | Large (can store JSON) |
+| Use case | Identity, grouping | Tooling metadata, configs |
+

@@ -30,9 +30,26 @@ graph TD
 
 ## Default Namespaces
 
+
+| Namespace | Purpose |
+| --- | --- |
+| default | Where resources go if you don't specify a namespace |
+| kube-system | Kubernetes internal components (CoreDNS, kube-proxy, etc.) |
+| kube-public | Publicly readable resources (cluster info) |
+| kube-node-lease | Node heartbeat lease objects |
+
 ---
 
 # Namespaced vs Cluster-Scoped Resources
+
+
+| Namespaced (live inside a namespace) | Cluster-Scoped (no namespace) |
+| --- | --- |
+| Pod, Deployment, Service | Node |
+| ConfigMap, Secret | PersistentVolume |
+| Role, RoleBinding | ClusterRole, ClusterRoleBinding |
+| PersistentVolumeClaim | Namespace itself |
+| HPA, NetworkPolicy | StorageClass |
 
 ```bash
 # Check if a resource is namespaced

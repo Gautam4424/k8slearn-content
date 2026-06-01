@@ -196,7 +196,17 @@ kubectl get vpa myapp-vpa -o yaml | grep -A20 recommendation
 
 ## VPA Update Modes
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## HPA vs VPA
+
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 6.1 HorizontalPodAutoscaler (HPA) | Scale pod replicas based on CPU / memory / custom metrics |
+| 6.2 VerticalPodAutoscaler (VPA) | Right-size CPU and memory requests automatically |
+| 6.3 Cluster Autoscaler | Add and remove nodes based on pending pods |
 
 ---
 

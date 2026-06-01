@@ -102,6 +102,13 @@ The container runtime is what actually creates and runs containers on the node.
 
 kubelet uses a **gRPC API** called CRI to talk to any compliant runtime — it doesn't care which one you use.
 
+
+| Runtime | Notes |
+| --- | --- |
+| containerd | Default in kubeadm, GKE, EKS, AKS. Lightweight, fast |
+| CRI-O | Designed for Kubernetes only. Used in OpenShift |
+| Docker (via cri-dockerd) | Legacy — Docker was removed as default in K8s 1.24 |
+
 ```bash
 # Check which runtime is in use
 kubectl get nodes -o wide

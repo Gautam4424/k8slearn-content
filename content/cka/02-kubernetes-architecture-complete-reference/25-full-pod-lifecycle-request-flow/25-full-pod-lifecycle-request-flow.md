@@ -83,6 +83,17 @@ flowchart TD
 
 # Key Concepts Summary
 
+
+| Concept | What it means |
+| --- | --- |
+| Desired State | What you declare in YAML — stored in etcd |
+| Actual State | What's actually running on nodes |
+| Reconciliation | Controllers continuously drive actual → desired |
+| Watch API | Components get push notifications, no polling |
+| Declarative | You say WHAT you want, K8s figures out HOW |
+| Label Selectors | How Services/Deployments find their Pods |
+| OwnerReferences | When a Deployment is deleted, its ReplicaSets and Pods are too |
+
 ```bash
 # Watch a deployment rollout step by step
 kubectl get pods -w

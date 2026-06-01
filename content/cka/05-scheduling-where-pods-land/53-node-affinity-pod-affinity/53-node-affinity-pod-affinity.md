@@ -29,6 +29,9 @@ flowchart LR
 
 # Node Affinity Types
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ```yaml
 spec:
   affinity:
@@ -57,6 +60,16 @@ spec:
 ```
 
 ## Operators
+
+
+| Operator | Meaning |
+| --- | --- |
+| In | Value must be in list |
+| NotIn | Value must NOT be in list |
+| Exists | Key must exist (any value) |
+| DoesNotExist | Key must not exist |
+| Gt | Greater than (numeric) |
+| Lt | Less than (numeric) |
 
 ```bash
 # Label a node

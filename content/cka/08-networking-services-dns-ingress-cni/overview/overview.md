@@ -310,13 +310,28 @@ ls /opt/cni/bin/
 
 > 📚 **Ref:** [Services](https://kubernetes.io/docs/concepts/services-networking/service/) | [Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) | [DNS](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 Service Types & Traffic Flow
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ## 🔄 DNS Resolution Flow
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 Ingress Flow
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 CNI Plugin Flow
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ---
 
@@ -520,6 +535,9 @@ kubectl describe gateway main-gateway -n infra
 
 ## Gateway API vs Ingress
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ---
 
 # 6. EndpointSlices
@@ -558,4 +576,12 @@ kubectl describe endpointslice web-svc-abc
 # Old Endpoints object (still exists for compatibility)
 kubectl get endpoints web-svc
 ```
+
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 8.1 Pod Networking & CNI | How pods get IPs — Calico, Flannel, Cilium |
+| 8.2 DNS, CoreDNS & EndpointSlices | How pods find each other by name |
+| 8.3 Ingress & Gateway API | Route external HTTP/HTTPS traffic into the cluster |
+| 8.4 NetworkPolicy | Firewall rules between pods |
 

@@ -39,6 +39,16 @@ flowchart TD
 
 # Common Built-in Controllers
 
+
+| Controller | Type | What it does |
+| --- | --- | --- |
+| DefaultStorageClass | Mutating | Adds default storage class to PVCs |
+| LimitRanger | Mutating | Injects default CPU/memory from LimitRange |
+| ServiceAccount | Mutating | Injects default SA token |
+| NamespaceLifecycle | Validating | Rejects resources in non-existent namespaces |
+| ResourceQuota | Validating | Rejects if namespace quota exceeded |
+| PodSecurity | Validating | Enforces Pod Security Standards |
+
 ---
 
 # Custom Admission Webhooks

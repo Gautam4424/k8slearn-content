@@ -89,6 +89,14 @@ flowchart LR
     E1 -->|committed when majority agrees| DONE["Write committed ✅"]
 ```
 
+
+| etcd Nodes | Quorum | Can Lose |
+| --- | --- | --- |
+| 1 | 1 | 0 (no fault tolerance) |
+| 3 | 2 | 1 node |
+| 5 | 3 | 2 nodes |
+| 7 | 4 | 3 nodes |
+
 > ✅ Always use **odd numbers** of etcd nodes. 3 is the minimum for production.
 
 ## Key Facts

@@ -37,7 +37,17 @@ flowchart TD
 
 # 1. Core Concepts
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## Helm 2 vs Helm 3
+
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 13.1 Helm Concepts & Setup | Charts, releases, repos — what Helm is and how to install |
+| 13.2 Install, Upgrade, Rollback & Uninstall | Deploy and manage releases in your cluster |
+| 13.3 Chart Structure & Creating Charts | Build your own Helm chart from scratch |
 
 ---
 

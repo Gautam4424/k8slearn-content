@@ -33,6 +33,13 @@ flowchart TD
 
 # Taint Effects
 
+
+| Effect | Meaning |
+| --- | --- |
+| NoSchedule | New pods without toleration won't be scheduled here |
+| PreferNoSchedule | Scheduler tries to avoid, but not guaranteed |
+| NoExecute | New pods blocked + existing pods without toleration evicted |
+
 ---
 
 # Commands

@@ -12,3 +12,13 @@ tags: ["cka"]
 
 > **Chapter 3** of the CKA Learning Path — open a sub-topic below to start learning.
 
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 3.1 Pods | The smallest unit — create, inspect, debug |
+| 3.2 ReplicaSets | Maintain N replicas — self-healing |
+| 3.3 Deployments | Rolling updates, rollbacks, scaling |
+| 3.4 Services | ClusterIP, NodePort, LoadBalancer, ExternalName |
+| 3.5 Namespaces | Virtual clusters — isolation and multi-tenancy |
+| 3.6 Labels, Selectors & Annotations | How resources find each other |
+

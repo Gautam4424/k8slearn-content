@@ -47,6 +47,14 @@ spec:
         app: web
 ```
 
+
+| Field | Meaning |
+| --- | --- |
+| maxSkew | Max allowed difference in pod count between domains |
+| topologyKey | Group nodes by this label (zone / hostname) |
+| DoNotSchedule | Hard — block if constraint would be violated |
+| ScheduleAnyway | Soft — try but allow violations |
+
 ---
 
 # PriorityClass

@@ -411,6 +411,13 @@ spec:
 
 ## minAvailable vs maxUnavailable
 
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 11.1 Node Drain, Cordon, Uncordon & PDB | Safe node maintenance and disruption budgets |
+| 11.2 Cluster Upgrades (kubeadm) | Upgrade control plane and workers step by step |
+| 11.3 etcd Backup & Restore | Snapshot and recover all cluster state |
+
 ```bash
 # Check PDB status
 kubectl get pdb

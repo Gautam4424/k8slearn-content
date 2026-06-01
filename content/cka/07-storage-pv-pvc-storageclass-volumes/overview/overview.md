@@ -44,6 +44,9 @@ tags: ["cka"]
 
 ## Volume Types
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ```yaml
 # emptyDir — shared temp between containers in same pod
 apiVersion: v1
@@ -120,6 +123,9 @@ spec:
 ```
 
 ## Access Modes
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ---
 
@@ -281,11 +287,23 @@ kubectl delete pvc <name>
 
 > 📚 **Ref:** [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) | [StorageClass](https://kubernetes.io/docs/concepts/storage/storage-classes/) | [CSI](https://kubernetes-csi.github.io/docs/)
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 PV Lifecycle States
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ## 🔄 Dynamic Provisioning Flow
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 Access Modes Comparison
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ---
 
@@ -462,4 +480,12 @@ spec:
     requests:
       storage: 5Gi
 ```
+
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 7.1 Volumes & emptyDir | Temporary storage, shared between containers |
+| 7.2 PersistentVolumes & PersistentVolumeClaims | Durable storage — admin provisions, developer claims |
+| 7.3 StorageClass & Dynamic Provisioning | Auto-create disks on demand via CSI drivers |
+| 7.4 VolumeSnapshots | Point-in-time backups and restore |
 

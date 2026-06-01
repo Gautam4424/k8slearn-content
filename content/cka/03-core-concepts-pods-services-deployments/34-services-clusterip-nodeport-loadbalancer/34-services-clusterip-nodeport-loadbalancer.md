@@ -51,6 +51,14 @@ flowchart TD
     end
 ```
 
+
+| Type | Access | Use Case |
+| --- | --- | --- |
+| ClusterIP | Internal only | Microservice-to-microservice |
+| NodePort | External via NodeIP:port | Dev/testing, on-prem |
+| LoadBalancer | External via cloud LB | Production on cloud |
+| ExternalName | DNS CNAME alias | Access external service by internal name |
+
 ---
 
 # Service YAML

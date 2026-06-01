@@ -16,6 +16,9 @@ This guide is structured for **complete beginners** — follow the chapters in o
 
 ## How Long Will This Take?
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ---
 
 ## The Learning Path
@@ -43,6 +46,27 @@ flowchart TD
 ---
 
 ## Chapter Map
+
+
+| # | Chapter | What You Learn | Beginner Priority |
+| --- | --- | --- | --- |
+| 01 | 🗃️ Start Here | This roadmap | ⭐⭐⭐⭐⭐ |
+| 02 | ☸️ Architecture | How Kubernetes works internally | ⭐⭐⭐⭐⭐ |
+| 03 | 🧡 Core Concepts | Pods, Deployments, Services, Namespaces | ⭐⭐⭐⭐⭐ |
+| 04 | ⚙️ App Lifecycle | Rolling updates, ConfigMaps, Secrets, Probes | ⭐⭐⭐⭐⭐ |
+| 05 | 📅 Scheduling | Taints, Affinity, DaemonSets, Static Pods | ⭐⭐⭐⭐ |
+| 06 | 📈 Autoscaling | HPA, VPA, Cluster Autoscaler | ⭐⭐⭐ |
+| 07 | 💾 Storage | PV, PVC, StorageClass, Volumes | ⭐⭐⭐⭐ |
+| 08 | 🌐 Networking | Services, DNS, Ingress, Gateway API, CNI | ⭐⭐⭐⭐⭐ |
+| 09 | 🔒 Security | RBAC, TLS, PSA, NetworkPolicy, Secrets | ⭐⭐⭐⭐⭐ |
+| 10 | 📊 Monitoring | Metrics Server, kubectl top, Logs | ⭐⭐⭐⭐ |
+| 11 | 🔧 Maintenance | Drain, Upgrade, etcd Backup | ⭐⭐⭐⭐ |
+| 12 | 🏗️ Install | kubeadm, HA clusters, Design decisions | ⭐⭐⭐ |
+| 13 | 📦 Helm | Package manager for Kubernetes | ⭐⭐⭐⭐ |
+| 14 | 🔧 Kustomize | Environment-specific config overlays | ⭐⭐⭐ |
+| 15 | 🔍 Troubleshooting | Fix broken clusters, pods, nodes | ⭐⭐⭐⭐⭐ |
+| 16 | 📐 Advanced kubectl | JSONPath, diff, server-side apply | ⭐⭐⭐ |
+| 17 | 💡 Cheatsheet | Exam tips, shortcuts, quick reference | ⭐⭐⭐⭐⭐ |
 
 ---
 

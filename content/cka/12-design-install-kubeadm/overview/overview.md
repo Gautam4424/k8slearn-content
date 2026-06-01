@@ -39,6 +39,9 @@ tags: ["cka"]
 
 ## Node Sizing Guidelines
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## HA Control Plane Architecture
 
 ```javascript
@@ -182,13 +185,25 @@ kubectl get nodes
 
 > 📚 **Ref:** [kubeadm install](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) | [HA topology](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/ha-topology/)
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 HA Control Plane Architecture
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## 🔄 etcd Raft Quorum Table
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 > 📌 Always use an **odd number** of etcd nodes. 4 nodes has the same fault tolerance as 3 but more risk during split-brain scenarios.
 
 ## 🔄 Cluster Design Decision Matrix
+
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
 
 ---
 

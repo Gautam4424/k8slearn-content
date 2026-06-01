@@ -45,6 +45,9 @@ graph TD
 
 # 1. Kustomize vs Helm
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ---
 
 # 2. Installation & Setup
@@ -252,6 +255,13 @@ patches:
     name: myapp
     namespace: production
 ```
+
+
+| Lesson | What You'll Learn |
+| --- | --- |
+| 14.1 Base & Overlays | Structure your configs for dev, staging, prod |
+| 14.2 Patches, ConfigMapGenerator & SecretGenerator | Override specific fields without duplicating YAML |
+| 14.3 Kustomize Commands | Build, apply, diff, delete with kubectl -k |
 
 ---
 

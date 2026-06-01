@@ -35,6 +35,9 @@ flowchart TD
 
 # Namespaced vs Cluster-Wide
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ---
 
 # YAML Examples

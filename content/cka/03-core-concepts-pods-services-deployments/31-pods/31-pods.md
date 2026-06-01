@@ -108,3 +108,16 @@ kubectl delete pod nginx --force --grace-period=0   # immediate
 
 # Pod Status — What Do They Mean?
 
+
+| Status | Meaning |
+| --- | --- |
+| Pending | Pod accepted but not yet scheduled or containers not started |
+| Running | Pod scheduled, all containers created, at least one running |
+| Succeeded | All containers exited successfully (exit code 0) |
+| Failed | All containers exited, at least one with non-zero exit code |
+| CrashLoopBackOff | Container keeps crashing — exponential backoff between restarts |
+| ImagePullBackOff | Cannot pull the container image |
+| OOMKilled | Container exceeded memory limit |
+| Terminating | Pod is being deleted |
+| PodInitializing | Init containers running, main containers not started yet |
+

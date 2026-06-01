@@ -46,9 +46,28 @@ graph TD
 
 # Control Plane vs Worker Nodes
 
+
+> ⚠️ **Notice:** Table content could not be synced from Notion due to integration permission restrictions.
+
 ## Control Plane Components
 
+
+| Component | Role | Stateless? |
+| --- | --- | --- |
+| kube-apiserver | Front door — all communication goes through it | ✅ Yes — can scale horizontally |
+| etcd | Key-value store — stores ALL cluster state | ❌ No — has persistent state |
+| kube-scheduler | Picks which node a new pod runs on | ✅ Yes |
+| kube-controller-manager | Runs reconciliation loops | ✅ Yes |
+| cloud-controller-manager | Integrates with cloud provider APIs | ✅ Yes |
+
 ## Worker Node Components
+
+
+| Component | Role |
+| --- | --- |
+| kubelet | Node agent — starts/stops containers, reports status |
+| kube-proxy | Handles Service networking (iptables/IPVS rules) |
+| Container Runtime | Actually runs containers (containerd, CRI-O) |
 
 ---
 

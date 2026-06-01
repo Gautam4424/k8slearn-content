@@ -34,6 +34,15 @@ flowchart TD
 
 # Common Use Cases
 
+
+| Use Case | DaemonSet Example |
+| --- | --- |
+| Log collection | Fluentd, Filebeat, Logstash |
+| Node monitoring | node-exporter, Datadog agent |
+| Network plugin | Calico, Cilium, Flannel, Weave |
+| Storage driver | Ceph CSI node plugin |
+| Security scanning | Falco, Twistlock |
+
 ---
 
 # DaemonSet YAML
