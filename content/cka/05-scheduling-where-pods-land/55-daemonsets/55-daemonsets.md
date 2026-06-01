@@ -1,6 +1,13 @@
 ---
 title: "5.5 DaemonSets"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.5 DaemonSets"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
 ---
+
 # 5.5 DaemonSets
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

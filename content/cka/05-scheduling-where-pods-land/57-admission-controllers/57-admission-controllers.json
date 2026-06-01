@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.7 Admission Controllers",
   "difficulty": "intermediate",
   "content": "57-admission-controllers.md",
   "title": "5.7 Admission Controllers",
+  "order": 7,
   "questions": [
     {
       "type": "mcq",

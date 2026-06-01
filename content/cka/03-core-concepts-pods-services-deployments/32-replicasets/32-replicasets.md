@@ -1,6 +1,13 @@
 ---
 title: "3.2 ReplicaSets"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.2 ReplicaSets"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
 ---
+
 # 3.2 ReplicaSets
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

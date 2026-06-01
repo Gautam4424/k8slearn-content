@@ -1,6 +1,13 @@
 ---
 title: "3.5 Namespaces"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.5 Namespaces"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
 ---
+
 # 3.5 Namespaces
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

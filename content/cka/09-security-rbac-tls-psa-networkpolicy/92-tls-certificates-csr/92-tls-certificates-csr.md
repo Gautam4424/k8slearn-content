@@ -1,6 +1,13 @@
 ---
 title: "9.2 TLS Certificates & CSR"
+cert: ["cka"]
+roadmap: "09-security-rbac-tls-psa-networkpolicy"
+subtopic: "9.2 TLS Certificates & CSR"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
 ---
+
 # 9.2 TLS Certificates & CSR
 
 > Part of **09 🔒 Security** | CKA Chapter 9

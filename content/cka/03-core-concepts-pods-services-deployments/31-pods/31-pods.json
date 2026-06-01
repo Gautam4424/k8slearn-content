@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "03-core-concepts-pods-services-deployments",
   "subtopic": "3.1 Pods",
   "difficulty": "intermediate",
   "content": "31-pods.md",
   "title": "3.1 Pods",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

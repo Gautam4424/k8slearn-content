@@ -1,6 +1,13 @@
 ---
 title: "5.6 TopologySpreadConstraints & PriorityClass"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.6 TopologySpreadConstraints & PriorityClass"
+difficulty: "intermediate"
+order: 6
+tags: ["cka"]
 ---
+
 # 5.6 TopologySpreadConstraints & PriorityClass
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

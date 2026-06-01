@@ -1,6 +1,13 @@
 ---
 title: "4.6 Multi-Container Pod Patterns"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.6 Multi-Container Pod Patterns"
+difficulty: "intermediate"
+order: 6
+tags: ["cka"]
 ---
+
 # 4.6 Multi-Container Pod Patterns
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "01-start-here-cka-learning-roadmap"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 This guide is structured for **complete beginners** — follow the chapters in order. Each chapter builds on the previous one. Don't skip ahead!

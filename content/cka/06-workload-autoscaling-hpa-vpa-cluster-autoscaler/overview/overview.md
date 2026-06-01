@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "06-workload-autoscaling-hpa-vpa-cluster-autoscaler"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 > **Source:** CKA 2025/2026 Exam Curriculum | 📅 June 2026

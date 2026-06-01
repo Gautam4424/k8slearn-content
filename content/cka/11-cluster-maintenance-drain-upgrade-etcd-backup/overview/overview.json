@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "11-cluster-maintenance-drain-upgrade-etcd-backup",
   "subtopic": "Overview",
   "difficulty": "beginner",
   "content": "overview.md",
   "title": "Overview",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

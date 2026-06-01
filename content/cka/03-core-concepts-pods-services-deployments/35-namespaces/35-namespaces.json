@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "03-core-concepts-pods-services-deployments",
   "subtopic": "3.5 Namespaces",
   "difficulty": "intermediate",
   "content": "35-namespaces.md",
   "title": "3.5 Namespaces",
+  "order": 5,
   "questions": [
     {
       "type": "mcq",

@@ -1,6 +1,13 @@
 ---
 title: "5.3 Node Affinity & Pod Affinity"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.3 Node Affinity & Pod Affinity"
+difficulty: "intermediate"
+order: 3
+tags: ["cka"]
 ---
+
 # 5.3 Node Affinity & Pod Affinity
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

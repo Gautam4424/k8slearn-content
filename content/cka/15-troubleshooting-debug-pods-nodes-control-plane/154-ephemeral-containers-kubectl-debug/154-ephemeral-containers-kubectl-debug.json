@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "15-troubleshooting-debug-pods-nodes-control-plane",
   "subtopic": "15.4 Ephemeral Containers & kubectl debug",
   "difficulty": "intermediate",
   "content": "154-ephemeral-containers-kubectl-debug.md",
   "title": "15.4 Ephemeral Containers & kubectl debug",
+  "order": 4,
   "questions": [
     {
       "type": "mcq",

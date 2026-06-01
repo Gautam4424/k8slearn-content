@@ -1,6 +1,13 @@
 ---
 title: "2.3 kube-scheduler & controller-manager"
+cert: ["cka"]
+roadmap: "02-kubernetes-architecture-complete-reference"
+subtopic: "2.3 kube-scheduler & controller-manager"
+difficulty: "intermediate"
+order: 3
+tags: ["cka"]
 ---
+
 # 2.3 kube-scheduler & controller-manager
 
 > Part of **02 ☸️ Kubernetes Architecture** | CKA Chapter 2

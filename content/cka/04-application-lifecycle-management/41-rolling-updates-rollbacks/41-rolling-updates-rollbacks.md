@@ -1,6 +1,13 @@
 ---
 title: "4.1 Rolling Updates & Rollbacks"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.1 Rolling Updates & Rollbacks"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 4.1 Rolling Updates & Rollbacks
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

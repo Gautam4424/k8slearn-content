@@ -1,6 +1,13 @@
 ---
 title: "2.5 Full Pod Lifecycle — Request Flow"
+cert: ["cka"]
+roadmap: "02-kubernetes-architecture-complete-reference"
+subtopic: "2.5 Full Pod Lifecycle — Request Flow"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
 ---
+
 # 2.5 Full Pod Lifecycle — Request Flow
 
 > Part of **02 ☸️ Kubernetes Architecture** | CKA Chapter 2

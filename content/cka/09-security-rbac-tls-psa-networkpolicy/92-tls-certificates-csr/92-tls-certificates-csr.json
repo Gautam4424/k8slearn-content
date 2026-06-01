@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "09-security-rbac-tls-psa-networkpolicy",
   "subtopic": "9.2 TLS Certificates & CSR",
   "difficulty": "intermediate",
   "content": "92-tls-certificates-csr.md",
   "title": "9.2 TLS Certificates & CSR",
+  "order": 2,
   "questions": [
     {
       "type": "mcq",

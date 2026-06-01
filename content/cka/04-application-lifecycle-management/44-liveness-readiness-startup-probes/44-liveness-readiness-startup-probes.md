@@ -1,6 +1,13 @@
 ---
 title: "4.4 Liveness, Readiness & Startup Probes"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.4 Liveness, Readiness & Startup Probes"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 4.4 Liveness, Readiness & Startup Probes
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

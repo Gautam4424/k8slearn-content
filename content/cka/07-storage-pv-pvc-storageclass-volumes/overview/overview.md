@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "07-storage-pv-pvc-storageclass-volumes"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 ---

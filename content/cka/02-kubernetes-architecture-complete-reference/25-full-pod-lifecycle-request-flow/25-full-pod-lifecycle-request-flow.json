@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "02-kubernetes-architecture-complete-reference",
   "subtopic": "2.5 Full Pod Lifecycle — Request Flow",
   "difficulty": "intermediate",
   "content": "25-full-pod-lifecycle-request-flow.md",
   "title": "2.5 Full Pod Lifecycle — Request Flow",
+  "order": 5,
   "questions": [
     {
       "type": "mcq",

@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "02-kubernetes-architecture-complete-reference",
   "subtopic": "2.1 Cluster Components Overview",
   "difficulty": "intermediate",
   "content": "21-cluster-components-overview.md",
   "title": "2.1 Cluster Components Overview",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

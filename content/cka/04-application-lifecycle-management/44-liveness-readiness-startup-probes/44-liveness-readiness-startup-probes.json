@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "04-application-lifecycle-management",
   "subtopic": "4.4 Liveness, Readiness & Startup Probes",
   "difficulty": "intermediate",
   "content": "44-liveness-readiness-startup-probes.md",
   "title": "4.4 Liveness, Readiness & Startup Probes",
+  "order": 4,
   "questions": [
     {
       "type": "mcq",

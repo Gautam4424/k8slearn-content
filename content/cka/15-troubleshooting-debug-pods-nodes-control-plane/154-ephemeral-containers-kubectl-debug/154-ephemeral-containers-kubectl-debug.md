@@ -1,6 +1,13 @@
 ---
 title: "15.4 Ephemeral Containers & kubectl debug"
+cert: ["cka"]
+roadmap: "15-troubleshooting-debug-pods-nodes-control-plane"
+subtopic: "15.4 Ephemeral Containers & kubectl debug"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 15.4 Ephemeral Containers & kubectl debug
 
 > Part of **15 🔍 Troubleshooting** | CKA Chapter 15

@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "04-application-lifecycle-management",
   "subtopic": "4.5 Init Containers",
   "difficulty": "intermediate",
   "content": "45-init-containers.md",
   "title": "4.5 Init Containers",
+  "order": 5,
   "questions": [
     {
       "type": "mcq",

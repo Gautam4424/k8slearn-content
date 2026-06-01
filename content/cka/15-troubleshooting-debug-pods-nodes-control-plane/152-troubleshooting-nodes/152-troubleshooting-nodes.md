@@ -1,6 +1,13 @@
 ---
 title: "15.2 Troubleshooting Nodes"
+cert: ["cka"]
+roadmap: "15-troubleshooting-debug-pods-nodes-control-plane"
+subtopic: "15.2 Troubleshooting Nodes"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
 ---
+
 # 15.2 Troubleshooting Nodes
 
 > Part of **15 🔍 Troubleshooting** | CKA Chapter 15

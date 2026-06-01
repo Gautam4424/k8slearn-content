@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.3 Node Affinity & Pod Affinity",
   "difficulty": "intermediate",
   "content": "53-node-affinity-pod-affinity.md",
   "title": "5.3 Node Affinity & Pod Affinity",
+  "order": 3,
   "questions": [
     {
       "type": "mcq",

@@ -1,6 +1,13 @@
 ---
 title: "5.7 Admission Controllers"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.7 Admission Controllers"
+difficulty: "intermediate"
+order: 7
+tags: ["cka"]
 ---
+
 # 5.7 Admission Controllers
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

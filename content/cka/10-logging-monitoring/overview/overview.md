@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "10-logging-monitoring"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 ---

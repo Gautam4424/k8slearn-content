@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.4 Resource Requests, Limits & QoS",
   "difficulty": "intermediate",
   "content": "54-resource-requests-limits-qos.md",
   "title": "5.4 Resource Requests, Limits & QoS",
+  "order": 4,
   "questions": [
     {
       "type": "mcq",

@@ -1,6 +1,13 @@
 ---
 title: "2.1 Cluster Components Overview"
+cert: ["cka"]
+roadmap: "02-kubernetes-architecture-complete-reference"
+subtopic: "2.1 Cluster Components Overview"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 2.1 Cluster Components Overview
 
 > Part of **02 ☸️ Kubernetes Architecture** | CKA Chapter 2

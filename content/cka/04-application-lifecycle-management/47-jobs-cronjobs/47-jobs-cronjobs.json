@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "04-application-lifecycle-management",
   "subtopic": "4.7 Jobs & CronJobs",
   "difficulty": "intermediate",
   "content": "47-jobs-cronjobs.md",
   "title": "4.7 Jobs & CronJobs",
+  "order": 7,
   "questions": [
     {
       "type": "mcq",

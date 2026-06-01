@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "04-application-lifecycle-management",
   "subtopic": "4.1 Rolling Updates & Rollbacks",
   "difficulty": "intermediate",
   "content": "41-rolling-updates-rollbacks.md",
   "title": "4.1 Rolling Updates & Rollbacks",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

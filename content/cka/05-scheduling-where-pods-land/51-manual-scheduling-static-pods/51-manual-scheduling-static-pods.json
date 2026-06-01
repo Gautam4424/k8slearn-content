@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.1 Manual Scheduling & Static Pods",
   "difficulty": "intermediate",
   "content": "51-manual-scheduling-static-pods.md",
   "title": "5.1 Manual Scheduling & Static Pods",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

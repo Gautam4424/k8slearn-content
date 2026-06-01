@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.5 DaemonSets",
   "difficulty": "intermediate",
   "content": "55-daemonsets.md",
   "title": "5.5 DaemonSets",
+  "order": 5,
   "questions": [
     {
       "type": "mcq",

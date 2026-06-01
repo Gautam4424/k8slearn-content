@@ -1,6 +1,13 @@
 ---
 title: "4.7 Jobs & CronJobs"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.7 Jobs & CronJobs"
+difficulty: "intermediate"
+order: 7
+tags: ["cka"]
 ---
+
 # 4.7 Jobs & CronJobs
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

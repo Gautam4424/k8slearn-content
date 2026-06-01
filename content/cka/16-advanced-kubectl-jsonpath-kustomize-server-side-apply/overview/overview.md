@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "16-advanced-kubectl-jsonpath-kustomize-server-side-apply"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 ---

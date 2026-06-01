@@ -1,6 +1,13 @@
 ---
 title: "3.3 Deployments"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.3 Deployments"
+difficulty: "intermediate"
+order: 3
+tags: ["cka"]
 ---
+
 # 3.3 Deployments
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

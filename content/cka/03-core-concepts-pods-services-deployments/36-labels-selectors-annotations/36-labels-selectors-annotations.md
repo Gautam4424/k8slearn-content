@@ -1,6 +1,13 @@
 ---
 title: "3.6 Labels, Selectors & Annotations"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.6 Labels, Selectors & Annotations"
+difficulty: "intermediate"
+order: 6
+tags: ["cka"]
 ---
+
 # 3.6 Labels, Selectors & Annotations
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "13-helm-kubernetes-package-manager",
   "subtopic": "Overview",
   "difficulty": "beginner",
   "content": "overview.md",
   "title": "Overview",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

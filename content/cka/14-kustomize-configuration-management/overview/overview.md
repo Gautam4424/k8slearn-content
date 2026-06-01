@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "14-kustomize-configuration-management"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 > **Source:** KodeKloud CKA Course — Kustomize Section (2025 Updates) | 📅 June 2026

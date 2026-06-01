@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "09-security-rbac-tls-psa-networkpolicy",
   "subtopic": "9.3 RBAC — Roles & RoleBindings",
   "difficulty": "intermediate",
   "content": "93-rbac-roles-rolebindings.md",
   "title": "9.3 RBAC — Roles & RoleBindings",
+  "order": 3,
   "questions": [
     {
       "type": "mcq",

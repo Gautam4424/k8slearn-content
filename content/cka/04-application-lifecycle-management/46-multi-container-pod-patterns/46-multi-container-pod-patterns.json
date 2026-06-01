@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "04-application-lifecycle-management",
   "subtopic": "4.6 Multi-Container Pod Patterns",
   "difficulty": "intermediate",
   "content": "46-multi-container-pod-patterns.md",
   "title": "4.6 Multi-Container Pod Patterns",
+  "order": 6,
   "questions": [
     {
       "type": "mcq",

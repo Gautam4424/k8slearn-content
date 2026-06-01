@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "09-security-rbac-tls-psa-networkpolicy",
   "subtopic": "9.4 SecurityContext & Pod Security Admission",
   "difficulty": "intermediate",
   "content": "94-securitycontext-pod-security-admission.md",
   "title": "9.4 SecurityContext & Pod Security Admission",
+  "order": 4,
   "questions": [
     {
       "type": "mcq",

@@ -1,6 +1,13 @@
 ---
 title: "Overview"
+cert: ["cka"]
+roadmap: "13-helm-kubernetes-package-manager"
+subtopic: "Overview"
+difficulty: "beginner"
+order: 1
+tags: ["cka"]
 ---
+
 # Overview
 
 > **Source:** KodeKloud CKA Course — Helm Section (2025 Updates) | 📅 June 2026

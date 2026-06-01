@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "02-kubernetes-architecture-complete-reference",
   "subtopic": "Overview",
   "difficulty": "beginner",
   "content": "overview.md",
   "title": "Overview",
+  "order": 1,
   "questions": [
     {
       "type": "mcq",

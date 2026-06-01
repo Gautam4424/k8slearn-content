@@ -1,6 +1,13 @@
 ---
 title: "9.1 Authentication & kubeconfig"
+cert: ["cka"]
+roadmap: "09-security-rbac-tls-psa-networkpolicy"
+subtopic: "9.1 Authentication & kubeconfig"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 9.1 Authentication & kubeconfig
 
 > Part of **09 🔒 Security** | CKA Chapter 9

@@ -1,6 +1,13 @@
 ---
 title: "3.4 Services — ClusterIP, NodePort, LoadBalancer"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.4 Services — ClusterIP, NodePort, LoadBalancer"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 3.4 Services — ClusterIP, NodePort, LoadBalancer
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

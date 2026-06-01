@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "03-core-concepts-pods-services-deployments",
   "subtopic": "3.2 ReplicaSets",
   "difficulty": "intermediate",
   "content": "32-replicasets.md",
   "title": "3.2 ReplicaSets",
+  "order": 2,
   "questions": [
     {
       "type": "mcq",

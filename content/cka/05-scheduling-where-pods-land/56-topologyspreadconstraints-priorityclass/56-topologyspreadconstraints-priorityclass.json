@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "05-scheduling-where-pods-land",
   "subtopic": "5.6 TopologySpreadConstraints & PriorityClass",
   "difficulty": "intermediate",
   "content": "56-topologyspreadconstraints-priorityclass.md",
   "title": "5.6 TopologySpreadConstraints & PriorityClass",
+  "order": 6,
   "questions": [
     {
       "type": "mcq",

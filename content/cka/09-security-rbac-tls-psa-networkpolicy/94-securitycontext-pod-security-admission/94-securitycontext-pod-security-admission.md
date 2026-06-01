@@ -1,6 +1,13 @@
 ---
 title: "9.4 SecurityContext & Pod Security Admission"
+cert: ["cka"]
+roadmap: "09-security-rbac-tls-psa-networkpolicy"
+subtopic: "9.4 SecurityContext & Pod Security Admission"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 9.4 SecurityContext & Pod Security Admission
 
 > Part of **09 🔒 Security** | CKA Chapter 9

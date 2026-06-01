@@ -1,6 +1,13 @@
 ---
 title: "15.1 Troubleshooting Pods & Applications"
+cert: ["cka"]
+roadmap: "15-troubleshooting-debug-pods-nodes-control-plane"
+subtopic: "15.1 Troubleshooting Pods & Applications"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 15.1 Troubleshooting Pods & Applications
 
 > Part of **15 🔍 Troubleshooting** | CKA Chapter 15

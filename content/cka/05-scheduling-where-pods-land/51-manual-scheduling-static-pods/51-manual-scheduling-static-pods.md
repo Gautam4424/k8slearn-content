@@ -1,6 +1,13 @@
 ---
 title: "5.1 Manual Scheduling & Static Pods"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.1 Manual Scheduling & Static Pods"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 5.1 Manual Scheduling & Static Pods
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

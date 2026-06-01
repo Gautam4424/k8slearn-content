@@ -1,6 +1,13 @@
 ---
 title: "5.2 Taints & Tolerations"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.2 Taints & Tolerations"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
 ---
+
 # 5.2 Taints & Tolerations
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

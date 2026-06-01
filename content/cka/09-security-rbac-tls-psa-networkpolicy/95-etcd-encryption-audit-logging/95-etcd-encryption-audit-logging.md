@@ -1,6 +1,13 @@
 ---
 title: "9.5 etcd Encryption & Audit Logging"
+cert: ["cka"]
+roadmap: "09-security-rbac-tls-psa-networkpolicy"
+subtopic: "9.5 etcd Encryption & Audit Logging"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
 ---
+
 # 9.5 etcd Encryption & Audit Logging
 
 > Part of **09 🔒 Security** | CKA Chapter 9

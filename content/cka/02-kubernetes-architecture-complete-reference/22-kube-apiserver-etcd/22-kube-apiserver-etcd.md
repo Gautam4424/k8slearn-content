@@ -1,6 +1,13 @@
 ---
 title: "2.2 kube-apiserver & etcd"
+cert: ["cka"]
+roadmap: "02-kubernetes-architecture-complete-reference"
+subtopic: "2.2 kube-apiserver & etcd"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
 ---
+
 # 2.2 kube-apiserver & etcd
 
 > Part of **02 ☸️ Kubernetes Architecture** | CKA Chapter 2

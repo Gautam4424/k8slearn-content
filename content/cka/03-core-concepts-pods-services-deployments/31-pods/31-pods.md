@@ -1,6 +1,13 @@
 ---
 title: "3.1 Pods"
+cert: ["cka"]
+roadmap: "03-core-concepts-pods-services-deployments"
+subtopic: "3.1 Pods"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
 ---
+
 # 3.1 Pods
 
 > Part of **03 🧠 Core Concepts** | CKA Chapter 3

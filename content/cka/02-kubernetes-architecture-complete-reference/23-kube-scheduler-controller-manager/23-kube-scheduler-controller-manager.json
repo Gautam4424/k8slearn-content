@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "02-kubernetes-architecture-complete-reference",
   "subtopic": "2.3 kube-scheduler & controller-manager",
   "difficulty": "intermediate",
   "content": "23-kube-scheduler-controller-manager.md",
   "title": "2.3 kube-scheduler & controller-manager",
+  "order": 3,
   "questions": [
     {
       "type": "mcq",

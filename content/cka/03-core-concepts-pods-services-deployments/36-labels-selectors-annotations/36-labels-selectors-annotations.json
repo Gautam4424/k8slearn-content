@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "03-core-concepts-pods-services-deployments",
   "subtopic": "3.6 Labels, Selectors & Annotations",
   "difficulty": "intermediate",
   "content": "36-labels-selectors-annotations.md",
   "title": "3.6 Labels, Selectors & Annotations",
+  "order": 6,
   "questions": [
     {
       "type": "mcq",

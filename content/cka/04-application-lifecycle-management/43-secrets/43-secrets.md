@@ -1,6 +1,13 @@
 ---
 title: "4.3 Secrets"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.3 Secrets"
+difficulty: "intermediate"
+order: 3
+tags: ["cka"]
 ---
+
 # 4.3 Secrets
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

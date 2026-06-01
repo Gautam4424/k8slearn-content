@@ -1,6 +1,13 @@
 ---
 title: "9.3 RBAC — Roles & RoleBindings"
+cert: ["cka"]
+roadmap: "09-security-rbac-tls-psa-networkpolicy"
+subtopic: "9.3 RBAC — Roles & RoleBindings"
+difficulty: "intermediate"
+order: 3
+tags: ["cka"]
 ---
+
 # 9.3 RBAC — Roles & RoleBindings
 
 > Part of **09 🔒 Security** | CKA Chapter 9

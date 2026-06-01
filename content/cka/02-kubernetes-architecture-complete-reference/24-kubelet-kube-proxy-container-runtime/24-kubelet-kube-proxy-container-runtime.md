@@ -1,6 +1,13 @@
 ---
 title: "2.4 kubelet, kube-proxy & Container Runtime"
+cert: ["cka"]
+roadmap: "02-kubernetes-architecture-complete-reference"
+subtopic: "2.4 kubelet, kube-proxy & Container Runtime"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 2.4 kubelet, kube-proxy & Container Runtime
 
 > Part of **02 ☸️ Kubernetes Architecture** | CKA Chapter 2

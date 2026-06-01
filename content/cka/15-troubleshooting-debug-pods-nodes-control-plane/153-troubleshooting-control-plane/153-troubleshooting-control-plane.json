@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "15-troubleshooting-debug-pods-nodes-control-plane",
   "subtopic": "15.3 Troubleshooting Control Plane",
   "difficulty": "intermediate",
   "content": "153-troubleshooting-control-plane.md",
   "title": "15.3 Troubleshooting Control Plane",
+  "order": 3,
   "questions": [
     {
       "type": "mcq",

@@ -1,6 +1,13 @@
 ---
 title: "4.5 Init Containers"
+cert: ["cka"]
+roadmap: "04-application-lifecycle-management"
+subtopic: "4.5 Init Containers"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
 ---
+
 # 4.5 Init Containers
 
 > Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4

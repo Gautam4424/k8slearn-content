@@ -1,6 +1,13 @@
 ---
 title: "5.4 Resource Requests, Limits & QoS"
+cert: ["cka"]
+roadmap: "05-scheduling-where-pods-land"
+subtopic: "5.4 Resource Requests, Limits & QoS"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
 ---
+
 # 5.4 Resource Requests, Limits & QoS
 
 > Part of **05 📅 Scheduling** | CKA Chapter 5

@@ -1,10 +1,13 @@
 {
-  "cert": "cka",
-  "roadmap": "cka",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "03-core-concepts-pods-services-deployments",
   "subtopic": "3.4 Services — ClusterIP, NodePort, LoadBalancer",
   "difficulty": "intermediate",
   "content": "34-services-clusterip-nodeport-loadbalancer.md",
   "title": "3.4 Services — ClusterIP, NodePort, LoadBalancer",
+  "order": 4,
   "questions": [
     {
       "type": "mcq",
