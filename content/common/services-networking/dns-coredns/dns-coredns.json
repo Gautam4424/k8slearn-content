@@ -1,0 +1,46 @@
+{
+  "title": "DNS in Kubernetes (CoreDNS)",
+  "cert": ["cka", "ckad"],
+  "roadmap": "services-networking",
+  "subtopic": "DNS in Kubernetes (CoreDNS)",
+  "difficulty": "intermediate",
+  "content": "dns-coredns.md",
+  "order": {
+    "cka": 3,
+    "ckad": 3
+  },
+  "tags": ["dns", "coredns", "resolv", "nslookup", "cluster-dns", "service-discovery"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A pod in the `production` namespace needs to resolve a Service named `cache-svc` in the `backend` namespace by its short name. Which fully qualified domain name (FQDN) will CoreDNS ultimately resolve?",
+      "options": [
+        "cache-svc.svc.cluster.local",
+        "cache-svc.production.svc.cluster.local",
+        "cache-svc.backend.svc.cluster.local",
+        "cache-svc.cluster.local"
+      ],
+      "answer": 2,
+      "explanation": "Kubernetes Service DNS records follow the format <svc>.<namespace>.svc.cluster.local. To reach a service in a different namespace, the full FQDN including the target namespace must be used: cache-svc.backend.svc.cluster.local."
+    },
+    {
+      "type": "mcq",
+      "q": "Which Kubernetes component provides cluster-internal DNS resolution and resolves Service names to their ClusterIP addresses?",
+      "options": [
+        "kube-proxy",
+        "kubelet",
+        "CoreDNS",
+        "etcd"
+      ],
+      "answer": 2,
+      "explanation": "CoreDNS runs as a Deployment in the kube-system namespace and acts as the cluster's internal DNS server. It watches the API server for Service resources and creates DNS A records mapping Service names to their ClusterIP addresses."
+    },
+    {
+      "type": "true-false",
+      "q": "A pod's /etc/resolv.conf is automatically configured by Kubernetes to point to the CoreDNS service IP as the nameserver.",
+      "options": ["True", "False"],
+      "answer": 0,
+      "explanation": "True. When a pod starts, kubelet automatically injects /etc/resolv.conf into the pod with the CoreDNS ClusterIP (typically 10.96.0.10) as the nameserver and appropriate search domains (e.g. default.svc.cluster.local)."
+    }
+  ]
+}

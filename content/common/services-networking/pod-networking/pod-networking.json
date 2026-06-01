@@ -1,0 +1,47 @@
+{
+  "title": "Pod Networking & CNI",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "services-networking",
+  "subtopic": "Pod Networking & CNI",
+  "difficulty": "intermediate",
+  "content": "pod-networking.md",
+  "order": {
+    "cka": 1,
+    "ckad": 1,
+    "cks": 2
+  },
+  "tags": ["cni", "pod-networking", "calico", "flannel", "cilium", "veth", "ipam"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Which fundamental Kubernetes networking requirement is TRUE about pod-to-pod communication?",
+      "options": [
+        "Pods on different nodes must use NAT to communicate with each other.",
+        "Every pod gets a unique IP and can communicate with any other pod directly without NAT.",
+        "Pods can only communicate with pods on the same node without NAT.",
+        "Pod-to-pod communication requires a Service resource to route traffic."
+      ],
+      "answer": 1,
+      "explanation": "Kubernetes mandates that every pod has a unique cluster-wide IP and that all pods can reach all other pods directly without NAT — regardless of which node they are on. This is the fundamental CNI contract."
+    },
+    {
+      "type": "mcq",
+      "q": "When a new pod is created, which component is responsible for calling the CNI plugin to set up pod networking?",
+      "options": [
+        "kube-scheduler",
+        "kube-proxy",
+        "kubelet",
+        "kube-apiserver"
+      ],
+      "answer": 2,
+      "explanation": "kubelet is the node agent that manages the pod lifecycle. After the pod is scheduled and created on a node, kubelet calls the configured CNI plugin to set up the pod's network namespace, veth pair, IP allocation, and routing."
+    },
+    {
+      "type": "true-false",
+      "q": "Flannel provides richer NetworkPolicy enforcement capabilities compared to Cilium.",
+      "options": ["True", "False"],
+      "answer": 1,
+      "explanation": "False. Flannel is a simple overlay network (VXLAN-based) with limited NetworkPolicy support. Cilium uses eBPF technology and provides advanced L3/L4/L7-aware network policies, observability, and higher performance."
+    }
+  ]
+}

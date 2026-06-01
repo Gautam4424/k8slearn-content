@@ -1,18 +1,15 @@
 {
-  "title": "Ingress Controllers",
+  "title": "Ingress",
   "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "services-networking"
-  },
-  "subtopic": "Ingress Controllers",
+  "roadmap": "services-networking",
+  "subtopic": "Ingress",
   "difficulty": "intermediate",
   "content": "ingress.md",
   "order": {
-    "cka": 15,
-    "ckad": 3
+    "cka": 4,
+    "ckad": 4
   },
-  "tags": ["ingress", "tls", "routing", "nginx"],
+  "tags": ["ingress", "ingress-controller", "nginx", "traefik", "tls", "routing", "path-routing", "host-routing"],
   "questions": [
     {
       "type": "mcq",
@@ -21,10 +18,34 @@
         "To provision persistent storage volumes",
         "To act as a reverse proxy and load balancer routing external HTTP/HTTPS traffic to internal Services",
         "To schedule pods onto nodes",
-        "To manage the deployment rolling updates"
+        "To manage rolling deployment updates"
       ],
       "answer": 1,
-      "explanation": "Ingress is a collection of routing rules that require an Ingress Controller (like NGINX or Traefik) running in the cluster to act as the actual load balancer/reverse proxy to route external requests to internal Services."
+      "explanation": "An Ingress Controller (e.g. NGINX, Traefik) is a pod running in the cluster that watches Ingress resources and acts as the actual L7 reverse proxy, routing external HTTP/HTTPS requests to the correct internal Services based on host and path rules."
+    },
+    {
+      "type": "mcq",
+      "q": "An Ingress resource is created with a TLS section referencing `secretName: myapp-tls-secret`. What type of Kubernetes Secret must exist with that name?",
+      "options": [
+        "A Secret of type `Opaque` containing a base64 token",
+        "A Secret of type `kubernetes.io/tls` containing `tls.crt` and `tls.key` data",
+        "A Secret of type `kubernetes.io/dockerconfigjson`",
+        "A Secret of type `kubernetes.io/service-account-token`"
+      ],
+      "answer": 1,
+      "explanation": "TLS Ingress requires a Secret of type `kubernetes.io/tls` with two keys: `tls.crt` (the certificate) and `tls.key` (the private key). This can be created with: kubectl create secret tls myapp-tls-secret --cert=tls.crt --key=tls.key"
+    },
+    {
+      "type": "mcq",
+      "q": "What is the difference between path-based and host-based Ingress routing?",
+      "options": [
+        "Path-based routing uses the URL path (/api, /web) to select a backend; host-based routing uses the HTTP Host header (api.myapp.com, web.myapp.com) to select a backend.",
+        "Host-based routing uses iptables rules; path-based routing uses DNS records.",
+        "Path-based routing requires TLS; host-based routing works only over HTTP.",
+        "They are functionally identical — only the annotation syntax differs."
+      ],
+      "answer": 0,
+      "explanation": "Path-based routing inspects the URL path of incoming requests to route to different backends (e.g. /api → api-service). Host-based routing inspects the HTTP Host header to route requests for different domains (e.g. api.myapp.com vs web.myapp.com) to different backends. Both can be combined in a single Ingress resource."
     }
   ]
 }

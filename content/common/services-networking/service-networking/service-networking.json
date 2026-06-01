@@ -1,0 +1,51 @@
+{
+  "title": "Service Networking",
+  "cert": ["cka", "ckad"],
+  "roadmap": "services-networking",
+  "subtopic": "Service Networking",
+  "difficulty": "intermediate",
+  "content": "service-networking.md",
+  "order": {
+    "cka": 2,
+    "ckad": 2
+  },
+  "tags": ["service", "clusterip", "nodeport", "loadbalancer", "kube-proxy", "iptables", "ipvs", "endpoints"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A Service of type ClusterIP is created for a Deployment. Which component on each node is responsible for routing traffic from the ClusterIP to the actual backend pod IPs?",
+      "options": [
+        "kubelet",
+        "kube-scheduler",
+        "kube-proxy",
+        "CoreDNS"
+      ],
+      "answer": 2,
+      "explanation": "kube-proxy runs as a DaemonSet on every node and watches the API server for Service and Endpoints changes. It then programs iptables or IPVS rules to DNAT traffic destined for the ClusterIP to one of the backend pod IPs."
+    },
+    {
+      "type": "mcq",
+      "q": "Which Service type allows external traffic to reach a pod by accessing any node's IP on a statically assigned port in the 30000–32767 range?",
+      "options": [
+        "ClusterIP",
+        "NodePort",
+        "LoadBalancer",
+        "ExternalName"
+      ],
+      "answer": 1,
+      "explanation": "NodePort exposes the Service on a static port (default range 30000–32767) on every node's IP address, allowing external clients to reach the Service through any node IP and that port."
+    },
+    {
+      "type": "mcq",
+      "q": "What does the `kubectl get endpoints api-service` command show?",
+      "options": [
+        "The virtual ClusterIP of the service",
+        "The node IPs that can accept service traffic",
+        "The actual IP:port combinations of pods currently backing the service",
+        "The DNS name of the service"
+      ],
+      "answer": 2,
+      "explanation": "Endpoints (or EndpointSlices) hold the real IP:port pairs of pods that match the Service's selector and are Ready. This is what kube-proxy uses to set up its forwarding rules."
+    }
+  ]
+}
