@@ -1,0 +1,40 @@
+{
+  "title": "Exam Environment Setup",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "exam-tips",
+  "subtopic": "Exam Environment Setup",
+  "difficulty": "beginner",
+  "content": "environment-setup.md",
+  "order": {
+    "cka": 1,
+    "ckad": 1,
+    "cks": 1
+  },
+  "tags": ["cka", "exam", "setup", "alias", "autocomplete", "vim"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "What is the primary benefit of exporting the variable `export do='--dry-run=client -o yaml'` during an exam?",
+      "options": [
+        "It forces kubectl to skip validation checks.",
+        "It allows you to quickly generate base YAML manifests without memorising the syntax.",
+        "It automatically applies the YAML to the cluster.",
+        "It tells the API server to perform a dry run."
+      ],
+      "answer": 1,
+      "explanation": "By appending `$do` to an imperative command (e.g. `kubectl run pod --image=nginx $do > pod.yaml`), you instantly generate a perfectly formatted YAML file without actually creating the resource, allowing you to edit it for complex questions."
+    },
+    {
+      "type": "mcq",
+      "q": "Why is it important to use `--force --grace-period=0` when deleting pods in an exam?",
+      "options": [
+        "It ensures the pod's data is backed up before deletion.",
+        "It deletes the pod immediately without waiting for the default 30-second graceful termination, saving valuable exam time.",
+        "It bypasses finalizers that might block deletion.",
+        "It prevents the Deployment from recreating the pod."
+      ],
+      "answer": 1,
+      "explanation": "Time management is critical in Kubernetes exams. By default, pods take 30 seconds to terminate gracefully. Using `--force --grace-period=0` kills the pod immediately, allowing you to recreate it without waiting."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Common Exam Scenarios & Solutions",
+  "cert": ["cka", "ckad"],
+  "roadmap": "exam-tips",
+  "subtopic": "Common Exam Scenarios & Solutions",
+  "difficulty": "advanced",
+  "content": "exam-scenarios.md",
+  "order": {
+    "cka": 4,
+    "ckad": 3
+  },
+  "tags": ["scenarios", "troubleshooting", "upgrade", "kubeadm", "etcd-backup", "non-root"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Before upgrading the Kubernetes version on a worker node with `kubeadm upgrade node`, what action MUST be performed on the control plane?",
+      "options": [
+        "kubectl delete node <node-name>",
+        "kubectl cordon <node-name>",
+        "kubectl drain <node-name> --ignore-daemonsets --force",
+        "kubeadm token create"
+      ],
+      "answer": 2,
+      "explanation": "Before upgrading a worker node, you must safely evict all running workloads by 'draining' the node. `--ignore-daemonsets` is usually required because DaemonSet pods cannot be evicted by the standard eviction API."
+    },
+    {
+      "type": "mcq",
+      "q": "You try to use `kubectl edit pod` to change the `env` variables of a running Pod, but the API server rejects the change. Why?",
+      "options": [
+        "You do not have cluster-admin privileges.",
+        "The Pod is running in the kube-system namespace.",
+        "Only a few fields (like image, tolerations, activeDeadlineSeconds) can be edited on a live Pod. Other changes require recreating the Pod.",
+        "You must drain the node before editing the Pod."
+      ],
+      "answer": 2,
+      "explanation": "Pods are mostly immutable once created. If you need to change fields like environment variables, volumes, or commands, you must extract the YAML (`kubectl get pod -o yaml`), edit it, delete the old pod, and apply the new YAML."
+    }
+  ]
+}

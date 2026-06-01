@@ -1,0 +1,40 @@
+{
+  "title": "Master Quick-Reference Card",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "exam-tips",
+  "subtopic": "Master Quick-Reference Card",
+  "difficulty": "intermediate",
+  "content": "quick-reference.md",
+  "order": {
+    "cka": 5,
+    "ckad": 4,
+    "cks": 3
+  },
+  "tags": ["reference", "verbs", "api-resources", "kubectl", "cheat-sheet"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "When writing a Role manifest to grant permissions to manage Deployments, what should you set the `apiGroups` field to?",
+      "options": [
+        "[\"extensions\"]",
+        "[\"apps\"]",
+        "[\"core\"]",
+        "[\"\"]"
+      ],
+      "answer": 1,
+      "explanation": "Deployments, ReplicaSets, DaemonSets, and StatefulSets all belong to the `apps` API group (e.g., `apps/v1`). Therefore, in the RBAC Role, `apiGroups` must be `[\"apps\"]`."
+    },
+    {
+      "type": "mcq",
+      "q": "You completely forget the API group for NetworkPolicies during an exam. What command can you run to find it?",
+      "options": [
+        "kubectl get api-groups",
+        "kubectl explain networkpolicy --group",
+        "kubectl api-resources",
+        "kubectl cluster-info dump"
+      ],
+      "answer": 2,
+      "explanation": "`kubectl api-resources` is your built-in cheat sheet. It prints a table of every resource type the cluster supports, including its short name, whether it is namespaced, and its API group."
+    }
+  ]
+}

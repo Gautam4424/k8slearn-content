@@ -1,0 +1,38 @@
+{
+  "title": "Testing Network Policies",
+  "cert": ["cka"],
+  "roadmap": "exam-tips",
+  "subtopic": "Testing Network Policies",
+  "difficulty": "advanced",
+  "content": "network-testing.md",
+  "order": {
+    "cka": 2
+  },
+  "tags": ["network-policy", "netshoot", "curl", "nslookup", "debug-pod", "testing"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You apply a default-deny NetworkPolicy to the 'frontend' namespace. Suddenly, pods in that namespace can no longer resolve Service names. Why?",
+      "options": [
+        "A default-deny Ingress policy blocks CoreDNS from reaching the pods.",
+        "A default-deny Egress policy drops outbound UDP port 53 traffic to the kube-dns service.",
+        "NetworkPolicies automatically disable /etc/resolv.conf.",
+        "The kube-proxy DaemonSet is blocked from running in the namespace."
+      ],
+      "answer": 1,
+      "explanation": "If you apply an empty Egress policy (default deny), the pod cannot initiate ANY outbound connections. This includes UDP port 53 traffic to the CoreDNS cluster IP (usually 10.96.0.10). You must explicitly allow Egress to kube-dns for DNS resolution to work."
+    },
+    {
+      "type": "mcq",
+      "q": "Which curl flag is most useful when testing a NetworkPolicy that is expected to drop traffic, to prevent the command from hanging indefinitely?",
+      "options": [
+        "--fail",
+        "--silent",
+        "--max-time",
+        "--head"
+      ],
+      "answer": 2,
+      "explanation": "If a NetworkPolicy drops traffic, the TCP connection will simply hang until the OS timeout (which can take minutes). Using `--max-time 3` (or `-m 3`) forces curl to give up after 3 seconds, allowing you to quickly determine if traffic is blocked."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Imperative Command Patterns",
+  "cert": ["cka", "ckad", "cks"],
+  "roadmap": "exam-tips",
+  "subtopic": "Imperative Command Patterns",
+  "difficulty": "intermediate",
+  "content": "imperative-patterns.md",
+  "order": {
+    "cka": 3,
+    "ckad": 2,
+    "cks": 2
+  },
+  "tags": ["imperative", "dry-run", "create", "expose", "run", "kubectl"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You need to create a Deployment named `backend` using the `redis` image with 4 replicas. Which command does this imperatively?",
+      "options": [
+        "kubectl run backend --image=redis --replicas=4",
+        "kubectl create deployment backend --image=redis --replicas=4",
+        "kubectl generate deploy backend --image=redis -n 4",
+        "kubectl expose deployment backend --image=redis --replicas=4"
+      ],
+      "answer": 1,
+      "explanation": "`kubectl create deployment` is the correct imperative command for creating deployments. `kubectl run` is strictly for creating isolated Pods."
+    },
+    {
+      "type": "mcq",
+      "q": "Which command quickly generates the base YAML for a Role that grants read-only access to ConfigMaps?",
+      "options": [
+        "kubectl create role cm-reader --verb=get,list,watch --resource=configmaps --dry-run=client -o yaml",
+        "kubectl generate role cm-reader --permissions=read --resource=cm -o yaml",
+        "kubectl auth role cm-reader --allow=get,list --resource=configmaps -o yaml",
+        "kubectl expose role cm-reader --verb=read --resource=cm -o yaml"
+      ],
+      "answer": 0,
+      "explanation": "`kubectl create role <name> --verb=<verbs> --resource=<resources>` is the correct syntax. Appending `--dry-run=client -o yaml` outputs the YAML without applying it."
+    }
+  ]
+}
