@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "9.2 TLS Certificates & CSR",
+  "difficulty": "intermediate",
+  "content": "92-tls-certificates-csr.md",
+  "title": "9.2 TLS Certificates & CSR",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

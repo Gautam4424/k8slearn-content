@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "5.7 Admission Controllers",
+  "difficulty": "intermediate",
+  "content": "57-admission-controllers.md",
+  "title": "5.7 Admission Controllers",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

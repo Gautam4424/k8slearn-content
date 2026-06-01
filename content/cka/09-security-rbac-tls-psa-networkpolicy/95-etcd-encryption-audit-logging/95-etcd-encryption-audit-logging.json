@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "9.5 etcd Encryption & Audit Logging",
+  "difficulty": "intermediate",
+  "content": "95-etcd-encryption-audit-logging.md",
+  "title": "9.5 etcd Encryption & Audit Logging",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

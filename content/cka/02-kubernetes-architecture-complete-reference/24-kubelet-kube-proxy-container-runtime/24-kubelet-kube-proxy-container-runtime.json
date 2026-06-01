@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "2.4 kubelet, kube-proxy & Container Runtime",
+  "difficulty": "intermediate",
+  "content": "24-kubelet-kube-proxy-container-runtime.md",
+  "title": "2.4 kubelet, kube-proxy & Container Runtime",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

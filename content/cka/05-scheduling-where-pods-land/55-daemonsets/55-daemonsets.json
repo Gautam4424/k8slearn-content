@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "5.5 DaemonSets",
+  "difficulty": "intermediate",
+  "content": "55-daemonsets.md",
+  "title": "5.5 DaemonSets",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

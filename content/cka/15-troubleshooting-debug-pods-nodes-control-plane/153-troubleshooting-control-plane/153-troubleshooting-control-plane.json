@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "15.3 Troubleshooting Control Plane",
+  "difficulty": "intermediate",
+  "content": "153-troubleshooting-control-plane.md",
+  "title": "15.3 Troubleshooting Control Plane",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

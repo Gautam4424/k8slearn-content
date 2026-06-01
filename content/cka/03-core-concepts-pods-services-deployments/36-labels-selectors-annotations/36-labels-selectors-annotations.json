@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "3.6 Labels, Selectors & Annotations",
+  "difficulty": "intermediate",
+  "content": "36-labels-selectors-annotations.md",
+  "title": "3.6 Labels, Selectors & Annotations",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}

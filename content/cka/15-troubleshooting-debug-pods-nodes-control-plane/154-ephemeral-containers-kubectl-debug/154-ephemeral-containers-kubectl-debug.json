@@ -1,0 +1,22 @@
+{
+  "cert": "cka",
+  "roadmap": "cka",
+  "subtopic": "15.4 Ephemeral Containers & kubectl debug",
+  "difficulty": "intermediate",
+  "content": "154-ephemeral-containers-kubectl-debug.md",
+  "title": "15.4 Ephemeral Containers & kubectl debug",
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Update me"
+    }
+  ]
+}
