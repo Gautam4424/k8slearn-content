@@ -1,7 +1,7 @@
-﻿---
+---
 title: "StatefulSets"
 cert: ckad
-roadmap: state-persistence
+roadmap: storage
 subtopic: StatefulSets
 difficulty: advanced
 order: 2

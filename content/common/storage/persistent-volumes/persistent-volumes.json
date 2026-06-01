@@ -1,15 +1,12 @@
 {
   "title": "Persistent Volumes & Claims",
   "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "core-concepts",
-    "ckad": "state-persistence"
-  },
+  "roadmap": "storage",
   "subtopic": "Persistent Volumes & Claims",
   "difficulty": "intermediate",
   "content": "persistent-volumes.md",
   "order": {
-    "cka": 16,
+    "cka": 1,
     "ckad": 1
   },
   "tags": ["pv", "pvc", "storageclass", "volumes"],

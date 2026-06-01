@@ -9,6 +9,7 @@
   "roadmapOrder": [
     "core-concepts",
     "Scheduling",
+    "storage",
     "Logging & Monitoring",
     "Application Lifecycle Management",
     "Cluster Maintenance",
