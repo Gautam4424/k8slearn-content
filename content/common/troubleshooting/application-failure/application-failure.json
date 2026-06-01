@@ -1,0 +1,51 @@
+{
+  "title": "Application Failure Troubleshooting",
+  "cert": ["cka", "ckad"],
+  "roadmap": "troubleshooting",
+  "subtopic": "Application Failure Troubleshooting",
+  "difficulty": "intermediate",
+  "content": "application-failure.md",
+  "order": {
+    "cka": 1,
+    "ckad": 1
+  },
+  "tags": ["troubleshooting", "application", "pod", "service", "crashloopbackoff", "pending"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A user reports they cannot access an application via its Service. You run `kubectl get endpoints my-service` and see `none`. What is the most likely cause?",
+      "options": [
+        "The kube-proxy DaemonSet is failing on all nodes.",
+        "The Service selector labels do not match any Pod labels.",
+        "The Pods are in a CrashLoopBackOff state.",
+        "The CoreDNS pods are down."
+      ],
+      "answer": 1,
+      "explanation": "If a Service has no endpoints, it means the Service's label selector did not match any running pods in the same namespace. Always check for typos in the selector and pod labels."
+    },
+    {
+      "type": "mcq",
+      "q": "Which command is used to view the logs of a container that crashed and restarted?",
+      "options": [
+        "kubectl logs <pod-name> --previous",
+        "kubectl describe pod <pod-name> --logs",
+        "kubectl get logs <pod-name> -c <container-name>",
+        "kubectl logs <pod-name> --tail=100"
+      ],
+      "answer": 0,
+      "explanation": "The `--previous` (or `-p`) flag is used to retrieve the logs for a previously terminated instance of a container in a pod, which is essential for diagnosing why a pod entered CrashLoopBackOff."
+    },
+    {
+      "type": "mcq",
+      "q": "A pod is stuck in the `Pending` state. What is the first place you should look for the reason?",
+      "options": [
+        "The container's logs via `kubectl logs`.",
+        "The node's `syslog` or `journalctl`.",
+        "The pod's Events section via `kubectl describe pod`.",
+        "The kube-apiserver logs."
+      ],
+      "answer": 2,
+      "explanation": "When a pod is Pending, it hasn't been scheduled or is waiting for resources (like a PVC or image pull). The `kubectl describe pod` command will show the Events section, which often contains a `FailedScheduling` message explaining exactly why."
+    }
+  ]
+}

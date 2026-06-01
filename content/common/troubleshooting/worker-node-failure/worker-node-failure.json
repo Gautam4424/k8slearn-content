@@ -1,0 +1,50 @@
+{
+  "title": "Worker Node Failure",
+  "cert": ["cka"],
+  "roadmap": "troubleshooting",
+  "subtopic": "Worker Node Failure",
+  "difficulty": "advanced",
+  "content": "worker-node-failure.md",
+  "order": {
+    "cka": 3
+  },
+  "tags": ["troubleshooting", "worker-node", "kubelet", "notready", "memorypressure", "diskpressure"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You run `kubectl get nodes` and notice `node02` has the status `NotReady`. What is the first command you should run to investigate why?",
+      "options": [
+        "kubectl get pods --field-selector spec.nodeName=node02",
+        "kubectl describe node node02",
+        "kubectl logs node02",
+        "ssh node02 systemctl status kube-proxy"
+      ],
+      "answer": 1,
+      "explanation": "`kubectl describe node <node-name>` displays the node's Conditions (like MemoryPressure, DiskPressure, and Ready) and recent Events, providing immediate clues before you need to SSH into the node."
+    },
+    {
+      "type": "mcq",
+      "q": "You SSH into a `NotReady` node and discover that the `kubelet` is crashing. How do you view the detailed logs for the kubelet service?",
+      "options": [
+        "cat /var/log/kubelet.log",
+        "kubectl logs -n kube-system kubelet",
+        "crictl logs kubelet",
+        "journalctl -u kubelet"
+      ],
+      "answer": 3,
+      "explanation": "The `kubelet` runs as a native systemd service on the host OS, not as a container. Therefore, you use standard Linux systemd tools like `systemctl status kubelet` and `journalctl -u kubelet` to manage and troubleshoot it."
+    },
+    {
+      "type": "mcq",
+      "q": "A node exhibits `DiskPressure: True`. What is a common Kubernetes-related cause for this?",
+      "options": [
+        "The etcd database has grown too large.",
+        "The API server's audit logs are filling up the disk.",
+        "The container runtime's image layer storage (/var/lib/containerd or /var/lib/docker) is full.",
+        "The node's swap space is exhausted."
+      ],
+      "answer": 2,
+      "explanation": "On worker nodes, `DiskPressure` is typically caused by the container runtime accumulating too many stopped containers or unused images in its data directory (e.g., `/var/lib/containerd`), or pods writing large amounts of data to ephemeral storage (`emptyDir`)."
+    }
+  ]
+}

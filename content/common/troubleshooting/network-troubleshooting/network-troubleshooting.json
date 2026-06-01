@@ -1,0 +1,38 @@
+{
+  "title": "Network Troubleshooting",
+  "cert": ["cka"],
+  "roadmap": "troubleshooting",
+  "subtopic": "Network Troubleshooting",
+  "difficulty": "advanced",
+  "content": "network-troubleshooting.md",
+  "order": {
+    "cka": 4
+  },
+  "tags": ["troubleshooting", "network", "cni", "dns", "kube-proxy", "iptables", "netshoot"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You find that pods can reach the internet, but they cannot resolve internal Service DNS names (like `my-svc.default.svc.cluster.local`). Which component is most likely failing?",
+      "options": [
+        "kube-proxy",
+        "CoreDNS",
+        "The CNI Plugin (e.g. Calico)",
+        "The Ingress Controller"
+      ],
+      "answer": 1,
+      "explanation": "CoreDNS is responsible for internal service name resolution. If external IPs work but internal DNS names fail, the CoreDNS pods are likely down, failing, or misconfigured. You should check their logs (`kubectl logs -n kube-system -l k8s-app=kube-dns`)."
+    },
+    {
+      "type": "mcq",
+      "q": "You are troubleshooting a Service that has valid endpoints, but traffic sent to its ClusterIP is timing out. You want to verify that the node's OS has been correctly programmed to route the traffic. What should you check on the node?",
+      "options": [
+        "The /etc/resolv.conf file.",
+        "The kubelet logs.",
+        "The node's iptables or IPVS rules.",
+        "The CNI plugin configuration in /etc/cni/net.d/."
+      ],
+      "answer": 2,
+      "explanation": "kube-proxy is responsible for translating Services (ClusterIPs) into actual routing rules using the node's iptables or IPVS. If the Service has endpoints but traffic isn't flowing, you should inspect the iptables rules (e.g., `iptables -t nat -L KUBE-SERVICES`) to ensure kube-proxy created them correctly."
+    }
+  ]
+}

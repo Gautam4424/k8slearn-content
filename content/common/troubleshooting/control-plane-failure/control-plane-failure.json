@@ -1,0 +1,50 @@
+{
+  "title": "Control Plane Failure",
+  "cert": ["cka"],
+  "roadmap": "troubleshooting",
+  "subtopic": "Control Plane Failure",
+  "difficulty": "advanced",
+  "content": "control-plane-failure.md",
+  "order": {
+    "cka": 2
+  },
+  "tags": ["troubleshooting", "control-plane", "kube-apiserver", "kube-scheduler", "kube-controller-manager", "etcd", "kubeadm"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "You are unable to run any `kubectl` commands and receive a connection refused error. You SSH into the control plane node. Which tool should you use to check the logs of the `kube-apiserver` container?",
+      "options": [
+        "docker logs",
+        "crictl logs",
+        "kubectl logs",
+        "journalctl"
+      ],
+      "answer": 1,
+      "explanation": "If the API server is down, `kubectl` will not work. In modern Kubernetes (which uses containerd or CRI-O), `crictl` is the command-line interface for CRI-compatible container runtimes. You use `crictl ps -a` to find the container ID and `crictl logs` to read its output."
+    },
+    {
+      "type": "mcq",
+      "q": "In a kubeadm-provisioned cluster, which component is responsible for starting and monitoring the control plane components (API server, scheduler, controller-manager)?",
+      "options": [
+        "kube-proxy",
+        "systemd",
+        "kubelet",
+        "containerd"
+      ],
+      "answer": 2,
+      "explanation": "In a kubeadm cluster, the control plane components are deployed as Static Pods. The `kubelet` on the master node watches the `/etc/kubernetes/manifests` directory and ensures these pods are running."
+    },
+    {
+      "type": "mcq",
+      "q": "You accidentally modified `/etc/kubernetes/manifests/kube-apiserver.yaml` and introduced a syntax error. What is the immediate result?",
+      "options": [
+        "The kube-apiserver continues running until the node is rebooted.",
+        "The kubelet detects the change, attempts to restart the pod, fails due to the error, and the API server goes down.",
+        "The kube-controller-manager detects the error and reverts the file.",
+        "The etcd cluster enters a split-brain state."
+      ],
+      "answer": 1,
+      "explanation": "The `kubelet` constantly monitors the static pod manifest directory. If a file is modified, it restarts the corresponding pod. If the YAML has a syntax error, the pod will fail to start, bringing down the API server."
+    }
+  ]
+}

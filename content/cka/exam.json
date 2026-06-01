@@ -7,7 +7,6 @@
   "price": "$445 USD",
   "attempts": "2 attempts included",
   "roadmapOrder": [
-    "cluster-design",
     "core-concepts",
     "Scheduling",
     "Logging & Monitoring",
@@ -15,7 +14,9 @@
     "Cluster Maintenance",
     "services-networking",
     "storage",
-    "security"
+    "security",
+    "cluster-design",
+    "troubleshooting"
   ],
   "curriculum": [
     {
