@@ -19,22 +19,26 @@ Role-Based Access Control (RBAC) is the method Kubernetes uses to authorize requ
 When an authenticated identity makes a request, the API server checks if a binding connects the identity to a role that permits the requested API action (verbs) on the target resource.
 
 ```mermaid
-flowchart TD
-    USER(["👤 User / Group / ServiceAccount"])
+flowchart LR
+    USER(["👤 User / SA / Group"])
     API["☸️ kube-apiserver"]
-    RB{"RoleBinding /\nClusterRoleBinding\nexists?"}
-    ROLE["Role / ClusterRole\ndefines allowed verbs + resources"]
+    RB{"Binding\nexists?"}
+    ROLE["Role / ClusterRole\nverbs + resources"]
     ALLOW(["✅ ALLOW"])
-    DENY(["❌ DENY — Forbidden"])
+    DENY(["❌ DENY"])
 
     USER -->|request| API --> RB
     RB -->|yes| ROLE
-    ROLE -->|action allowed by rules| ALLOW
-    ROLE -->|action NOT in rules| DENY
+    ROLE -->|verb allowed| ALLOW
+    ROLE -->|verb NOT allowed| DENY
     RB -->|no binding| DENY
 
-    style ALLOW fill:#d1fae5,stroke:#10b981,color:#064e3b
-    style DENY fill:#fee2e2,stroke:#ef4444,color:#7f1d1d
+    style USER  fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style API   fill:#312e81,stroke:#818cf8,color:#e0e7ff
+    style RB    fill:#3b1f6e,stroke:#a855f7,color:#e9d5ff
+    style ROLE  fill:#1e3a8a,stroke:#60a5fa,color:#dbeafe
+    style ALLOW fill:#064e3b,stroke:#10b981,color:#d1fae5
+    style DENY  fill:#450a0a,stroke:#ef4444,color:#fecaca
 ```
 
 ---

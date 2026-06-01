@@ -18,28 +18,31 @@ A `kubeconfig` file is a structured YAML file used by `kubectl` and other Kubern
 
 A `kubeconfig` file consists of three key architectural blocks: **clusters**, **users**, and **contexts**.
 
-```
-┌────────────────────────────────────────────────────────┐
-│                    KUBECONFIG FILE                     │
-│                                                        │
-│  clusters:            ← WHERE to connect               │
-│    - name: prod-cluster                                │
-│      server: https://1.2.3.4:6443                      │
-│      certificate-authority: /path/ca.crt               │
-│                                                        │
-│  users:               ← WHO is connecting              │
-│    - name: admin-user                                  │
-│      client-certificate: /path/admin.crt               │
-│      client-key: /path/admin.key                       │
-│                                                        │
-│  contexts:            ← WHO connects to WHERE          │
-│    - name: admin@prod                                  │
-│      cluster: prod-cluster                             │
-│      user: admin-user                                  │
-│      namespace: production                             │
-│                                                        │
-│  current-context: admin@prod                           │
-└────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph KF["📄 KUBECONFIG FILE"]
+        direction TB
+        subgraph CL["clusters  ←  WHERE to connect"]
+            C1["name: prod-cluster\nserver: https://1.2.3.4:6443\ncertificate-authority: /path/ca.crt"]
+        end
+        subgraph US["users  ←  WHO is connecting"]
+            U1["name: admin-user\nclient-certificate: /path/admin.crt\nclient-key: /path/admin.key"]
+        end
+        subgraph CT["contexts  ←  WHO connects to WHERE"]
+            X1["name: admin@prod\ncluster: prod-cluster\nuser: admin-user\nnamespace: production"]
+        end
+        CC["current-context: admin@prod"]
+    end
+
+    U1 -->|binds| X1
+    C1 -->|binds| X1
+    X1 -->|activates| CC
+
+    style CL fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style US fill:#064e3b,stroke:#10b981,color:#d1fae5
+    style CT fill:#3b1f6e,stroke:#a855f7,color:#e9d5ff
+    style CC fill:#451a03,stroke:#f59e0b,color:#fef3c7
+    style KF fill:#0f172a,stroke:#334155,color:#94a3b8
 ```
 
 - **Clusters**: Contains the endpoints (`server` URL) and TLS Certificate Authority (`certificate-authority` path or base64 embedded `certificate-authority-data`) of the API servers.

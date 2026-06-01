@@ -18,26 +18,25 @@ A `securityContext` in Kubernetes defines privilege and access control settings 
 
 You can configure security contexts at either the **Pod-level** (applies globally to all containers in the Pod) or the **Container-level** (applies strictly to that single container and overrides Pod-level parameters).
 
-```
-┌────────────────────────────────────────────────────────┐
-│               SECURITY CONTEXT HIERARCHY               │
-│                                                        │
-│  Pod-Level securityContext (applies to all containers) │
-│  spec:                                                 │
-│    securityContext:                                    │
-│      runAsUser: 1000          ← Set user UID           │
-│      runAsGroup: 3000         ← Set group GID          │
-│      fsGroup: 2000            ← Set volume GID         │
-│      runAsNonRoot: true       ← Deny running as root   │
-│                                                        │
-│  Container-Level securityContext (overrides pod level) │
-│    securityContext:                                    │
-│      allowPrivilegeEscalation: false                   │
-│      readOnlyRootFilesystem: true     ← Read-only mount│
-│      capabilities:                                     │
-│        add: ["NET_BIND_SERVICE"]      ← Add privileges │
-│        drop: ["ALL"]                  ← Drop privileges│
-└────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph POD["🗂️ Pod-Level securityContext — applies to ALL containers"]
+        P1["runAsUser: 1000  ← Set process UID"]
+        P2["runAsGroup: 3000  ← Set process GID"]
+        P3["fsGroup: 2000  ← Mounted volume GID"]
+        P4["runAsNonRoot: true  ← Reject root (UID 0)"]
+    end
+    subgraph CTR["📦 Container-Level securityContext — overrides Pod-level"]
+        C1["allowPrivilegeEscalation: false"]
+        C2["readOnlyRootFilesystem: true"]
+        C3["capabilities.drop: ALL"]
+        C4["capabilities.add: NET_BIND_SERVICE"]
+    end
+
+    POD -->|"container inherits, then can override"| CTR
+
+    style POD fill:#451a03,stroke:#f59e0b,color:#fef3c7
+    style CTR fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
 ```
 
 ---

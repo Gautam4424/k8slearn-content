@@ -41,9 +41,9 @@ flowchart TD
     PVC -->|storageClassName| SC
     SC -->|auto-creates| PV
 
-    style PVC fill:#fef3c7,stroke:#f59e0b,color:#2d1a09
-    style PV fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
-    style CSI fill:#d1fae5,stroke:#10b981,color:#064e3b
+    style PVC fill:#451a03,stroke:#f59e0b,color:#fef3c7
+    style PV fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style CSI fill:#064e3b,stroke:#10b981,color:#d1fae5
 ```
 
 ---

@@ -35,9 +35,9 @@ flowchart TD
     end
     L1 --> L2 --> L3
 
-    style L1 fill:#fef3c7,stroke:#f59e0b,color:#2d1a09
-    style L2 fill:#dbeafe,stroke:#3b82f6,color:#1e3a8a
-    style L3 fill:#d1fae5,stroke:#10b981,color:#064e3b
+    style L1 fill:#451a03,stroke:#f59e0b,color:#fef3c7
+    style L2 fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style L3 fill:#064e3b,stroke:#10b981,color:#d1fae5
 ```
 
 ---
@@ -58,9 +58,9 @@ flowchart TD
         end
     end
 
-    style HUMANS fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a
-    style MACHINES fill:#f0fdf4,stroke:#22c55e,color:#14532d
-    style METHODS fill:#f8fafc,stroke:#64748b,color:#0f172a
+    style HUMANS fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style MACHINES fill:#14532d,stroke:#22c55e,color:#dcfce7
+    style METHODS fill:#0f172a,stroke:#64748b,color:#e2e8f0
 ```
 
 > ⚠️ **Key Difference:** Kubernetes does **not** have database records or objects representing human users natively inside etcd. Instead, human identities are verified through external mechanisms (e.g. usernames extracted from certificate Common Names or OIDC token claims). Only `ServiceAccounts` are managed as actual resources within the cluster.

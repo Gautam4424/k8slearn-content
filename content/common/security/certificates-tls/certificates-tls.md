@@ -29,13 +29,13 @@ flowchart TD
     CA --> CTRL_C["controller-manager.crt\nClient Cert\ncontroller-manager client auth"]
     CA --> SCHED_C["scheduler.crt\nClient Cert\nscheduler client auth"]
 
-    style CA fill:#fef3c7,stroke:#f59e0b,color:#2d1a09
-    style API_C fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a
-    style ETCD_C fill:#eff6ff,stroke:#3b82f6,color:#1e3a8a
-    style KL_C fill:#f0fdf4,stroke:#22c55e,color:#14532d
-    style ADMIN_C fill:#f0fdf4,stroke:#22c55e,color:#14532d
-    style CTRL_C fill:#f0fdf4,stroke:#22c55e,color:#14532d
-    style SCHED_C fill:#f0fdf4,stroke:#22c55e,color:#14532d
+    style CA fill:#451a03,stroke:#f59e0b,color:#fef3c7
+    style API_C fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style ETCD_C fill:#1e3a8a,stroke:#3b82f6,color:#dbeafe
+    style KL_C fill:#064e3b,stroke:#22c55e,color:#dcfce7
+    style ADMIN_C fill:#064e3b,stroke:#22c55e,color:#dcfce7
+    style CTRL_C fill:#064e3b,stroke:#22c55e,color:#dcfce7
+    style SCHED_C fill:#064e3b,stroke:#22c55e,color:#dcfce7
 ```
 
 ---
