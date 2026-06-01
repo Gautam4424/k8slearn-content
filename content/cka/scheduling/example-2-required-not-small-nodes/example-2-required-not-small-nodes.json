@@ -1,0 +1,29 @@
+{
+  "title": "Example 2 — Required: NOT Small Nodes",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Example 2 — Required: NOT Small Nodes",
+  "difficulty": "intermediate",
+  "content": "example-2-required-not-small-nodes.md",
+  "order": 21,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "1.5 cloud-controller-manager",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "k8s-architecture",
+  "subtopic": "1.5 cloud-controller-manager",
+  "difficulty": "intermediate",
+  "content": "15-cloud-controller-manager.md",
+  "order": 8,
+  "tags": [
+    "cka",
+    "k8s-architecture"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

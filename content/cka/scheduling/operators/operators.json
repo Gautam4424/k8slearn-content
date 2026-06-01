@@ -1,0 +1,29 @@
+{
+  "title": "Operators",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Operators",
+  "difficulty": "intermediate",
+  "content": "operators.md",
+  "order": 24,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

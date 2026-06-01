@@ -1,0 +1,29 @@
+{
+  "title": "2.1 kubelet",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "k8s-architecture",
+  "subtopic": "2.1 kubelet",
+  "difficulty": "intermediate",
+  "content": "21-kubelet.md",
+  "order": 9,
+  "tags": [
+    "cka",
+    "k8s-architecture"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

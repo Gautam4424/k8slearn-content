@@ -1,0 +1,29 @@
+{
+  "title": "Beginner Tips Before You Start",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "01-start-here",
+  "subtopic": "Beginner Tips Before You Start",
+  "difficulty": "intermediate",
+  "content": "beginner-tips-before-you-start.md",
+  "order": 6,
+  "tags": [
+    "cka",
+    "01-start-here"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

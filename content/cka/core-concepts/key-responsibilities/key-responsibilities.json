@@ -1,0 +1,29 @@
+{
+  "title": "Key Responsibilities",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "Key Responsibilities",
+  "difficulty": "intermediate",
+  "content": "key-responsibilities.md",
+  "order": 17,
+  "tags": [
+    "cka",
+    "core-concepts"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

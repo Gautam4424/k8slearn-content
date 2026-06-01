@@ -1,0 +1,29 @@
+{
+  "title": "containerd",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "containerd",
+  "difficulty": "intermediate",
+  "content": "containerd.md",
+  "order": 7,
+  "tags": [
+    "cka",
+    "core-concepts"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "VPA Update Modes",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "workload-autoscaling",
+  "subtopic": "VPA Update Modes",
+  "difficulty": "intermediate",
+  "content": "vpa-update-modes.md",
+  "order": 6,
+  "tags": [
+    "cka",
+    "workload-autoscaling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

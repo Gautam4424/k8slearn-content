@@ -1,0 +1,29 @@
+{
+  "title": "🗂️ Table of Contents",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "k8s-architecture",
+  "subtopic": "🗂️ Table of Contents",
+  "difficulty": "intermediate",
+  "content": "table-of-contents.md",
+  "order": 3,
+  "tags": [
+    "cka",
+    "k8s-architecture"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

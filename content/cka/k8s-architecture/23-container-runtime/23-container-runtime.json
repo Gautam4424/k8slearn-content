@@ -1,0 +1,29 @@
+{
+  "title": "2.3 Container Runtime",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "k8s-architecture",
+  "subtopic": "2.3 Container Runtime",
+  "difficulty": "intermediate",
+  "content": "23-container-runtime.md",
+  "order": 11,
+  "tags": [
+    "cka",
+    "k8s-architecture"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

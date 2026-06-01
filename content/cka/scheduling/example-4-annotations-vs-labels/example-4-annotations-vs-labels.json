@@ -1,0 +1,29 @@
+{
+  "title": "Example 4 — Annotations vs Labels",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Example 4 — Annotations vs Labels",
+  "difficulty": "intermediate",
+  "content": "example-4-annotations-vs-labels.md",
+  "order": 9,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

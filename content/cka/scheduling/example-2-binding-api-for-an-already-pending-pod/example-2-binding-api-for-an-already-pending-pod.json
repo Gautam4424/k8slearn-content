@@ -1,0 +1,29 @@
+{
+  "title": "Example 2 — Binding API for an Already-Pending Pod",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Example 2 — Binding API for an Already-Pending Pod",
+  "difficulty": "intermediate",
+  "content": "example-2-binding-api-for-an-already-pending-pod.md",
+  "order": 4,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

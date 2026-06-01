@@ -1,0 +1,29 @@
+{
+  "title": "Example 2 — NoExecute with tolerationSeconds",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Example 2 — NoExecute with tolerationSeconds",
+  "difficulty": "intermediate",
+  "content": "example-2-noexecute-with-tolerationseconds.md",
+  "order": 14,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

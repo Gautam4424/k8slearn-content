@@ -1,0 +1,29 @@
+{
+  "title": "CPU Units: `1` = 1 vCPU, `500m` = 0.5 CPU, `100m` = 0.1 CPU, `1m` = minimum",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "CPU Units: `1` = 1 vCPU, `500m` = 0.5 CPU, `100m` = 0.1 CPU, `1m` = minimum",
+  "difficulty": "intermediate",
+  "content": "cpu-units-1-1-vcpu-500m-05-cpu-100m-01-cpu-1m-minimum.md",
+  "order": 31,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

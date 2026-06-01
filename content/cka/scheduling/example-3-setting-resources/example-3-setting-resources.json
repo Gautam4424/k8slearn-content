@@ -1,0 +1,29 @@
+{
+  "title": "Example 3 — Setting Resources",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Example 3 — Setting Resources",
+  "difficulty": "intermediate",
+  "content": "example-3-setting-resources.md",
+  "order": 30,
+  "tags": [
+    "cka",
+    "scheduling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

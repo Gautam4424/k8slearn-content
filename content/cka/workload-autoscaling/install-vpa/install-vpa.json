@@ -1,0 +1,29 @@
+{
+  "title": "Install VPA",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "workload-autoscaling",
+  "subtopic": "Install VPA",
+  "difficulty": "intermediate",
+  "content": "install-vpa.md",
+  "order": 4,
+  "tags": [
+    "cka",
+    "workload-autoscaling"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "Configuration",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "Configuration",
+  "difficulty": "intermediate",
+  "content": "configuration.md",
+  "order": 22,
+  "tags": [
+    "cka",
+    "core-concepts"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

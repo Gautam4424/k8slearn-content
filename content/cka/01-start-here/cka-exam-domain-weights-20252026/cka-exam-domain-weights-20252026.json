@@ -1,0 +1,29 @@
+{
+  "title": "CKA Exam Domain Weights (2025/2026)",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "01-start-here",
+  "subtopic": "CKA Exam Domain Weights (2025/2026)",
+  "difficulty": "intermediate",
+  "content": "cka-exam-domain-weights-20252026.md",
+  "order": 5,
+  "tags": [
+    "cka",
+    "01-start-here"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "CLI Comparison",
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "CLI Comparison",
+  "difficulty": "intermediate",
+  "content": "cli-comparison.md",
+  "order": 8,
+  "tags": [
+    "cka",
+    "core-concepts"
+  ],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "[TODO] Add a practice question for this topic.",
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C",
+        "Option D"
+      ],
+      "answer": 0,
+      "explanation": "Placeholder explanation."
+    }
+  ]
+}
