@@ -1,0 +1,50 @@
+{
+  "title": "etcd HA & Raft Consensus",
+  "cert": ["cka"],
+  "roadmap": "cluster-design",
+  "subtopic": "etcd HA & Raft Consensus",
+  "difficulty": "advanced",
+  "content": "etcd-ha.md",
+  "order": {
+    "cka": 2
+  },
+  "tags": ["etcd", "raft", "ha", "quorum", "consensus", "fault-tolerance", "etcdctl", "backup"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "A 5-node etcd cluster loses 3 members simultaneously. What happens to the cluster?",
+      "options": [
+        "The cluster continues operating with the 2 remaining nodes",
+        "The cluster becomes read-only until a node is restored",
+        "The cluster loses quorum (needs 3) and stops accepting writes",
+        "The cluster automatically elects a new leader from the 2 remaining nodes"
+      ],
+      "answer": 2,
+      "explanation": "A 5-node etcd cluster requires a quorum of ⌊5/2⌋+1 = 3 nodes to commit writes. With only 2 remaining, quorum is lost and the cluster cannot process write requests, preventing split-brain data divergence."
+    },
+    {
+      "type": "mcq",
+      "q": "Why is it always recommended to use an odd number of etcd nodes (e.g., 3 or 5) rather than an even number (e.g., 4)?",
+      "options": [
+        "Even numbers cause etcd to use more CPU during leader elections",
+        "4 nodes gives the same fault tolerance as 3 (can only lose 1) but has more risk in split-brain without any benefit",
+        "Even numbers of nodes cannot form a valid Raft cluster",
+        "Kubernetes only supports odd-numbered etcd topologies via kubeadm"
+      ],
+      "answer": 1,
+      "explanation": "A 4-node cluster requires quorum of 3 (can only tolerate losing 1 node) — the same as a 3-node cluster. But 4 nodes cost more and introduce split-brain risk (2 vs 2 partition). Always prefer 3 or 5 to maximise fault tolerance per node."
+    },
+    {
+      "type": "mcq",
+      "q": "Which etcdctl command is used to create a point-in-time backup of the etcd data store?",
+      "options": [
+        "etcdctl backup --data-dir=/var/lib/etcd",
+        "etcdctl snapshot save /path/to/backup.db",
+        "etcdctl db export /path/to/backup.db",
+        "etcdctl cluster-health --backup"
+      ],
+      "answer": 1,
+      "explanation": "The ETCDCTL_API=3 etcdctl snapshot save <path> command creates a consistent snapshot of the etcd database. You must provide the --endpoints, --cacert, --cert, and --key flags for authentication."
+    }
+  ]
+}

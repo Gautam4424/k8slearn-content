@@ -1,0 +1,50 @@
+{
+  "title": "Cluster Design",
+  "cert": ["cka"],
+  "roadmap": "cluster-design",
+  "subtopic": "Cluster Design",
+  "difficulty": "intermediate",
+  "content": "cluster-design.md",
+  "order": {
+    "cka": 1
+  },
+  "tags": ["cluster-design", "ha", "control-plane", "node-sizing", "minikube", "kubeadm", "eks", "gke", "aks", "k3s"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "In a Kubernetes HA control plane, how do multiple kube-controller-manager instances coordinate to avoid conflicting actions?",
+      "options": [
+        "All instances run actively and merge their results",
+        "They use leader election — only one instance is active at a time, others are on standby",
+        "Each instance manages a separate subset of namespaces",
+        "The Load Balancer forwards requests to only one controller-manager"
+      ],
+      "answer": 1,
+      "explanation": "kube-controller-manager (and kube-scheduler) use a built-in leader election mechanism backed by a Lease object in the kube-system namespace. Only the elected leader actively reconciles cluster state; the others remain on standby and take over only if the leader fails."
+    },
+    {
+      "type": "mcq",
+      "q": "For a small team running development workloads on-premises without requiring high availability, which cluster setup is most appropriate?",
+      "options": [
+        "EKS with managed node groups",
+        "kubeadm HA with 3 master nodes and 5 worker nodes",
+        "k3s or kubeadm with a 3-node cluster (1 master, 2 workers)",
+        "A stacked etcd cluster with 7 nodes"
+      ],
+      "answer": 2,
+      "explanation": "For small dev teams without HA requirements, k3s (lightweight) or a simple kubeadm 3-node setup is the right balance of simplicity and functionality. Managed clouds (EKS) and 3+ master HA setups are overkill for non-production workloads."
+    },
+    {
+      "type": "mcq",
+      "q": "What is the recommended minimum CPU and RAM for an etcd node in a production Kubernetes cluster?",
+      "options": [
+        "1 CPU, 2 GB RAM on any disk type",
+        "2 CPU, 8 GB RAM on SSD-backed, low-latency storage",
+        "4 CPU, 4 GB RAM on HDD storage",
+        "8 CPU, 16 GB RAM with network-attached storage"
+      ],
+      "answer": 1,
+      "explanation": "etcd is I/O sensitive. The official recommendation is 2 CPU and 8 GB RAM minimum, with SSD-backed storage and low-latency networking. High write latency (from slow disks or network) directly causes etcd heartbeat timeouts and leader re-elections."
+    }
+  ]
+}

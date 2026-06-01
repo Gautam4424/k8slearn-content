@@ -1,0 +1,50 @@
+{
+  "title": "kubeadm Install",
+  "cert": ["cka"],
+  "roadmap": "cluster-design",
+  "subtopic": "kubeadm Install",
+  "difficulty": "advanced",
+  "content": "kubeadm-install.md",
+  "order": {
+    "cka": 3
+  },
+  "tags": ["kubeadm", "install", "containerd", "cni", "swap", "sysctl", "kernel-modules", "join", "bootstrap"],
+  "questions": [
+    {
+      "type": "mcq",
+      "q": "Why must swap be disabled on all Kubernetes nodes before running kubeadm?",
+      "options": [
+        "Swap causes iptables rules to be reset on node reboot",
+        "kubelet requires predictable memory behaviour and will fail to start if swap is active",
+        "Swap prevents etcd from persisting data correctly to disk",
+        "Swap is incompatible with CNI plugins like Calico"
+      ],
+      "answer": 1,
+      "explanation": "kubelet (by default) refuses to run if swap is enabled because Kubernetes memory management and OOM handling rely on predictable memory limits. With swap active, a container's memory usage becomes unpredictable and resource limits cannot be reliably enforced."
+    },
+    {
+      "type": "mcq",
+      "q": "After running `kubeadm init` successfully, what is the correct way to configure kubectl access for the cluster administrator?",
+      "options": [
+        "Run kubectl config init to auto-detect the cluster",
+        "Copy /etc/kubernetes/admin.conf to ~/.kube/config and set correct ownership",
+        "Set the KUBECONFIG_PATH environment variable to /etc/kubernetes",
+        "Run kubeadm kubeconfig generate > ~/.kube/config"
+      ],
+      "answer": 1,
+      "explanation": "kubeadm init prints the exact commands: mkdir -p $HOME/.kube && cp -i /etc/kubernetes/admin.conf $HOME/.kube/config && chown $(id -u):$(id -g) $HOME/.kube/config. This copies the admin kubeconfig (with embedded cluster CA and client cert) to the standard kubectl location."
+    },
+    {
+      "type": "mcq",
+      "q": "Which kernel modules must be loaded on all nodes before kubeadm can initialise a cluster?",
+      "options": [
+        "iptables and nftables",
+        "overlay and br_netfilter",
+        "ip_tables and vxlan",
+        "bridge and netlink"
+      ],
+      "answer": 1,
+      "explanation": "The overlay module is required by containerd for OverlayFS storage (layered container images). The br_netfilter module enables bridge network traffic to pass through iptables, which is required for kube-proxy and pod networking (controlled via the net.bridge.bridge-nf-call-iptables sysctl)."
+    }
+  ]
+}
