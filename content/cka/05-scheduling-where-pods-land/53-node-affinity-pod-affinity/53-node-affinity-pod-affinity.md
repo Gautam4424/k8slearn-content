@@ -23,7 +23,6 @@ flowchart LR
     NS["nodeSelector\nsimple key=value\nhard requirement only"]
     NA["Node Affinity\nricher expressions\nhard AND soft rules"]
     NS -->|upgrade| NA
-    style NA fill:#d1fae5,stroke:#10b981
 ```
 
 ---
@@ -81,8 +80,6 @@ flowchart TD
     subgraph ANTI["Pod Anti-Affinity — spread out"]
         P1["Pod A"] -->|avoid nodes with| P2["Pod A (duplicate)"]
     end
-    style AFF fill:#d1fae5,stroke:#10b981
-    style ANTI fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```yaml

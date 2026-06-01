@@ -33,9 +33,6 @@ flowchart TD
     CURR --> HPA
     TARGET --> HPA
     HPA --> CALC --> DEPLOY
-
-    style HPA fill:#dbeafe,stroke:#3b82f6
-    style DEPLOY fill:#d1fae5,stroke:#10b981
 ```
 
 ## Create HPA Imperative
@@ -139,9 +136,6 @@ flowchart TD
 
     PROM --> VPA --> REC --> ADM --> POD
     REC --> MODES
-
-    style VPA fill:#dbeafe,stroke:#3b82f6
-    style REC fill:#fef3c7,stroke:#f59e0b
 ```
 
 ## Install VPA
@@ -222,10 +216,6 @@ flowchart TD
 
     PEND --> CA --> ADD --> SCHED
     UNDER --> CA --> REMOVE
-
-    style CA fill:#dbeafe,stroke:#3b82f6
-    style ADD fill:#d1fae5,stroke:#10b981
-    style REMOVE fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

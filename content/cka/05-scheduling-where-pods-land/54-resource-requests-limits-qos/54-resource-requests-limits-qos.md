@@ -25,8 +25,6 @@ flowchart LR
     NODE["Node: 8 CPU, 16Gi"]
     REQ -->|scheduler checks| NODE
     LIM -->|kernel enforces| NODE
-    style REQ fill:#d1fae5,stroke:#10b981
-    style LIM fill:#fee2e2,stroke:#ef4444
 ```
 
 ```yaml
@@ -58,9 +56,6 @@ flowchart TD
     G["Guaranteed\nrequests == limits (both set)\nHighest priority — evicted last"]
     B["Burstable\nrequests < limits\nOR only one set\nMiddle priority"]
     BE["BestEffort\nno requests or limits set\nLowest priority — evicted FIRST"]
-    style G fill:#d1fae5,stroke:#10b981
-    style B fill:#fef3c7,stroke:#f59e0b
-    style BE fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

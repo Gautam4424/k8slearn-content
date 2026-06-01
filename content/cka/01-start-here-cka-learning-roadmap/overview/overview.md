@@ -38,9 +38,6 @@ flowchart TD
     N --> O["15 🔍 Troubleshooting\nFix broken things"]
     O --> P["16 📐 Advanced kubectl\nExam speed"]
     P --> Q["17 💡 Exam Cheatsheet\nFinal prep"]
-
-    style A fill:#dbeafe,stroke:#3b82f6
-    style Q fill:#d1fae5,stroke:#10b981
 ```
 
 ---

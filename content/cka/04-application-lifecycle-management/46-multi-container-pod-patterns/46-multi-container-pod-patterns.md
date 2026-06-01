@@ -38,7 +38,6 @@ flowchart LR
         SIDE["Sidecar\nlog-agent"] -->|reads + ships| VOL
     end
     SIDE -->|sends to| ES["Elasticsearch"]
-    style POD fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml
@@ -72,7 +71,6 @@ flowchart LR
     end
     AMB -->|routes to correct| DB1["Redis Dev"]
     AMB -->|or| DB2["Redis Prod"]
-    style POD fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml
@@ -98,7 +96,6 @@ flowchart LR
         APP["Main App\ncustom log format"] --> ADAPT["Adapter\nconverts to\nPrometheus format"]
     end
     ADAPT -->|standard format| PROM["Prometheus"]
-    style POD fill:#dbeafe,stroke:#3b82f6
 ```
 
 ---

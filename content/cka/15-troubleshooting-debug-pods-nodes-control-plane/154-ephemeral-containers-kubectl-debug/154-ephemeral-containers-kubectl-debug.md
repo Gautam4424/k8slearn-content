@@ -21,7 +21,6 @@ flowchart LR
     POD["Running Pod\nnginx:1.25\n(no shell/tools)"] --> DBG["kubectl debug\ninjects ephemeral container\nbusybox or netshoot"]
     DBG --> SHARE["Shared namespaces\nnetwork · PID"]
     SHARE --> INSP["ip addr · curl · ps · netstat"]
-    style DBG fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```bash

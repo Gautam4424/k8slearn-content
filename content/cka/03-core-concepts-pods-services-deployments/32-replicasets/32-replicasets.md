@@ -29,8 +29,6 @@ flowchart TD
     FAIL(["Pod 2 crashes ❌"])
     NEW["Creates new Pod 2 ✅"]
     CTRL -->|detects| FAIL --> NEW
-    style RS fill:#dbeafe,stroke:#3b82f6
-    style CTRL fill:#fef3c7,stroke:#f59e0b
 ```
 
 > **In practice:** You almost never create ReplicaSets directly. You use **Deployments** instead — they manage ReplicaSets for you and add rolling updates + rollback.
@@ -87,7 +85,6 @@ flowchart LR
     P3["Pod\napp=api ❌\nnot selected"]
     RS -->|manages| P1 & P2
     RS -->|ignores| P3
-    style P3 fill:#fee2e2,stroke:#ef4444
 ```
 
 > ⚠️ **Warning:** If you manually create pods with the same label as a ReplicaSet's selector, the RS will count them and may delete some to maintain the desired count.

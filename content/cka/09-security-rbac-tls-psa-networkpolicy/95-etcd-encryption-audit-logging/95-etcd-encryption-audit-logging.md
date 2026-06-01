@@ -23,8 +23,6 @@ flowchart LR
     SEC["Secret created"] --> API["kube-apiserver"]
     API -->|Without encryption| E1["etcd\nbase64 only — readable"]
     API -->|With EncryptionConfig| E2["etcd\naescbc encrypted ✅"]
-    style E1 fill:#fee2e2,stroke:#ef4444
-    style E2 fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -68,7 +66,6 @@ flowchart LR
     API --> AL["Audit Logger"]
     AL -->|matches rule| LOG["/var/log/kubernetes/audit.log"]
     LOG --> SIEM["SIEM / Elasticsearch"]
-    style LOG fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml

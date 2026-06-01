@@ -25,7 +25,6 @@ flowchart TD
     PID["PIDPressure"] --> F3["kill runaway processes"]
     NOTREADY["Ready=False"] --> F4["SSH to node\nsystemctl status kubelet\njournalctl -u kubelet"]
     START --> DESC --> MEM & DISK & PID & NOTREADY
-    style START fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

@@ -317,9 +317,6 @@ flowchart TD
 
     START --> CP1 --> CP2 --> CP3 --> CP4 --> CP5
     CP5 --> W1a --> W1b --> W1c --> W1d --> WN1 --> VERIFY
-
-    style CP fill:#dbeafe,stroke:#3b82f6
-    style W1 fill:#d1fae5,stroke:#10b981
 ```
 
 ## etcd Backup & Restore
@@ -341,9 +338,6 @@ flowchart TD
 
     B1 --> B2 --> B3
     B3 -.->|disaster recovery| R1 --> R2 --> R3 --> R4
-
-    style BACKUP fill:#d1fae5,stroke:#10b981
-    style RESTORE fill:#fef3c7,stroke:#f59e0b
 ```
 
 
@@ -367,9 +361,6 @@ flowchart TD
     DRAIN --> PDB --> CHECK
     CHECK -->|"running=3, min=2\n3-1=2 ≥ 2"| ALLOW
     CHECK -->|"running=2, min=2\n2-1=1 < 2"| BLOCK
-
-    style ALLOW fill:#d1fae5,stroke:#10b981
-    style BLOCK fill:#fee2e2,stroke:#ef4444
 ```
 
 ## Example 1 — minAvailable (Absolute)
@@ -445,8 +436,6 @@ flowchart LR
     V29["v1.29\nCurrent"] -->|one minor at a time| V30["v1.30"]
     V30 --> V31["v1.31\nTarget"]
     NOTE["Cannot skip minor versions\nv1.29 → v1.31 directly = NOT allowed"]
-    style V31 fill:#d1fae5,stroke:#10b981
-    style NOTE fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

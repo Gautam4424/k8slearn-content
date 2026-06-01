@@ -30,9 +30,6 @@ flowchart TD
     BIND["BIND\nWrite nodeName to Pod spec via API Server → etcd"]
     KL["kubelet on that node\npulls image + starts containers"]
     POD --> WATCH --> FILTER --> SCORE --> WIN --> BIND --> KL
-    style FILTER fill:#fef3c7,stroke:#f59e0b
-    style SCORE fill:#d1fae5,stroke:#10b981
-    style BIND fill:#dbeafe,stroke:#3b82f6
 ```
 
 ## Scheduler Extension Points
@@ -42,9 +39,6 @@ flowchart LR
     QS["QueueSort"] --> PF["PreFilter"] --> F["Filter\n❌ eliminate"]
     F --> POF["PostFilter\npreemption"] --> PS["PreScore"] --> SC["Score\n🏆 rank"]
     SC --> RES["Reserve"] --> PER["Permit"] --> PB["PreBind"] --> B["Bind"] --> POB["PostBind"]
-    style F fill:#fee2e2,stroke:#ef4444
-    style SC fill:#d1fae5,stroke:#10b981
-    style B fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```bash
@@ -73,8 +67,6 @@ flowchart TD
     ACT["Take corrective action\ncreate / delete / update resources"]
     STATUS["Update status\nvia API Server"]
     WATCH --> DIFF --> ACT --> STATUS --> WATCH
-    style DIFF fill:#fef3c7,stroke:#f59e0b
-    style ACT fill:#d1fae5,stroke:#10b981
 ```
 
 ## Key Controllers

@@ -39,10 +39,6 @@ graph TD
 
     DEV --> OUT1
     PROD --> OUT2
-
-    style BASE fill:#dbeafe,stroke:#3b82f6
-    style DEV fill:#d1fae5,stroke:#10b981
-    style PROD fill:#fef3c7,stroke:#f59e0b
 ```
 
 ---
@@ -207,8 +203,6 @@ flowchart LR
     RESULT["Final YAML\nreplicas: 5\nimage: myapp:v2\n(other fields kept)"]
     BASE --> RESULT
     PATCH --> RESULT
-    style PATCH fill:#fef3c7,stroke:#f59e0b
-    style RESULT fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -311,9 +305,6 @@ graph TD
 
     REPO --> BASE & ENVS & COMP
     ENVS --> DEV & STG & PROD
-
-    style BASE fill:#dbeafe,stroke:#3b82f6
-    style COMP fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```yaml

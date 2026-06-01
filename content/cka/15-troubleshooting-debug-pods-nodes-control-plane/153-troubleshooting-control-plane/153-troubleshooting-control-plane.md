@@ -28,8 +28,6 @@ flowchart TD
     START --> N1 --> N2 --> N3 --> N4
     N3 --> N5
     N3 --> N6
-    style START fill:#fee2e2,stroke:#ef4444
-    style N6 fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```bash

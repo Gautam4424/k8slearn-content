@@ -25,8 +25,6 @@ flowchart TD
     P2["Pod B\nToleration: gpu=true ✅\nCAN land here"]
     P1 -->|rejected| NODE
     P2 -->|allowed| NODE
-    style P1 fill:#fee2e2,stroke:#ef4444
-    style P2 fill:#d1fae5,stroke:#10b981
 ```
 
 > **Think of it as:** Taint = "keep away" sign on a node. Toleration = pod has the key to ignore that sign.

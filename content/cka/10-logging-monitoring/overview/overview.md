@@ -30,8 +30,6 @@ flowchart TD
     end
     N1 & N2 & N3 -->|scrape| MS --> API --> TOP
     N1 & N2 & N3 -->|scrape| PROM
-    style MS fill:#fef3c7,stroke:#f59e0b
-    style PROM fill:#d1fae5,stroke:#10b981
 ```
 
 ---
@@ -51,7 +49,6 @@ flowchart LR
     API["kube-apiserver\n/apis/metrics.k8s.io/v1beta1"]
     TOP["kubectl top nodes/pods"]
     CA --> MS --> API --> TOP
-    style MS fill:#fef3c7,stroke:#f59e0b
 ```
 
 ### Install Metrics Server
@@ -110,8 +107,6 @@ flowchart LR
     NE & KSM -->|scrape| PROM
     PROM --> ALERT --> NOTIF
     PROM --> GRAFANA
-    style PROM fill:#d1fae5,stroke:#10b981
-    style GRAFANA fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```bash
@@ -138,7 +133,6 @@ flowchart TD
     KL["kubelet\nlog rotation"]
     CMD["kubectl logs pod-name"]
     APP -->|stdout/stderr| RT --> KL --> CMD
-    style APP fill:#dbeafe,stroke:#3b82f6
 ```
 
 > **Key Rule:** Always write logs to **stdout/stderr** — never to files inside the container. Kubernetes captures stdout/stderr automatically.
@@ -224,8 +218,6 @@ flowchart LR
     ES["Elasticsearch / Loki"]
     KIB["Kibana / Grafana"]
     L --> F --> ES --> KIB
-    style F fill:#fef3c7,stroke:#f59e0b
-    style ES fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -281,8 +273,6 @@ flowchart TD
     C["CrashLoopBackOff"] --> D2["kubectl logs --previous"]
     R["Running but broken"] --> D3["kubectl logs -f\nkubectl exec -it -- sh"]
     START --> G --> P & C & R
-    style P fill:#fef3c7,stroke:#f59e0b
-    style C fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

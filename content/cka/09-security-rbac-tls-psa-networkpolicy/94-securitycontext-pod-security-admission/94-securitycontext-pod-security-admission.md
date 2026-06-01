@@ -28,8 +28,6 @@ flowchart TD
         C2["readOnlyRootFilesystem: true"]
         C3["capabilities.drop: ALL"]
     end
-    style POD_SC fill:#dbeafe,stroke:#3b82f6
-    style CTR_SC fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -65,9 +63,6 @@ flowchart TD
     BASE["baseline\nBlocks hostNetwork\nprivileged containers"]
     REST["restricted\nNon-root, drop ALL caps\nread-only FS, seccomp"]
     NS --> PRIV & BASE & REST
-    style REST fill:#d1fae5,stroke:#10b981
-    style BASE fill:#fef3c7,stroke:#f59e0b
-    style PRIV fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash

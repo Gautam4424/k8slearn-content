@@ -31,9 +31,6 @@ flowchart TD
     DEV --> HELM
     HELM -->|helm pull| REPO --> CHART
     HELM -->|helm install| RENDER --> API --> REL
-
-    style CHART fill:#dbeafe,stroke:#3b82f6
-    style REL fill:#d1fae5,stroke:#10b981
 ```
 
 ---
@@ -128,9 +125,6 @@ flowchart LR
     CV --> MERGE
     UV --> MERGE
     MERGE --> TPL --> YAML
-
-    style UV fill:#d1fae5,stroke:#10b981
-    style YAML fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml
@@ -172,9 +166,6 @@ flowchart LR
     R1["Release v1"] -->|upgrade| R2["Release v2"]
     R2 -->|rollback| R1
     R2 -->|uninstall| GONE["Deleted"]
-    style R1 fill:#dbeafe,stroke:#3b82f6
-    style R2 fill:#d1fae5,stroke:#10b981
-    style GONE fill:#fee2e2,stroke:#ef4444
 ```
 
 ```bash
@@ -215,9 +206,6 @@ graph TD
 
     ROOT --> CY & VY & TPL & DEP_DIR
     TPL --> DEP & SVC & HLP & NOT
-
-    style ROOT fill:#dbeafe,stroke:#3b82f6
-    style TPL fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```yaml

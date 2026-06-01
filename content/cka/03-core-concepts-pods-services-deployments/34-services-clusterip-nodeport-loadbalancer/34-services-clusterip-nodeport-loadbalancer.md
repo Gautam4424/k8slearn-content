@@ -29,7 +29,6 @@ flowchart LR
     P3["Pod 10.244.3.8"]
     CLIENT --> SVC
     SVC -->|load balance| P1 & P2 & P3
-    style SVC fill:#dbeafe,stroke:#3b82f6
 ```
 
 ---
@@ -50,9 +49,6 @@ flowchart TD
     subgraph EN["ExternalName — DNS alias"]
         E1["Pod"] -->|CNAME| E2["external.database.com"]
     end
-    style CIP fill:#d1fae5,stroke:#10b981
-    style NP fill:#fef3c7,stroke:#f59e0b
-    style LB fill:#dbeafe,stroke:#3b82f6
 ```
 
 ---

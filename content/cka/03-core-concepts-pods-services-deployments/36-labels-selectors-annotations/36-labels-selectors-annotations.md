@@ -62,7 +62,6 @@ flowchart LR
     SVC -->|routes to| P1 & P2
     DEP -->|manages| P1 & P2
     SVC -->|ignores| P3
-    style P3 fill:#fee2e2,stroke:#ef4444
 ```
 
 ## Equality-based vs Set-based Selectors

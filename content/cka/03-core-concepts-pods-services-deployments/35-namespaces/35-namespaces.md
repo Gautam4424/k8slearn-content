@@ -26,8 +26,6 @@ graph TD
     NS3["Namespace: production\n(your production workloads)"]
     NS4["Namespace: staging\n(your staging workloads)"]
     CLUSTER --> NS1 & NS2 & NS3 & NS4
-    style CLUSTER fill:#dbeafe,stroke:#3b82f6
-    style NS2 fill:#fee2e2,stroke:#ef4444
 ```
 
 ## Default Namespaces

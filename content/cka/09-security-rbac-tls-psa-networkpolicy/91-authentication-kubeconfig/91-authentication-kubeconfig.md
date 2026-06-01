@@ -27,7 +27,6 @@ flowchart TD
     end
     API["kube-apiserver"]
     H1 & H2 & M1 --> API
-    style API fill:#dbeafe,stroke:#3b82f6
 ```
 
 > K8s does **not** manage human users natively. It relies on certs or OIDC. Only **ServiceAccounts** are native K8s objects.
@@ -43,7 +42,6 @@ flowchart LR
     US["users:\nWHO is connecting\nclient cert + key"]
     CT["contexts:\nWHO connects to WHERE\nuser@cluster"]
     KC --> CL & US & CT
-    style KC fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```bash

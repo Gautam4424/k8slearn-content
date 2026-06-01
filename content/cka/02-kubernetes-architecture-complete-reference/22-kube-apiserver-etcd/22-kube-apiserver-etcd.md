@@ -38,9 +38,6 @@ flowchart TD
     ETCD[("5. Persist to etcd ✅")]
     RESP["6. Return response to client"]
     CLI --> AUTH --> AUTHZ --> MUT --> VAL --> ETCD --> RESP
-    style MUT fill:#fef3c7,stroke:#f59e0b
-    style VAL fill:#fee2e2,stroke:#ef4444
-    style ETCD fill:#dbeafe,stroke:#3b82f6
 ```
 
 > ⚠️ **Mutating webhooks ALWAYS run before Validating webhooks.** Validators see the final mutated object.
@@ -80,7 +77,6 @@ graph LR
     R --> SV["services/default/web-svc"]
     R --> SE["secrets/default/db-secret"]
     R --> NO["nodes/node01"]
-    style R fill:#fef3c7,stroke:#f59e0b
 ```
 
 ## Raft Consensus — How HA etcd Works
@@ -91,8 +87,6 @@ flowchart LR
     E1 <-->|Raft replicate| E3[("etcd #3\nFollower")]
     API["kube-apiserver"] -->|write| E1
     E1 -->|committed when majority agrees| DONE["Write committed ✅"]
-    style E1 fill:#fef3c7,stroke:#f59e0b
-    style DONE fill:#d1fae5,stroke:#10b981
 ```
 
 > ✅ Always use **odd numbers** of etcd nodes. 3 is the minimum for production.

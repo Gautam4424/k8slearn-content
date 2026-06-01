@@ -28,7 +28,6 @@ flowchart LR
     end
     TSC["TopologySpreadConstraint\nmaxSkew=1 across zones"]
     TSC --> Z1 & Z2
-    style TSC fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml
@@ -61,8 +60,6 @@ flowchart TD
     NODE["Node at capacity"]
     P_H -->|needs resources| NODE
     NODE -->|evicts lower priority| P_L
-    style PC_H fill:#fee2e2,stroke:#ef4444
-    style PC_L fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml

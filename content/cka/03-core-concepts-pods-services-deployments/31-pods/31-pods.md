@@ -27,7 +27,6 @@ graph TD
     VOL["Shared Volumes\nemptyDir etc"]
     POD --> C1 & C2
     POD --> NET & VOL
-    style POD fill:#dbeafe,stroke:#3b82f6
 ```
 
 * Containers inside a pod **share the same IP address** — they talk to each other via `localhost`

@@ -63,7 +63,6 @@ flowchart TD
     M2["Method 2\nenv: single key as env var"]
     M3["Method 3\nvolume: keys as files"]
     CM --> M1 & M2 & M3
-    style CM fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml

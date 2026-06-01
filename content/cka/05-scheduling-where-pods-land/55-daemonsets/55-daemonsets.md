@@ -25,7 +25,6 @@ flowchart TD
     DS --> N1 & N2 & N3
     NEW["New node added"]
     NEW -->|auto-creates| N4["Node 4\nfluentd pod"]
-    style DS fill:#dbeafe,stroke:#3b82f6
 ```
 
 * When a **new node joins**, DaemonSet automatically creates a pod on it

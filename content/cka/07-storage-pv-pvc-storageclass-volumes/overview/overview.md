@@ -315,10 +315,6 @@ flowchart TD
     ADM --> PV
     PVC -->|storageClassName| SC
     SC -->|auto-creates| PV
-
-    style PVC fill:#fef3c7,stroke:#f59e0b
-    style PV fill:#dbeafe,stroke:#3b82f6
-    style CSI fill:#d1fae5,stroke:#10b981
 ```
 
 ## PV Lifecycle States
@@ -374,9 +370,6 @@ flowchart TD
     VSC --> VS
     VS --> VSContent
     VS -->|use as dataSource| RESTORE
-
-    style VS fill:#dbeafe,stroke:#3b82f6
-    style RESTORE fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -453,8 +446,6 @@ flowchart LR
         P2["Pod B ❌"] -->|blocked| V2
         note2["Exactly ONE pod\ncluster-wide"]
     end
-    style RWOP fill:#d1fae5,stroke:#10b981
-    style RWO fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```yaml

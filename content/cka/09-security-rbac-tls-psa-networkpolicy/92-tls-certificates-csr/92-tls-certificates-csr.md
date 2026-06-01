@@ -25,7 +25,6 @@ flowchart TD
     CA --> ADMIN_C["admin.crt\nkubectl auth"]
     CA --> CTRL_C["controller-manager.crt"]
     CA --> SCHED_C["scheduler.crt"]
-    style CA fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```bash

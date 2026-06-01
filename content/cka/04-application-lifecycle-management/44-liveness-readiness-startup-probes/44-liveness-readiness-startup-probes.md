@@ -43,9 +43,6 @@ flowchart TD
     R -->|fail| R_FAIL
     L -->|pass| L_OK --> L
     L -->|fail| L_FAIL
-    style S_FAIL fill:#fee2e2,stroke:#ef4444
-    style L_FAIL fill:#fee2e2,stroke:#ef4444
-    style R_FAIL fill:#fef3c7,stroke:#f59e0b
 ```
 
 ---

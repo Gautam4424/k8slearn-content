@@ -34,7 +34,6 @@ flowchart TD
     API --> KL
     KL --> CRI & CNI & CSI & PROBE
     KL --> STATUS
-    style KL fill:#dbeafe,stroke:#3b82f6
 ```
 
 ## kubelet Key Facts
@@ -80,8 +79,6 @@ flowchart TD
         EBPF["eBPF (Cilium)\nhighest performance\nkube-proxy optional"]
     end
     API --> KP --> RULES --> MODES
-    style IPVS fill:#d1fae5,stroke:#10b981
-    style EBPF fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```bash

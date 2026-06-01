@@ -209,10 +209,6 @@ flowchart TD
     D --> HA
     HA -->|Yes| E["3+ masters\netcd HA cluster\nLoad Balancer front-end"]
     HA -->|No| F["Single master OK\nfor dev/test"]
-
-    style C fill:#dbeafe,stroke:#3b82f6
-    style D fill:#d1fae5,stroke:#10b981
-    style E fill:#fef3c7,stroke:#f59e0b
 ```
 
 ## HA Control Plane Architecture
@@ -240,9 +236,6 @@ flowchart TD
     LB --> API1 & API2 & API3
     ETCD1 <-->|Raft| ETCD2 <-->|Raft| ETCD3
     ETCD1 <-->|Raft| ETCD3
-
-    style LB fill:#dbeafe,stroke:#3b82f6
-    style ETCD1 fill:#fef3c7,stroke:#f59e0b
 ```
 
 ## etcd Raft Quorum
@@ -254,8 +247,6 @@ flowchart LR
         L -->|replicate| F2[("Follower 2")]
     end
     NOTE["Write committed when\nMAJORITY (quorum) agrees\n\n3 nodes → quorum=2 → lose 1\n5 nodes → quorum=3 → lose 2\n7 nodes → quorum=4 → lose 3\n\nAlways use ODD number!"]
-
-    style L fill:#fef3c7,stroke:#f59e0b
 ```
 
 ## kubeadm Install Flow
@@ -284,8 +275,5 @@ flowchart TD
 
     ALL --> C1 --> C2 --> C3 --> C4
     C4 -->|join command| W1 --> DONE
-
-    style CP fill:#dbeafe,stroke:#3b82f6
-    style W fill:#d1fae5,stroke:#10b981
 ```
 

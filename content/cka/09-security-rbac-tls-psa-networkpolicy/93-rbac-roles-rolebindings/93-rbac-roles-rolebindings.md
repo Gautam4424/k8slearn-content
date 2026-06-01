@@ -29,8 +29,6 @@ flowchart TD
     ROLE -->|action in rules| ALLOW
     ROLE -->|action NOT in rules| DENY
     RB -->|no binding| DENY
-    style ALLOW fill:#d1fae5,stroke:#10b981
-    style DENY fill:#fee2e2,stroke:#ef4444
 ```
 
 ---

@@ -346,9 +346,6 @@ flowchart TD
     L1 --> L2 --> L3 --> L4
     SVC --> KP --> P1 & P2
     DNS -->|resolves| SVC
-
-    style L2 fill:#d1fae5,stroke:#10b981
-    style L3 fill:#dbeafe,stroke:#3b82f6
 ```
 
 ## DNS Resolution Flow
@@ -392,8 +389,6 @@ flowchart LR
     ING --> R1 --> APIP
     ING --> R2 --> WEBP
     TLS -.->|HTTPS termination| ING
-
-    style ING fill:#dbeafe,stroke:#3b82f6
 ```
 
 ## CNI Plugin Flow
@@ -433,10 +428,6 @@ flowchart TD
     GW --> HR
     HR -->|"/api path"| SVC1
     HR -->|"/web path"| SVC2
-
-    style GC fill:#fef3c7,stroke:#f59e0b
-    style GW fill:#dbeafe,stroke:#3b82f6
-    style HR fill:#d1fae5,stroke:#10b981
 ```
 
 ```bash
@@ -544,9 +535,6 @@ flowchart LR
     KP["kube-proxy on every node\nreads EndpointSlices\nbuilds iptables rules"]
 
     SVC --> CTRL --> ES1 & ES2 --> KP
-
-    style ES1 fill:#dbeafe,stroke:#3b82f6
-    style ES2 fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```bash

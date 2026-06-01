@@ -26,9 +26,6 @@ graph TD
     P1["Pod"] & P2["Pod"] & P3["Pod"]
     D --> RS1 & RS2
     RS2 --> P1 & P2 & P3
-    style D fill:#dbeafe,stroke:#3b82f6
-    style RS1 fill:#f3f4f6,stroke:#9ca3af
-    style RS2 fill:#d1fae5,stroke:#10b981
 ```
 
 ---

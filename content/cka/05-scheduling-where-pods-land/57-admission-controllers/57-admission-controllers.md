@@ -33,8 +33,6 @@ flowchart TD
     end
     RESP(["Response"])
     REQ --> A1 --> A2 --> M --> S --> V --> E --> RESP
-    style M fill:#fef3c7,stroke:#f59e0b
-    style V fill:#fee2e2,stroke:#ef4444
 ```
 
 ---

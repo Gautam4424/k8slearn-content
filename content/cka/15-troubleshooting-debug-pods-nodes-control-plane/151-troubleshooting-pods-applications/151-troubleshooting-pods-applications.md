@@ -30,9 +30,6 @@ flowchart TD
     START --> SVC
     SVC -->|no| SVC_NO
     SVC -->|yes| STATUS --> PEND & CRASH & IMG & OOM & RUN
-    style CRASH fill:#fee2e2,stroke:#ef4444
-    style OOM fill:#fee2e2,stroke:#ef4444
-    style PEND fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```bash

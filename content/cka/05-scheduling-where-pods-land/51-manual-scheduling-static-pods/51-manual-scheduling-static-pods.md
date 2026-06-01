@@ -24,7 +24,6 @@ flowchart TD
     SKIP["Scheduler skipped"]
     NODE["node01\nkubelet starts pod directly"]
     POD --> SKIP --> NODE
-    style SKIP fill:#fef3c7,stroke:#f59e0b
 ```
 
 ```yaml

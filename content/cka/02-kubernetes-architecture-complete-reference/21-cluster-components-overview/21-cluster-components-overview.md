@@ -40,9 +40,6 @@ graph TD
     API <--> ETCD
     API --> SCHED & CTRL & CCM
     API --> KL1 & KL2
-    style CP fill:#dbeafe,stroke:#3b82f6
-    style W1 fill:#d1fae5,stroke:#10b981
-    style W2 fill:#d1fae5,stroke:#10b981
 ```
 
 ---
@@ -65,8 +62,6 @@ flowchart LR
     ACT["Creates 3 pods\non worker nodes"]
     WATCH["Continuously watches\nif one dies → creates another"]
     YOU --> API --> CTRL --> ACT --> WATCH --> CTRL
-    style YOU fill:#dbeafe,stroke:#3b82f6
-    style ACT fill:#d1fae5,stroke:#10b981
 ```
 
 > 💡 You never say **how** to do things — you say **what** you want. Kubernetes figures out the how.

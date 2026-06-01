@@ -77,8 +77,6 @@ flowchart TD
     KP["kube-proxy iptables\nDNAT to pod IP"]
     POD["🟢 Pod 10.244.2.7:8080"]
     USER --> DNS --> LB --> ING --> SVC --> KP --> POD
-    style ING fill:#dbeafe,stroke:#3b82f6
-    style KP fill:#fef3c7,stroke:#f59e0b
 ```
 
 ---

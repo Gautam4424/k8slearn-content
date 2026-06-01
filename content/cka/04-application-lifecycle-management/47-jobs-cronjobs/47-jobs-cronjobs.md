@@ -24,7 +24,6 @@ flowchart TD
     P1["Pod 1 ✅"] & P2["Pod 2 ✅"] --> DONE1["2 done"]
     DONE1 --> P3["Pod 3 ✅"] --> DONE2["3/3 complete ✅"]
     JOB --> P1 & P2
-    style DONE2 fill:#d1fae5,stroke:#10b981
 ```
 
 ```yaml
@@ -64,7 +63,6 @@ flowchart LR
     J2["Job run 2\n2026-06-02"]
     J3["Job run 3\n2026-06-03"]
     CRON --> J1 & J2 & J3
-    style CRON fill:#dbeafe,stroke:#3b82f6
 ```
 
 ```yaml
