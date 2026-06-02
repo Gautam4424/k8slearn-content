@@ -1,63 +1,91 @@
+---
+title: "ReplicaSets"
+cert: ["cka"]
+roadmap: "core-concepts"
+subtopic: "ReplicaSets"
+difficulty: "intermediate"
+order: 2
+tags: ["cka"]
+---
+
 # ReplicaSets
 
-## Why ReplicaSets?
+> Part of **03 🧠 Core Concepts** | CKA Chapter 3
 
-- Ensures a **specified number of pod replicas** are always running
-- If a pod dies → ReplicaSet creates a new one
-- Supports **load balancing** across multiple pod replicas
-- Can manage pods **not created by it** (using label selectors)
+ReplicaSets ensure a **specified number of pod replicas** are always running at any time.
 
-## Old vs New API
+---
 
-| Object | API Version | Status |
-| --- | --- | --- |
-| `ReplicationController` | v1 | Legacy |
-| `ReplicaSet` | apps/v1 | Current |
+# What is a ReplicaSet?
 
-> Use **ReplicaSet** (or better, **Deployment**) — never `ReplicationController` in new work.
+```mermaid
+flowchart TD
+    RS["ReplicaSet\nreplicas: 3"]
+    P1["Pod 1 ✅"]
+    P2["Pod 2 ✅"]
+    P3["Pod 3 ✅"]
+    RS --> P1 & P2 & P3
+    CTRL["ReplicaSet Controller\nwatches pod count continuously"]
+    FAIL(["Pod 2 crashes ❌"])
+    NEW["Creates new Pod 2 ✅"]
+    CTRL -->|detects| FAIL --> NEW
+```
 
-## ReplicaSet YAML
+> **In practice:** You almost never create ReplicaSets directly. You use **Deployments** instead — they manage ReplicaSets for you and add rolling updates + rollback.
+
+---
+
+# ReplicaSet YAML
 
 ```yaml
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: myapp-rs
+  name: web-rs
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: myapp     # Must match pod template labels
+      app: web          # select pods with this label
   template:
     metadata:
       labels:
-        app: myapp
+        app: web        # pods MUST have this label
     spec:
       containers:
       - name: nginx
         image: nginx:1.25
 ```
 
-> ⚠️ The `selector.matchLabels` field is **mandatory** in ReplicaSet (unlike ReplicationController).
+---
 
-## Scaling a ReplicaSet
-
-```bash
-# Method 1: Edit YAML and apply
-kubectl apply -f replicaset.yaml
-
-# Method 2: Imperative scale command
-kubectl scale rs myapp-rs --replicas=6
-
-# Method 3: Edit live object
-kubectl edit rs myapp-rs
-```
-
-## Key Commands
+# Key Commands
 
 ```bash
+kubectl get replicasets
 kubectl get rs
-kubectl describe rs myapp-rs
-kubectl delete rs myapp-rs         # also deletes all pods
-kubectl replace -f replicaset.yaml
+kubectl describe rs web-rs
+
+# Scale
+kubectl scale rs web-rs --replicas=5
+
+# Delete RS (does NOT delete pods unless --cascade=foreground)
+kubectl delete rs web-rs
 ```
+
+---
+
+# How Selector Works
+
+```mermaid
+flowchart LR
+    RS["ReplicaSet\nselector: app=web"]
+    P1["Pod\napp=web ✅"]
+    P2["Pod\napp=web ✅"]
+    P3["Pod\napp=api ❌\nnot selected"]
+    RS -->|manages| P1 & P2
+    RS -->|ignores| P3
+```
+
+> ⚠️ **Warning:** If you manually create pods with the same label as a ReplicaSet's selector, the RS will count them and may delete some to maintain the desired count.
+

@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "application-lifecycle-management",
+  "subtopic": "Multi-Container Pod Patterns",
+  "difficulty": "intermediate",
+  "content": "multi-container-pod-patterns.md",
+  "title": "Multi-Container Pod Patterns",
+  "order": 6
+}

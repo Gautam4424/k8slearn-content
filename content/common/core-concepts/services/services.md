@@ -1,83 +1,113 @@
+---
+title: "Services"
+cert: ["cka"]
+roadmap: "core-concepts"
+subtopic: "Services"
+difficulty: "intermediate"
+order: 4
+tags: ["cka"]
+---
+
 # Services
 
-## What is a Service?
+> Part of **03 🧠 Core Concepts** | CKA Chapter 3
 
-A **Service** provides a **stable network endpoint** (IP + DNS name) to access a group of pods. Pods come and go with dynamic IPs — Services abstract that away.
+Services give pods a **stable network identity** — a fixed IP address and DNS name that doesn't change even as pods come and go.
 
-## Service Types
+---
 
-| Type | Access | Use Case |
-| --- | --- | --- |
-| `ClusterIP` | Internal only (default) | Inter-service communication |
-| `NodePort` | External via `<NodeIP>:<NodePort>` | Dev/testing, on-prem |
-| `LoadBalancer` | External via cloud LB | Production on cloud |
-| `ExternalName` | CNAME to external DNS | Access external service by name |
+# Why Services?
 
-## NodePort
+Pods are ephemeral — they get new IP addresses every time they restart. A Service provides a **stable virtual IP (ClusterIP)** that always routes to healthy pods.
+
+```mermaid
+flowchart LR
+    CLIENT["Client Pod"]
+    SVC["Service\nClusterIP: 10.96.50.100\nstable forever"]
+    P1["Pod 10.244.1.5"]
+    P2["Pod 10.244.2.3"]
+    P3["Pod 10.244.3.8"]
+    CLIENT --> SVC
+    SVC -->|load balance| P1 & P2 & P3
+```
+
+---
+
+# Service Types
+
+```mermaid
+flowchart TD
+    subgraph CIP["ClusterIP (default) — internal only"]
+        C1["Pod"] -->|ClusterIP:80| C2["Backend Pods"]
+    end
+    subgraph NP["NodePort — external via node IP"]
+        N1["Browser"] -->|NodeIP:30080| N2["ClusterIP"] --> N3["Pods"]
+    end
+    subgraph LB["LoadBalancer — cloud only"]
+        L1["Browser"] -->|LB IP:80| L2["NodePort"] --> L3["ClusterIP"] --> L4["Pods"]
+    end
+    subgraph EN["ExternalName — DNS alias"]
+        E1["Pod"] -->|CNAME| E2["external.database.com"]
+    end
+```
+
+---
+
+# Service YAML
 
 ```yaml
+# ClusterIP (default)
 apiVersion: v1
 kind: Service
 metadata:
-  name: myapp-service
+  name: web-svc
+spec:
+  type: ClusterIP          # default — omit for same result
+  selector:
+    app: web               # routes to pods with this label
+  ports:
+  - port: 80               # service port (what clients connect to)
+    targetPort: 8080       # container port (what app listens on)
+    protocol: TCP
+```
+
+```yaml
+# NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-nodeport
 spec:
   type: NodePort
   selector:
-    app: myapp
-  ports:
-  - protocol: TCP
-    port: 80          # Service port (ClusterIP)
-    targetPort: 8080  # Container port on pod
-    nodePort: 30008   # External port on node (30000–32767)
-```
-
-> NodePort range: **30000–32767**
-
-## ClusterIP
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: backend
-spec:
-  type: ClusterIP   # default
-  selector:
-    app: backend
+    app: web
   ports:
   - port: 80
     targetPort: 8080
+    nodePort: 30080        # optional: 30000-32767 range
 ```
 
-## LoadBalancer
+---
 
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: frontend
-spec:
-  type: LoadBalancer
-  selector:
-    app: frontend
-  ports:
-  - port: 80
-    targetPort: 8080
-```
-
-## Key Commands
+# Key Commands
 
 ```bash
-# Create a ClusterIP service for an existing deployment
-kubectl expose deployment myapp --port=80 --target-port=8080
+# Create service
+kubectl expose deployment web --port=80 --target-port=8080
+kubectl expose deployment web --port=80 --type=NodePort
+kubectl expose pod nginx --port=80 --name=nginx-svc
 
-# Create a NodePort service
-kubectl expose deployment myapp --type=NodePort --port=80
-
-# List services
+# Inspect
 kubectl get services
 kubectl get svc
+kubectl describe svc web-svc
 
-# Describe
-kubectl describe svc myapp-service
+# Check actual pod IPs behind service
+kubectl get endpoints web-svc
+kubectl get endpointslices -l kubernetes.io/service-name=web-svc
+
+# Test service DNS from inside cluster
+kubectl exec -it busybox -- nslookup web-svc
+kubectl exec -it busybox -- curl http://web-svc.default.svc.cluster.local
 ```
+

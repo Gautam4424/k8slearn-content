@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "troubleshooting",
+  "subtopic": "Ephemeral Containers & kubectl debug",
+  "difficulty": "intermediate",
+  "content": "ephemeral-containers-kubectl-debug.md",
+  "title": "Ephemeral Containers & kubectl debug",
+  "order": 4
+}

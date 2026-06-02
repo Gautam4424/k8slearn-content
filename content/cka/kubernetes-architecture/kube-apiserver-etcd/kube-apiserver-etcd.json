@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "kube-apiserver & etcd",
+  "difficulty": "intermediate",
+  "content": "kube-apiserver-etcd.md",
+  "title": "kube-apiserver & etcd",
+  "order": 2
+}

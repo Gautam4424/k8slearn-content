@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "TopologySpreadConstraints & PriorityClass",
+  "difficulty": "intermediate",
+  "content": "topologyspreadconstraints-priorityclass.md",
+  "title": "TopologySpreadConstraints & PriorityClass",
+  "order": 6
+}

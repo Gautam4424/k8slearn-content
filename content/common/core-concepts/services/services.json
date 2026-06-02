@@ -1,29 +1,14 @@
 {
-  "title": "Services",
-  "cert": ["cka", "ckad", "cks", "kcna"],
+  "cert": [
+    "cka",
+    "ckad",
+    "cks",
+    "kcna"
+  ],
   "roadmap": "core-concepts",
   "subtopic": "Services",
-  "difficulty": "beginner",
+  "difficulty": "intermediate",
   "content": "services.md",
-  "order": 4,
-  "tags": [
-    "services",
-    "clusterip",
-    "nodeport",
-    "loadbalancer"
-  ],
-  "questions": [
-    {
-      "type": "mcq",
-      "q": "What is the default port range allocated by Kubernetes for NodePort Services?",
-      "options": [
-        "80-443",
-        "10250-10255",
-        "30000-32767",
-        "32768-65535"
-      ],
-      "answer": 2,
-      "explanation": "By default, NodePorts are allocated in the 30000-32767 range."
-    }
-  ]
+  "title": "Services",
+  "order": 4
 }

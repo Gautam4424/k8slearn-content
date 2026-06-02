@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Manual Scheduling & Static Pods",
+  "difficulty": "intermediate",
+  "content": "manual-scheduling-static-pods.md",
+  "title": "Manual Scheduling & Static Pods",
+  "order": 1
+}

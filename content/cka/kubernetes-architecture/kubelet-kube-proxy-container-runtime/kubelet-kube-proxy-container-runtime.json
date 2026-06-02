@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "kubelet, kube-proxy & Container Runtime",
+  "difficulty": "intermediate",
+  "content": "kubelet-kube-proxy-container-runtime.md",
+  "title": "kubelet, kube-proxy & Container Runtime",
+  "order": 4
+}

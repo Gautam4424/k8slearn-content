@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Resource Requests, Limits & QoS",
+  "difficulty": "intermediate",
+  "content": "resource-requests-limits-qos.md",
+  "title": "Resource Requests, Limits & QoS",
+  "order": 4
+}

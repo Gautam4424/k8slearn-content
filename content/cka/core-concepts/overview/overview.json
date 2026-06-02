@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "Overview",
+  "difficulty": "beginner",
+  "content": "overview.md",
+  "title": "Overview",
+  "order": 1
+}

@@ -1,53 +1,12 @@
 {
-  "title": "Init Containers",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka":  "Application Lifecycle Management",
-    "ckad": "application-design"
-  },
+  "cert": [
+    "cka",
+    "ckad"
+  ],
+  "roadmap": "application-lifecycle",
   "subtopic": "Init Containers",
   "difficulty": "intermediate",
   "content": "init-containers.md",
-  "order": 5,
-  "tags": ["init-containers", "pod-lifecycle", "dependencies", "sequencing", "migration"],
-  "questions": [
-    {
-      "type": "mcq",
-      "q": "A pod has two init containers. The first succeeds but the second fails. What happens?",
-      "options": [
-        "The main container starts using only the first init container's result",
-        "The pod is marked Failed permanently",
-        "The pod restarts and runs both init containers again from the beginning",
-        "The second init container is skipped and the main container starts"
-      ],
-      "answer": 2,
-      "explanation": "If any init container fails, the entire pod is restarted (according to restartPolicy). All init containers run again from the beginning — there is no partial state preserved between restarts."
-    },
-    {
-      "type": "true-false",
-      "q": "Init containers run in parallel with each other.",
-      "options": ["True", "False"],
-      "answer": 1,
-      "explanation": "False. Init containers run sequentially — one at a time, in the order they are defined. Each must exit successfully before the next one starts. Only the main containers start in parallel (after all init containers complete)."
-    },
-    {
-      "type": "mcq",
-      "q": "Which pod status indicates that the first of two init containers is currently running?",
-      "options": ["PodInitializing", "Init:0/2", "Init:1/2", "Pending"],
-      "answer": 1,
-      "explanation": "Init:0/2 means 0 out of 2 init containers have completed (the first is currently running). Init:1/2 would mean the first completed and the second is running. PodInitializing appears after all init containers finish but before main containers start."
-    },
-    {
-      "type": "mcq",
-      "q": "Which is a valid use case for an init container?",
-      "options": [
-        "Serving HTTP traffic while the main container warms up",
-        "Waiting for a dependency service to become available before starting the main app",
-        "Providing a liveness probe endpoint",
-        "Scaling the pod horizontally"
-      ],
-      "answer": 1,
-      "explanation": "Init containers are ideal for dependency checks (wait for DB, wait for API), pre-populating shared volumes, running DB migrations, or any setup that must complete before the main app starts."
-    }
-  ]
+  "title": "Init Containers",
+  "order": 5
 }

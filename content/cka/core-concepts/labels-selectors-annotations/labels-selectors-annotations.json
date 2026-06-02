@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "core-concepts",
+  "subtopic": "Labels, Selectors & Annotations",
+  "difficulty": "intermediate",
+  "content": "labels-selectors-annotations.md",
+  "title": "Labels, Selectors & Annotations",
+  "order": 6
+}

@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "security",
+  "subtopic": "SecurityContext & Pod Security Admission",
+  "difficulty": "intermediate",
+  "content": "securitycontext-pod-security-admission.md",
+  "title": "SecurityContext & Pod Security Admission",
+  "order": 4
+}

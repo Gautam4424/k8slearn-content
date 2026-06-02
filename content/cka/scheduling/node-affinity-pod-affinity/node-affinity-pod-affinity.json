@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Node Affinity & Pod Affinity",
+  "difficulty": "intermediate",
+  "content": "node-affinity-pod-affinity.md",
+  "title": "Node Affinity & Pod Affinity",
+  "order": 3
+}

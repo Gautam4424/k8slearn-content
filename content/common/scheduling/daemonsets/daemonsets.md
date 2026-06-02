@@ -1,36 +1,42 @@
+---
+title: "DaemonSets"
+cert: ["cka"]
+roadmap: "scheduling"
+subtopic: "DaemonSets"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
+---
+
 # DaemonSets
 
-A DaemonSet ensures that **one pod runs on every node** (or a subset). When nodes are added, pods are automatically created. When nodes are removed, pods are garbage collected.
+> Part of **05 📅 Scheduling** | CKA Chapter 5
+
+DaemonSets ensure **exactly one pod runs on every node** — perfect for node-level agents.
+
+---
+
+# How DaemonSets Work
 
 ```mermaid
-graph TD
-    DS["📋 DaemonSet\n(kube-controller-manager)"]
-    N1["🖥️ Node 1"]
-    N2["🖥️ Node 2"]
-    N3["🖥️ Node 3 (new)"]
-    P1["📦 Pod (e.g. fluentd)"]
-    P2["📦 Pod (e.g. fluentd)"]
-    P3["📦 Pod (auto-created)"]
-
-    DS -->|"ensures 1 pod"| N1
-    DS -->|"ensures 1 pod"| N2
-    DS -->|"auto-deploys"| N3
-    N1 --- P1
-    N2 --- P2
-    N3 --- P3
+flowchart TD
+    DS["DaemonSet\nfluentd-logging"]
+    N1["Node 1\nfluentd pod"] & N2["Node 2\nfluentd pod"] & N3["Node 3\nfluentd pod"]
+    DS --> N1 & N2 & N3
+    NEW["New node added"]
+    NEW -->|auto-creates| N4["Node 4\nfluentd pod"]
 ```
 
-## Use Cases
+* When a **new node joins**, DaemonSet automatically creates a pod on it
+* When a **node is removed**, the pod is garbage collected
+* DaemonSet pods **bypass the scheduler** (they go to every node)
+---
 
-| Use Case | Example Tools |
-|---|---|
-| Log collection | Fluentd, Filebeat, Promtail |
-| Monitoring | Prometheus node-exporter, Datadog agent |
-| Networking | kube-proxy, Calico, Cilium |
-| Security | Falco, Sysdig |
-| Storage | Ceph OSD agent |
+# Common Use Cases
 
-## Example 1 — Fluentd Log Collector (including control-plane)
+---
+
+# DaemonSet YAML
 
 ```yaml
 apiVersion: apps/v1
@@ -41,25 +47,26 @@ metadata:
 spec:
   selector:
     matchLabels:
-      name: fluentd-logging
+      name: fluentd
   template:
     metadata:
       labels:
-        name: fluentd-logging
+        name: fluentd
     spec:
       tolerations:
-      - key: node-role.kubernetes.io/control-plane   # also run on master
+      # Allow on control plane nodes too
+      - key: node-role.kubernetes.io/control-plane
         operator: Exists
         effect: NoSchedule
       containers:
       - name: fluentd
         image: fluent/fluentd:v1.16
         resources:
-          limits:
-            memory: 200Mi
           requests:
             cpu: 100m
             memory: 200Mi
+          limits:
+            memory: 500Mi
         volumeMounts:
         - name: varlog
           mountPath: /var/log
@@ -69,43 +76,15 @@ spec:
           path: /var/log
 ```
 
-## Example 2 — DaemonSet on a Subset of Nodes
-
-```yaml
-spec:
-  template:
-    spec:
-      nodeSelector:
-        disktype: ssd      # only SSD nodes get this pod
-      containers:
-      - name: storage-agent
-        image: storage-agent:v2
-```
-
-## Example 3 — Creating from CLI
-
 ```bash
-# Generate deployment YAML then convert to DaemonSet
-kubectl create deployment node-monitor \
-  --image=prom/node-exporter:latest \
-  --dry-run=client -o yaml > daemonset.yaml
+kubectl get daemonsets
+kubectl get ds
+kubectl get ds -n kube-system
+kubectl describe ds fluentd-logging -n kube-system
 
-# Edit daemonset.yaml:
-# 1. kind: Deployment  →  kind: DaemonSet
-# 2. Remove: spec.replicas
-# 3. Remove: spec.strategy
-
-kubectl apply -f daemonset.yaml
-kubectl get daemonsets -A
-kubectl rollout status daemonset/node-monitor
+# How many pods are running?
+kubectl get ds fluentd-logging -n kube-system
+# NAME              DESIRED   CURRENT   READY
+# fluentd-logging   3         3         3
 ```
 
-## Static Pods vs DaemonSets
-
-| Feature | Static Pods | DaemonSets |
-|---|---|---|
-| Managed by | kubelet | kube-controller-manager |
-| Needs API server | No | Yes |
-| kubectl visible | Yes (read-only mirror) | Yes (full control) |
-| Runs on control-plane | Yes (by default) | Only with toleration |
-| Use case | Control plane bootstrap | Node agents |

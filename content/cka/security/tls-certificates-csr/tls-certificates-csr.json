@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "security",
+  "subtopic": "TLS Certificates & CSR",
+  "difficulty": "intermediate",
+  "content": "tls-certificates-csr.md",
+  "title": "TLS Certificates & CSR",
+  "order": 2
+}

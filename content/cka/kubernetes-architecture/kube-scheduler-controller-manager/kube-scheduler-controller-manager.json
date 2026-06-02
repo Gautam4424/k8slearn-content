@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "kube-scheduler & controller-manager",
+  "difficulty": "intermediate",
+  "content": "kube-scheduler-controller-manager.md",
+  "title": "kube-scheduler & controller-manager",
+  "order": 3
+}

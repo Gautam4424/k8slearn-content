@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "troubleshooting",
+  "subtopic": "Troubleshooting Control Plane",
+  "difficulty": "intermediate",
+  "content": "troubleshooting-control-plane.md",
+  "title": "Troubleshooting Control Plane",
+  "order": 3
+}

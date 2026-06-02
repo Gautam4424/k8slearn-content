@@ -1,76 +1,110 @@
+---
+title: "Pods"
+cert: ["cka"]
+roadmap: "core-concepts"
+subtopic: "Pods"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
+---
+
 # Pods
 
-## What is a Pod?
+> Part of **03 🧠 Core Concepts** | CKA Chapter 3
 
-A **Pod** is the smallest deployable unit in Kubernetes. It represents:
-- One or more tightly coupled containers
-- Shared network namespace (same IP, same ports)
-- Shared storage (volumes)
-- A single scheduling unit
+A Pod is the **smallest deployable unit** in Kubernetes. Every container you run lives inside a Pod.
 
-> Kubernetes does not deploy containers directly — it wraps them in pods.
+---
 
-## Single-Container Pod (Most Common)
+# What is a Pod?
+
+```mermaid
+graph TD
+    POD["Pod\nShared network namespace\nShared storage volumes"]
+    C1["Container 1\nmain app"]
+    C2["Container 2\nsidecar/helper"]
+    NET["Shared IP address\nlocalhost between containers"]
+    VOL["Shared Volumes\nemptyDir etc"]
+    POD --> C1 & C2
+    POD --> NET & VOL
+```
+
+* Containers inside a pod **share the same IP address** — they talk to each other via `localhost`
+* Containers inside a pod **share volumes** — they can read/write the same files
+* A pod is **ephemeral** — if it dies, it's gone. Use Deployments for self-healing.
+---
+
+# Create a Pod
+
+```bash
+# Imperative — fastest way
+kubectl run nginx --image=nginx:1.25
+
+# With port exposed
+kubectl run nginx --image=nginx:1.25 --port=80
+
+# Generate YAML without creating (exam trick)
+kubectl run nginx --image=nginx:1.25 --dry-run=client -o yaml
+
+# Generate and save to file
+kubectl run nginx --image=nginx:1.25 --dry-run=client -o yaml > pod.yaml
+kubectl apply -f pod.yaml
+```
 
 ```yaml
+# pod.yaml — basic pod
 apiVersion: v1
 kind: Pod
 metadata:
   name: nginx
   labels:
-    app: nginx
+    app: web
 spec:
   containers:
   - name: nginx
     image: nginx:1.25
     ports:
     - containerPort: 80
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 256Mi
 ```
 
-## Multi-Container Pod (Helper / Sidecar Pattern)
+---
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: web-with-logger
-spec:
-  containers:
-  - name: web
-    image: nginx
-  - name: log-agent
-    image: log-agent
-```
-
-Containers in the same pod:
-- Share `localhost` network
-- Can share volumes
-- Are always scheduled together on the same node
-
-## Essential kubectl Commands for Pods
+# Pod Commands
 
 ```bash
-# Create a pod
-kubectl run nginx --image=nginx
-
-# Generate YAML (dry run)
-kubectl run nginx --image=nginx --dry-run=client -o yaml
-
 # List pods
 kubectl get pods
-kubectl get pods -o wide          # includes node and IP
-kubectl get pods -n kube-system   # different namespace
+kubectl get pods -o wide           # with node + IP info
+kubectl get pods -A                # all namespaces
+kubectl get pods -n kube-system    # specific namespace
+kubectl get pods -w                # watch live
 
-# Describe a pod
-kubectl describe pod nginx
+# Inspect a pod
+kubectl describe pod nginx         # full detail + events
+kubectl get pod nginx -o yaml      # raw YAML
 
-# Get logs
+# Logs
 kubectl logs nginx
-kubectl logs nginx -c log-agent   # specific container
+kubectl logs nginx -f              # follow/stream
+kubectl logs nginx --previous      # previous crash
 
-# Execute command inside pod
+# Shell into a pod
 kubectl exec -it nginx -- /bin/bash
+kubectl exec -it nginx -- /bin/sh
 
-# Delete a pod
+# Delete
 kubectl delete pod nginx
+kubectl delete pod nginx --force --grace-period=0   # immediate
 ```
+
+---
+
+# Pod Status — What Do They Mean?
+

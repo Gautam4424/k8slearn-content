@@ -1,73 +1,12 @@
 {
-  "title": "DaemonSets",
-  "cert": ["cka", "ckad"],
-  "roadmap": {
-    "cka": "Scheduling",
-    "ckad": "application-design"
-  },
+  "cert": [
+    "cka",
+    "ckad"
+  ],
+  "roadmap": "scheduling",
   "subtopic": "DaemonSets",
   "difficulty": "intermediate",
   "content": "daemonsets.md",
-  "order": {
-    "cka": 7,
-    "ckad": 9
-  },
-  "tags": ["daemonset", "node-agent", "fluentd", "kube-proxy", "one-pod-per-node"],
-  "questions": [
-    {
-      "type": "mcq",
-      "q": "What does a DaemonSet guarantee about pod placement?",
-      "options": [
-        "Exactly one pod runs on the cluster at all times",
-        "One pod runs on every node (or every matching node)",
-        "Pods are spread evenly across all nodes",
-        "The pod is replicated across all namespaces"
-      ],
-      "answer": 1,
-      "explanation": "A DaemonSet ensures one pod instance runs on every node (or every node matching a nodeSelector/nodeAffinity). New nodes automatically get a pod; removed nodes have the pod deleted."
-    },
-    {
-      "type": "mcq",
-      "q": "By default, DaemonSet pods do NOT run on control-plane nodes. What must you add to the DaemonSet to make it run on control-plane nodes too?",
-      "options": [
-        "A nodeSelector targeting the master node",
-        "A toleration for the control-plane taint",
-        "Set `hostNetwork: true`",
-        "A NodeAffinity with operator Exists for the master label"
-      ],
-      "answer": 1,
-      "explanation": "Control-plane nodes have the taint `node-role.kubernetes.io/control-plane:NoSchedule`. Adding a toleration for this taint allows DaemonSet pods to also run on control-plane nodes."
-    },
-    {
-      "type": "mcq",
-      "q": "Which Kubernetes component manages DaemonSet pods?",
-      "options": [
-        "kubelet",
-        "kube-scheduler",
-        "kube-controller-manager",
-        "etcd"
-      ],
-      "answer": 2,
-      "explanation": "The kube-controller-manager runs the DaemonSet controller, which watches nodes and creates/deletes pods accordingly. This differs from Static Pods, which are managed directly by kubelet."
-    },
-    {
-      "type": "mcq",
-      "q": "You want to create a DaemonSet quickly using kubectl. What is the recommended approach?",
-      "options": [
-        "kubectl create daemonset --image=...",
-        "Generate a Deployment YAML with --dry-run=client, then edit kind and remove replicas/strategy",
-        "kubectl apply -f daemonset.yaml without any generation",
-        "kubectl expose deployment to create a DaemonSet"
-      ],
-      "answer": 1,
-      "explanation": "There is no kubectl create daemonset command. The common approach is to generate a Deployment YAML with --dry-run=client -o yaml, then change kind to DaemonSet and remove the replicas and strategy fields."
-    },
-    {
-      "type": "true-false",
-      "q": "Deleting a DaemonSet also deletes all the pods it manages.",
-      "options": ["True", "False"],
-      "answer": 0,
-      "explanation": "True. When you delete a DaemonSet, all its pods are also deleted. You can use --cascade=orphan to delete the DaemonSet without deleting its pods, but this is rarely recommended."
-    }
-  ]
+  "title": "DaemonSets",
+  "order": 5
 }

@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "Full Pod Lifecycle",
+  "difficulty": "intermediate",
+  "content": "full-pod-lifecycle.md",
+  "title": "Full Pod Lifecycle",
+  "order": 5
+}

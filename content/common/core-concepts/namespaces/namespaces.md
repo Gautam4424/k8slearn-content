@@ -1,64 +1,92 @@
+---
+title: "Namespaces"
+cert: ["cka"]
+roadmap: "core-concepts"
+subtopic: "Namespaces"
+difficulty: "intermediate"
+order: 5
+tags: ["cka"]
+---
+
 # Namespaces
 
-## What is a Namespace?
+> Part of **03 🧠 Core Concepts** | CKA Chapter 3
 
-Namespaces provide **logical isolation** within a cluster. Think of them as separate environments.
+Namespaces are **virtual clusters** within a physical cluster — a way to divide cluster resources between multiple teams, projects, or environments.
+
+---
+
+# What are Namespaces?
+
+```mermaid
+graph TD
+    CLUSTER["Kubernetes Cluster"]
+    NS1["Namespace: default\n(objects created here if no namespace specified)"]
+    NS2["Namespace: kube-system\n(Kubernetes internal components)"]
+    NS3["Namespace: production\n(your production workloads)"]
+    NS4["Namespace: staging\n(your staging workloads)"]
+    CLUSTER --> NS1 & NS2 & NS3 & NS4
+```
 
 ## Default Namespaces
 
-| Namespace | Purpose |
-| --- | --- |
-| `default` | Where your resources go if no namespace is specified |
-| `kube-system` | Kubernetes internal components (apiserver, etcd, scheduler pods) |
-| `kube-public` | Publicly accessible data (cluster info) |
-| `kube-node-lease` | Node heartbeat lease objects |
+---
 
-## DNS Across Namespaces
-
-Pods in the same namespace reach each other by service name:
-```
-mysql.connect("db-service")
-```
-
-Pods in different namespaces must use the full DNS name:
-```
-mysql.connect("db-service.dev.svc.cluster.local")
-```
-Format: `<service>.<namespace>.svc.cluster.local`
-
-## Resource Quotas
-
-```yaml
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: compute-quota
-  namespace: dev
-spec:
-  hard:
-    pods: "10"
-    requests.cpu: "4"
-    requests.memory: 5Gi
-    limits.cpu: "10"
-    limits.memory: 10Gi
-```
-
-## Key Commands
+# Namespaced vs Cluster-Scoped Resources
 
 ```bash
-# Create namespace
-kubectl create namespace dev
-
-# List resources in a namespace
-kubectl get pods -n dev
-
-# List resources in all namespaces
-kubectl get pods --all-namespaces
-kubectl get pods -A
-
-# Set default namespace for current context
-kubectl config set-context --current --namespace=dev
-
-# Generate namespace YAML
-kubectl create namespace dev --dry-run=client -o yaml
+# Check if a resource is namespaced
+kubectl api-resources --namespaced=true
+kubectl api-resources --namespaced=false
 ```
+
+---
+
+# Key Commands
+
+```bash
+# List namespaces
+kubectl get namespaces
+kubectl get ns
+
+# Create namespace
+kubectl create namespace production
+kubectl create ns staging
+
+# Work in a namespace
+kubectl get pods -n production
+kubectl get all -n production
+
+# Set default namespace for your session
+kubectl config set-context --current --namespace=production
+
+# Get everything across all namespaces
+kubectl get pods -A
+kubectl get all -A
+
+# Delete namespace (deletes ALL resources inside it)
+kubectl delete namespace staging
+```
+
+```yaml
+# Namespace YAML
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+```
+
+---
+
+# DNS Between Namespaces
+
+```bash
+# Same namespace — just use service name
+curl http://web-svc
+
+# Different namespace — use full DNS name
+curl http://web-svc.production.svc.cluster.local
+
+# Format: <service>.<namespace>.svc.cluster.local
+```
+

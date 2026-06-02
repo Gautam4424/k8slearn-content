@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "Cluster Components Overview",
+  "difficulty": "intermediate",
+  "content": "cluster-components-overview.md",
+  "title": "Cluster Components Overview",
+  "order": 1
+}

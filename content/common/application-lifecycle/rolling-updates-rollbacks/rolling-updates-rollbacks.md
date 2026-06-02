@@ -1,69 +1,78 @@
+---
+title: "Rolling Updates & Rollbacks"
+cert: ["cka"]
+roadmap: "application-lifecycle-management"
+subtopic: "Rolling Updates & Rollbacks"
+difficulty: "intermediate"
+order: 1
+tags: ["cka"]
+---
+
 # Rolling Updates & Rollbacks
 
-Kubernetes deployments support zero-downtime updates via rolling update strategy. Old pods are replaced gradually while maintaining availability.
+> Part of **04 ⚙️ Application Lifecycle Management** | CKA Chapter 4
 
-## Update Strategies
+---
 
-| Strategy | Behaviour | Downtime |
-|---|---|---|
-| `RollingUpdate` | Replace pods gradually, old+new coexist briefly | None |
-| `Recreate` | Kill ALL old pods, then start new ones | Yes |
+# Rolling Updates
 
-## Rolling Update Flow
+A rolling update replaces old pods with new ones **gradually** — zero downtime by default.
 
 ```mermaid
 sequenceDiagram
     participant User
-    participant API as kube-apiserver
-    participant RS1 as ReplicaSet v1
-    participant RS2 as ReplicaSet v2
-
-    User->>API: kubectl set image deployment/myapp myapp=v2
-    API->>RS2: create new ReplicaSet
-    loop maxSurge=1, maxUnavailable=1
-        RS2->>API: create new pod v2
-        Note over API: health check passes ✅
-        RS1->>API: terminate old pod v1
+    participant RS1 as ReplicaSet v1 (old)
+    participant RS2 as ReplicaSet v2 (new)
+    User->>RS2: kubectl set image deploy/web nginx=nginx:1.26
+    loop maxSurge=1, maxUnavailable=0
+        RS2->>RS2: create new pod v2 ✅
+        RS1->>RS1: terminate old pod v1
     end
-    Note over RS1: scaled to 0 — kept for rollback
-    API-->>User: deployment successfully rolled out ✅
+    Note over RS1: scaled to 0, kept for rollback
 ```
-
-## Deployment Strategy Config
-
-```yaml
-spec:
-  replicas: 4
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1        # max pods above desired during update
-      maxUnavailable: 1  # max pods below desired during update
-```
-
-## Commands
 
 ```bash
 # Update image
-kubectl set image deployment/myapp myapp=myapp:v2
+kubectl set image deployment/web nginx=nginx:1.26
 
-# Watch rollout progress
-kubectl rollout status deployment/myapp
+# Watch rollout live
+kubectl rollout status deployment/web
 
 # View history
-kubectl rollout history deployment/myapp
-kubectl rollout history deployment/myapp --revision=2
+kubectl rollout history deployment/web
 
-# Rollback
-kubectl rollout undo deployment/myapp
-kubectl rollout undo deployment/myapp --to-revision=1
+# Rollback to previous version
+kubectl rollout undo deployment/web
 
-# Pause / resume (batch multiple changes)
-kubectl rollout pause deployment/myapp
-kubectl set image deployment/myapp myapp=myapp:v3
-kubectl set resources deployment/myapp -c myapp --limits=cpu=200m,memory=512Mi
-kubectl rollout resume deployment/myapp
+# Rollback to specific revision
+kubectl rollout undo deployment/web --to-revision=1
 
-# Record change cause in history
-kubectl annotate deployment/myapp kubernetes.io/change-cause="image updated to v2"
+# Annotate change for history
+kubectl annotate deployment/web kubernetes.io/change-cause="upgrade to nginx 1.26"
+
+# Pause + batch multiple changes
+kubectl rollout pause deployment/web
+kubectl set image deployment/web nginx=nginx:1.26
+kubectl set resources deployment/web -c nginx --limits=cpu=500m
+kubectl rollout resume deployment/web
 ```
+
+```yaml
+# Deployment update strategy in YAML
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1        # max extra pods above desired
+      maxUnavailable: 0  # max pods below desired
+```
+
+## Recreate Strategy
+
+```yaml
+spec:
+  strategy:
+    type: Recreate     # kill ALL old pods first, then create new
+                       # causes downtime — use only when needed
+```
+

@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "application-lifecycle-management",
+  "subtopic": "ConfigMaps",
+  "difficulty": "intermediate",
+  "content": "configmaps.md",
+  "title": "ConfigMaps",
+  "order": 2
+}

@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "kubernetes-architecture",
+  "subtopic": "Overview",
+  "difficulty": "beginner",
+  "content": "overview.md",
+  "title": "Overview",
+  "order": 1
+}

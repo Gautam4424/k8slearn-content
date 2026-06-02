@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "security",
+  "subtopic": "etcd Encryption & Audit Logging",
+  "difficulty": "intermediate",
+  "content": "etcd-encryption-audit-logging.md",
+  "title": "etcd Encryption & Audit Logging",
+  "order": 5
+}

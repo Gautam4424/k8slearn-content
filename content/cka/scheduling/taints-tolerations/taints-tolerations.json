@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "scheduling",
+  "subtopic": "Taints & Tolerations",
+  "difficulty": "intermediate",
+  "content": "taints-tolerations.md",
+  "title": "Taints & Tolerations",
+  "order": 2
+}

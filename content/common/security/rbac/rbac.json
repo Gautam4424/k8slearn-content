@@ -1,46 +1,13 @@
 {
-  "title": "RBAC (Role-Based Access Control)",
-  "cert": ["cka", "ckad", "cks"],
+  "cert": [
+    "cka",
+    "ckad",
+    "cks"
+  ],
   "roadmap": "security",
-  "subtopic": "RBAC (Role-Based Access Control)",
+  "subtopic": "RBAC",
   "difficulty": "intermediate",
   "content": "rbac.md",
-  "order": {
-    "cka": 4,
-    "ckad": 3,
-    "cks": 4
-  },
-  "tags": [
-    "rbac",
-    "role",
-    "clusterrole",
-    "rolebinding",
-    "serviceaccount"
-  ],
-  "questions": [
-    {
-      "type": "mcq",
-      "q": "What is the primary operational difference between a Role and a ClusterRole in Kubernetes?",
-      "options": [
-        "A Role applies to a specific namespace, while a ClusterRole is cluster-wide and can select non-namespaced resources.",
-        "A Role dictates read-only access, while a ClusterRole grants full administrative access.",
-        "A Role binds directly to users, while a ClusterRole only binds to ServiceAccounts.",
-        "A Role is managed in etcd, while a ClusterRole is managed in an external authentication provider."
-      ],
-      "answer": 0,
-      "explanation": "A Role is a namespaced resource that grants API access inside that specific namespace. A ClusterRole is non-namespaced, allowing access to cluster-wide resources (like Nodes, PVs, or Namespaces) or resources across all namespaces."
-    },
-    {
-      "type": "mcq",
-      "q": "Which command checks if a specific ServiceAccount named 'deploy-sa' can list secrets in the 'production' namespace?",
-      "options": [
-        "kubectl check authorization --user=deploy-sa -n production",
-        "kubectl auth can-i list secrets --as=system:serviceaccount:production:deploy-sa -n production",
-        "kubectl get permissions --sa=deploy-sa -n production",
-        "kubectl test access --resource=secrets --as=deploy-sa"
-      ],
-      "answer": 1,
-      "explanation": "To check access for a ServiceAccount, specify its fully qualified system identity format 'system:serviceaccount:<namespace>:<sa-name>' using the '--as' flag with 'kubectl auth can-i'."
-    }
-  ]
+  "title": "RBAC",
+  "order": 3
 }

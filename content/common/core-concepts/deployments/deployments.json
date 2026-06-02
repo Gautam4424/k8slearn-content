@@ -1,41 +1,14 @@
 {
-  "title": "Deployments",
-  "cert": ["cka", "ckad", "cks", "kcna"],
+  "cert": [
+    "cka",
+    "ckad",
+    "cks",
+    "kcna"
+  ],
   "roadmap": "core-concepts",
   "subtopic": "Deployments",
-  "difficulty": "beginner",
+  "difficulty": "intermediate",
   "content": "deployments.md",
-  "order": 7,
-  "tags": [
-    "deployments",
-    "rolling-updates",
-    "rollbacks",
-    "scaling"
-  ],
-  "questions": [
-    {
-      "type": "mcq",
-      "q": "Which deployment strategy kills all running pod replicas first before initiating new ones?",
-      "options": [
-        "RollingUpdate",
-        "Recreate",
-        "BlueGreen",
-        "Canary"
-      ],
-      "answer": 1,
-      "explanation": "Recreate deletes all existing pods before starting new ones, which leads to temporary application downtime."
-    },
-    {
-      "type": "mcq",
-      "q": "What command rolls back a deployment to its previous revision?",
-      "options": [
-        "kubectl revert deployment myapp",
-        "kubectl rollout undo deployment/myapp",
-        "kubectl deployment rollback myapp",
-        "kubectl apply --rollback deployment/myapp"
-      ],
-      "answer": 1,
-      "explanation": "kubectl rollout undo deployment/<name> reverts a deployment to the previous revision. You can specify --to-revision=N for a specific version."
-    }
-  ]
+  "title": "Deployments",
+  "order": 3
 }

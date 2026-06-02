@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "troubleshooting",
+  "subtopic": "Troubleshooting Nodes",
+  "difficulty": "intermediate",
+  "content": "troubleshooting-nodes.md",
+  "title": "Troubleshooting Nodes",
+  "order": 2
+}

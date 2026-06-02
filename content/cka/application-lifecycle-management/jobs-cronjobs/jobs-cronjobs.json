@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "application-lifecycle-management",
+  "subtopic": "Jobs & CronJobs",
+  "difficulty": "intermediate",
+  "content": "jobs-cronjobs.md",
+  "title": "Jobs & CronJobs",
+  "order": 7
+}

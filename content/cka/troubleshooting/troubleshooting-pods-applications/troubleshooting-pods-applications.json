@@ -1,0 +1,11 @@
+{
+  "cert": [
+    "cka"
+  ],
+  "roadmap": "troubleshooting",
+  "subtopic": "Troubleshooting Pods & Applications",
+  "difficulty": "intermediate",
+  "content": "troubleshooting-pods-applications.md",
+  "title": "Troubleshooting Pods & Applications",
+  "order": 1
+}
