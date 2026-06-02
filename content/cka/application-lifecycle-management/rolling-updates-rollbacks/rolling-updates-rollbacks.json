@@ -1,9 +1,8 @@
 {
   "cert": [
-    "cka",
-    "ckad"
+    "cka"
   ],
-  "roadmap": "application-lifecycle",
+  "roadmap": "application-lifecycle-management",
   "subtopic": "Rolling Updates & Rollbacks",
   "difficulty": "intermediate",
   "content": "rolling-updates-rollbacks.md",

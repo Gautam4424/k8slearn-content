@@ -1,7 +1,6 @@
 {
   "cert": [
-    "cka",
-    "ckad"
+    "cka"
   ],
   "roadmap": "scheduling",
   "subtopic": "DaemonSets",

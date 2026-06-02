@@ -1,8 +1,6 @@
 {
   "cert": [
-    "cka",
-    "ckad",
-    "cks"
+    "cka"
   ],
   "roadmap": "security",
   "subtopic": "RBAC",

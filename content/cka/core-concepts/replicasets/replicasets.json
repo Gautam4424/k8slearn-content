@@ -1,9 +1,6 @@
 {
   "cert": [
-    "cka",
-    "ckad",
-    "cks",
-    "kcna"
+    "cka"
   ],
   "roadmap": "core-concepts",
   "subtopic": "ReplicaSets",
